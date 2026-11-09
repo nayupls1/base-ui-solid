@@ -75,6 +75,35 @@ def convert_style_object(body: str) -> str:
                   body)
 
 
+def convert_hooks(s: str) -> str:
+    """Converts the simple React hook patterns demos use. Review the result."""
+    imports = set()
+    if 'React.useId()' in s:
+        s = s.replace('React.useId()', 'createUniqueId()')
+        imports.add('createUniqueId')
+    signals = []
+
+    def state(m):
+        signals.append(m.group(1))
+        imports.add('createSignal')
+        return f'const [{m.group(1)}, {m.group(2)}] = createSignal{m.group(3) or ""}('
+
+    s = re.sub(r'const \[(\w+), (\w+)\] = React\.useState(<[^\n]*?>)?\(', state, s)
+    for name in signals:
+        s = re.sub(r'(?<![.\w\[\'"/-])' + name + r'\b(?!\s*[:,]\s*set)(?!\()(?!\s*:)(?![\'"])(?!=(?![=>]))(?<!-)', name + '()', s)
+        # undo the declaration
+        s = s.replace(f'const [{name}(), ', f'const [{name}, ')
+
+    def effect(m):
+        imports.add('onSettled')
+        return 'onSettled(() => {' + m.group(1) + '});'
+
+    s = re.sub(r'React\.useEffect\(\(\) => \{(.*?)\n  \}, \[\]\);', lambda m: effect(type('M', (), {'group': lambda self, i: m.group(1) + '\n  '})()), s, flags=re.S)
+    if imports:
+        s = f"import {{ {', '.join(sorted(imports))} }} from 'solid-js';\n" + s
+    return s
+
+
 def transform(src: str) -> str:
     s = src
     s = s.replace("'use client';\n", '')
@@ -100,6 +129,7 @@ def transform(src: str) -> str:
     # onChange on text inputs is native `change` in Solid; prefer onInput.
     s = re.sub(r'(<(?:input|textarea)\b[^>]*?)\bonChange=', r'\1onInput=', s, flags=re.S)
     s = s.replace('event.nativeEvent', 'event')
+    s = convert_hooks(s)
     hooks = re.findall(r'React\.use\w+', s)
     if 'JSX.' in s and 'type JSX' not in s:
         s = "import type { JSX } from '@solidjs/web';\n" + s

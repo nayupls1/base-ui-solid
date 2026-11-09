@@ -1,12 +1,12 @@
-// TODO(solid-port): uses React hooks: React.useState
+import { createSignal } from 'solid-js';
 import { Popover } from '@base-ui-solid/solid/popover';
 import styles from '../../_index.module.css';
 
 const demoPopover = Popover.createHandle();
 
 export default function PopoverDetachedTriggersControlledDemo() {
-  const [open, setOpen] = React.useState(false);
-  const [triggerId, setTriggerId] = React.useState<string | null>(null);
+  const [open, setOpen] = createSignal(false);
+  const [triggerId, setTriggerId] = createSignal<string | null>(null);
 
   const handleOpenChange = (isOpen: boolean, eventDetails: Popover.Root.ChangeEventDetails) => {
     setOpen(isOpen);
@@ -42,9 +42,9 @@ export default function PopoverDetachedTriggersControlledDemo() {
 
       <Popover.Root
         handle={demoPopover}
-        open={open}
+        open={open()}
         onOpenChange={handleOpenChange}
-        triggerId={triggerId}
+        triggerId={triggerId()}
       >
         <Popover.Portal>
           <Popover.Positioner class={styles.Positioner} sideOffset={8}>

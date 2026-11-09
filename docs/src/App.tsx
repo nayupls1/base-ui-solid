@@ -1,4 +1,4 @@
-import { createEffect, For, lazy, onSettled } from 'solid-js';
+import { createEffect, For, lazy, Loading, onSettled } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { createRouter, useLocation, useNavigate } from '@solidjs/router';
 import * as SideNav from './components/SideNav';
@@ -31,7 +31,11 @@ function MdxPage(props: { load: () => Promise<any> }) {
       },
     };
   });
-  return <Content />;
+  return (
+    <Loading fallback={null}>
+      <Content />
+    </Loading>
+  );
 }
 
 function Redirect(props: { to: string }) {

@@ -237,12 +237,15 @@ export function RadioGroup<Value>(componentProps: RadioGroup.Props<Value>) {
     }
   };
 
+  let capturedElement: HTMLElement | null = null;
   const captureRef = (element: HTMLElement | null) => {
-    if (element) {
-      element.addEventListener('keydown', handleKeyDownCapture, true);
-      onCleanup(() => element.removeEventListener('keydown', handleKeyDownCapture, true));
-    }
+    capturedElement?.removeEventListener('keydown', handleKeyDownCapture, true);
+    capturedElement = element;
+    element?.addEventListener('keydown', handleKeyDownCapture, true);
   };
+  onCleanup(() => {
+    capturedElement?.removeEventListener('keydown', handleKeyDownCapture, true);
+  });
 
   return (
     <RadioGroupContext value={contextValue}>

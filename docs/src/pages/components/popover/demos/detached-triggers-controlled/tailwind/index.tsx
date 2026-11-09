@@ -1,4 +1,4 @@
-// TODO(solid-port): uses React hooks: React.useState
+import { createSignal } from 'solid-js';
 import { Popover } from '@base-ui-solid/solid/popover';
 
 const demoPopover = Popover.createHandle();
@@ -7,8 +7,8 @@ const triggerClassName =
   'flex h-8 items-center justify-center border border-neutral-950 dark:border-white bg-white dark:bg-neutral-950 px-3 text-sm font-normal whitespace-nowrap text-neutral-950 dark:text-white select-none hover:not-data-disabled:bg-neutral-100 dark:hover:not-data-disabled:bg-neutral-800 active:not-data-disabled:bg-neutral-200 dark:active:not-data-disabled:bg-neutral-700 data-disabled:border-neutral-500 data-disabled:text-neutral-500 disabled:border-neutral-500 disabled:text-neutral-500 dark:data-disabled:border-neutral-400 dark:data-disabled:text-neutral-400 data-pressed:bg-neutral-100 dark:data-pressed:bg-neutral-800 focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-neutral-950 dark:focus-visible:outline-white';
 
 export default function PopoverDetachedTriggersControlledDemo() {
-  const [open, setOpen] = React.useState(false);
-  const [triggerId, setTriggerId] = React.useState<string | null>(null);
+  const [open, setOpen] = createSignal(false);
+  const [triggerId, setTriggerId] = createSignal<string | null>(null);
 
   const handleOpenChange = (isOpen: boolean, eventDetails: Popover.Root.ChangeEventDetails) => {
     setOpen(isOpen);
@@ -44,9 +44,9 @@ export default function PopoverDetachedTriggersControlledDemo() {
 
       <Popover.Root
         handle={demoPopover}
-        open={open}
+        open={open()}
         onOpenChange={handleOpenChange}
-        triggerId={triggerId}
+        triggerId={triggerId()}
       >
         <Popover.Portal>
           <Popover.Positioner

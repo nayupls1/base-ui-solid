@@ -22,3 +22,11 @@
     }
   }
 }
+
+@layer components {
+  /* Empty lines from the line-based highlighter keep their height (upstream's infra emits a
+     newline character inside them instead). */
+  .DemoSourceBrowser code .frame[data-lined] .line:empty {
+    height: var(--demo-code-block-line-height, 1.25rem);
+  }
+}

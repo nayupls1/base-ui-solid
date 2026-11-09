@@ -11,6 +11,7 @@ import { DemoCodeBlock } from './DemoCodeBlock';
 import { DemoPlayground } from './DemoPlayground';
 import type { DemoProps } from './types';
 import './Demo.css';
+import './Demo.solid.css';
 
 const VARIANT_STORAGE_KEY = 'base-ui-solid:demo-variant';
 

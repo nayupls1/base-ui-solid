@@ -1,4 +1,4 @@
-import { createSignal, type Accessor } from 'solid-js';
+import { createSignal, getObserver, type Accessor } from 'solid-js';
 
 export type SyncSetter<T> = (value: T | ((prev: T) => T)) => T;
 
@@ -17,7 +17,11 @@ export function createSyncSignal<T>(
     options?.equals === false ? () => false : (options?.equals ?? ((a: T, b: T) => Object.is(a, b)));
 
   const get = () => {
-    version();
+    // Only subscribe inside tracking scopes; imperative reads (event handlers, effect callbacks)
+    // just need the latest value.
+    if (getObserver() !== null) {
+      version();
+    }
     return current;
   };
 

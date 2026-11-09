@@ -1,4 +1,4 @@
-import { createMemo, createSignal, onCleanup, type Accessor } from 'solid-js';
+import { createMemo, createSignal, getObserver, onCleanup, type Accessor } from 'solid-js';
 import type { PopupHandleStoreProvider } from './popupHandle';
 
 /**
@@ -27,7 +27,11 @@ export function usePopupHandleStore<HandleStore>(
   onCleanup(unsubscribe);
 
   const current: Accessor<any> = () => {
-    version();
+    // Imperative member access (`store.state`, `store.set(...)`) outside tracking scopes doesn't
+    // need to subscribe to the store pointer.
+    if (getObserver() !== null) {
+      version();
+    }
     return handle.store;
   };
 

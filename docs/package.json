@@ -12,8 +12,9 @@
     "@base-ui-solid/utils": "workspace:*",
     "@solidjs/router": "2.0.0-next.44",
     "@solidjs/web": "2.0.0-rc.21",
+    "clsx": "^2.1.1",
     "solid-js": "2.0.0-rc.21",
-    "clsx": "^2.1.1"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@solidjs/vite-plugin": "3.0.0-next.27",

@@ -1,3 +1,4 @@
+import { untrack } from 'solid-js';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
 import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
 import type { RefObject } from '@base-ui-solid/utils/types';
@@ -12,7 +13,7 @@ export function useCheckboxGroupParent(
 ): UseCheckboxGroupParentReturnValue {
   const allValues = () => params.allValues ?? (EMPTY_ARRAY as string[]);
 
-  const uncontrolledStateRef = { current: params.value };
+  const uncontrolledStateRef = { current: untrack(() => params.value) };
   const disabledStatesRef = { current: new Map<string, boolean>() };
 
   const [status, setStatus] = createSyncSignal<'on' | 'off' | 'mixed'>('mixed');

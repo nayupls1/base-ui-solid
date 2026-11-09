@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import './DemoVariantSelector.css';
+
 
 export const variantTranslations: Record<string, string> = {
   Default: 'Default',

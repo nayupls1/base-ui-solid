@@ -76,8 +76,10 @@ export function useRenderElement<State extends Record<string, any>>(
   });
 
   const ref = (instance: Element) => {
-    assignRefs(componentProps.ref as RefInput<Element>, instance);
-    assignRefs(params.ref as RefInput<Element>, instance);
+    // Refs run inside effects; reading the (possibly reactive) ref props there is intentional.
+    const [componentRef, paramsRef] = untrack(() => [componentProps.ref, params.ref]);
+    assignRefs(componentRef as RefInput<Element>, instance);
+    assignRefs(paramsRef as RefInput<Element>, instance);
   };
 
   const getChildren = () => {
