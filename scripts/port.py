@@ -75,3 +75,31 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+def types_tail(rel: str) -> str:
+    """Returns the exported interfaces/types/namespaces after the component definition."""
+    src = (UP / rel).read_text()
+    lines = src.split('\n')
+    start = None
+    depth_started = False
+    for i, line in enumerate(lines):
+        if re.match(r'^export (interface|type|namespace) ', line) and i > 0:
+            # find the start of a leading JSDoc block
+            j = i
+            while j > 0 and (lines[j - 1].strip().startswith('*') or lines[j - 1].strip().startswith('/**')):
+                j -= 1
+            # only accept if this is after the main component (heuristic: after a line starting with '}' or ')')
+            if any(l.startswith(('})', '}) as', '});', '}')) for l in lines[:j]):
+                start = j
+                break
+    if start is None:
+        return ''
+    tail = '\n'.join(lines[start:])
+    tail = transform(tail)
+    tail = re.sub(r'^import .*\n', '', tail, flags=re.M)
+    tail = tail.replace('React.Ref<', 'RefInput<')
+    tail = re.sub(r'React\.ComponentPropsWithRef<\'(\w+)\'>', r"JSX.IntrinsicElements['\1']", tail)
+    tail = re.sub(r"React\.ComponentProps<'(\w+)'>\['(\w+)'\]", r"JSX.IntrinsicElements['\1']['\2']", tail)
+    tail = tail.replace("'className'", "'class'")
+    return tail
