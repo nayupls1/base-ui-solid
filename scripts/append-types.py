@@ -15,3 +15,27 @@ if 'RefInput<' in tail and 'RefInput' not in body.split('\n\n')[0] and 'type Ref
 content = body.rstrip('\n') + '\n\n' + tail.lstrip('\n')
 dest.write_text(content)
 print(dest)
+
+# Remove later duplicates of top-level function declarations (helpers that were already copied).
+import re as _re
+text = dest.read_text()
+lines = text.split('\n')
+seen = set()
+out = []
+skip_until_close = False
+for line in lines:
+    if skip_until_close:
+        if line == '}':
+            skip_until_close = False
+        continue
+    m = _re.match(r'^function (\w+)', line)
+    if m:
+        if m.group(1) in seen:
+            skip_until_close = True
+            # drop preceding JSDoc block
+            while out and (out[-1].strip().startswith('*') or out[-1].strip().startswith('/**') or out[-1].strip().startswith('//')):
+                out.pop()
+            continue
+        seen.add(m.group(1))
+    out.append(line)
+dest.write_text('\n'.join(out))
