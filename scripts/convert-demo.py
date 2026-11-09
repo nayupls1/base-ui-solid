@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+"""Mechanical React → Solid conversion for docs demos and docs components.
+
+Usage: convert-demo.py <src> <dest>
+Handles imports, attribute names, style objects, `key` props and simple hooks.
+Demos that use stateful React hooks still need a manual pass (marked with a TODO comment).
+"""
+import re
+import sys
+
+ATTRS = {
+    'className': 'class',
+    'htmlFor': 'for',
+    'tabIndex': 'tabindex',
+    'readOnly': 'readonly',
+    'autoComplete': 'autocomplete',
+    'autoFocus': 'autofocus',
+    'autoCapitalize': 'autocapitalize',
+    'autoCorrect': 'autocorrect',
+    'spellCheck': 'spellcheck',
+    'maxLength': 'maxlength',
+    'minLength': 'minlength',
+    'colSpan': 'colspan',
+    'rowSpan': 'rowspan',
+    'enterKeyHint': 'enterkeyhint',
+    'inputMode': 'inputmode',
+    'crossOrigin': 'crossorigin',
+    'referrerPolicy': 'referrerpolicy',
+    'srcSet': 'srcset',
+    'dateTime': 'datetime',
+    'noValidate': 'novalidate',
+    'contentEditable': 'contenteditable',
+    'accessKey': 'accesskey',
+    'strokeWidth': 'stroke-width',
+    'strokeLinecap': 'stroke-linecap',
+    'strokeLinejoin': 'stroke-linejoin',
+    'strokeMiterlimit': 'stroke-miterlimit',
+    'strokeDasharray': 'stroke-dasharray',
+    'strokeDashoffset': 'stroke-dashoffset',
+    'strokeOpacity': 'stroke-opacity',
+    'fillRule': 'fill-rule',
+    'fillOpacity': 'fill-opacity',
+    'clipRule': 'clip-rule',
+    'clipPath': 'clip-path',
+    'stopColor': 'stop-color',
+    'stopOpacity': 'stop-opacity',
+    'fontSize': 'font-size',
+    'fontWeight': 'font-weight',
+    'textAnchor': 'text-anchor',
+    'dominantBaseline': 'dominant-baseline',
+    'vectorEffect': 'vector-effect',
+    'shapeRendering': 'shape-rendering',
+    'xlinkHref': 'href',
+}
+
+
+def kebab(name: str) -> str:
+    if name.startswith('--'):
+        return name
+    out = re.sub(r'([A-Z])', lambda m: '-' + m.group(1).lower(), name)
+    if out.startswith('webkit-') or out.startswith('moz-') or out.startswith('ms-'):
+        out = '-' + out
+    return out
+
+
+def convert_style_object(body: str) -> str:
+    def repl(m):
+        key = m.group(2)
+        quoted = m.group(1) or ''
+        if quoted:
+            return m.group(0)
+        return f"{m.group(0)[:m.start(2) - m.start(0)]}'{kebab(key)}':"
+    return re.sub(r"(^|[{,\s])(?<!['\"-])([a-zA-Z][a-zA-Z0-9]*)\s*:(?!:)",
+                  lambda m: f"{m.group(1)}'{kebab(m.group(2))}':" if re.search('[A-Z]', m.group(2)) else m.group(0),
+                  body)
+
+
+def transform(src: str) -> str:
+    s = src
+    s = s.replace("'use client';\n", '')
+    s = re.sub(r"import \* as React from 'react';\n", '', s)
+    s = re.sub(r"import React from 'react';\n", '', s)
+    s = s.replace("'@base-ui/react/", "'@base-ui-solid/solid/")
+    s = s.replace("'@base-ui/react'", "'@base-ui-solid/solid'")
+    s = s.replace("'@base-ui/utils/", "'@base-ui-solid/utils/")
+    for k, v in ATTRS.items():
+        s = re.sub(r'(?<=[\s{(,])' + k + r'(?==)', v, s)
+    # style={{ camelCase: ... }}
+    s = re.sub(r'style=\{\{(.*?)\}\}', lambda m: 'style={{' + convert_style_object(m.group(1)) + '}}', s, flags=re.S)
+    # key props are meaningless in Solid
+    s = re.sub(r'\s+key=\{[^{}]*\}', '', s)
+    s = re.sub(r'\s+key="[^"]*"', '', s)
+    s = s.replace('React.ComponentProps<\'svg\'>', 'JSX.SvgSVGAttributes<SVGSVGElement>')
+    s = re.sub(r"React\.ComponentProps<'(\w+)'>", r"JSX.IntrinsicElements['\1']", s)
+    s = s.replace('React.ReactNode', 'JSX.Element')
+    s = s.replace('React.CSSProperties', 'JSX.CSSProperties')
+    s = s.replace('React.Fragment', '')
+    s = s.replace('<>', '<>').replace('</>', '</>')
+    s = re.sub(r'React\.(\w+Event)<[^>]*>', r'\1', s)
+    # onChange on text inputs is native `change` in Solid; prefer onInput.
+    s = re.sub(r'(<(?:input|textarea)\b[^>]*?)\bonChange=', r'\1onInput=', s, flags=re.S)
+    s = s.replace('event.nativeEvent', 'event')
+    hooks = re.findall(r'React\.use\w+', s)
+    if 'JSX.' in s and 'type JSX' not in s:
+        s = "import type { JSX } from '@solidjs/web';\n" + s
+    if hooks:
+        s = '// TODO(solid-port): uses React hooks: ' + ', '.join(sorted(set(hooks))) + '\n' + s
+    return s
+
+
+if __name__ == '__main__':
+    src, dest = sys.argv[1], sys.argv[2]
+    with open(src) as f:
+        out = transform(f.read())
+    import os
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    with open(dest, 'w') as f:
+        f.write(out)

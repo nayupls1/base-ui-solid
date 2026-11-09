@@ -12,10 +12,29 @@
     "@base-ui-solid/utils": "workspace:*",
     "@solidjs/router": "2.0.0-next.44",
     "@solidjs/web": "2.0.0-rc.21",
-    "solid-js": "2.0.0-rc.21"
+    "solid-js": "2.0.0-rc.21",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@solidjs/vite-plugin": "3.0.0-next.27",
-    "vite": "^8.0.0"
+    "vite": "^8.0.0",
+    "@mdx-js/rollup": "^3.1.1",
+    "remark-gfm": "^4.0.1",
+    "@wooorm/starry-night": "^3.8.0",
+    "hast-util-to-html": "^9.0.5",
+    "hast-util-to-string": "^3.0.1",
+    "tailwindcss": "^4.1.17",
+    "@tailwindcss/postcss": "^4.1.17",
+    "postcss-import": "^16.1.1",
+    "postcss-custom-media": "^11.0.6",
+    "postcss": "^8.5.6",
+    "unified": "^11.0.5",
+    "remark-parse": "^11.0.0",
+    "unist-util-visit": "^5.0.0",
+    "github-slugger": "^2.0.0",
+    "@types/mdx": "^2.0.13",
+    "remark-rehype": "^11.1.2",
+    "rehype-stringify": "^10.0.1",
+    "mdast-util-to-string": "^4.0.0"
   }
 }
