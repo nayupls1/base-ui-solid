@@ -1,4 +1,4 @@
-import { createMemo, untrack, Show, $PROXY, type Accessor } from 'solid-js';
+import { createMemo, untrack, Show, onCleanup, $PROXY, type Accessor } from 'solid-js';
 import { spread, insert, type JSX } from '@solidjs/web';
 import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
 import type { HTMLProps } from './types';
@@ -92,6 +92,12 @@ export function useRenderElement<State extends Record<string, any>>(
   const renderProp = untrack(() => componentProps.render);
 
   const content = () => {
+    // Mirror React's ref semantics: refs receive `null` when the element unmounts.
+    onCleanup(() => {
+      assignRefs(componentProps.ref as RefInput<Element | null>, null);
+      assignRefs(params.ref as RefInput<Element | null>, null);
+    });
+
     if (renderProp == null || typeof renderProp === 'string') {
       const tag = (renderProp as IntrinsicTagName | undefined) ?? element ?? 'div';
       return renderTag(tag, resolvedProps, getChildren, ref);
