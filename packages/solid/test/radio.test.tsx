@@ -1,6 +1,6 @@
 import { flush } from 'solid-js';
 import { render } from '@solidjs/web';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { Radio } from '../src/radio';
 import { RadioGroup } from '../src/radio-group';
 
@@ -8,7 +8,13 @@ function mount(fn: () => any) {
   const container = document.createElement('div');
   document.body.appendChild(container);
   const dispose = render(fn, container);
+  disposers.push(dispose);
   return { container, dispose };
+}
+const disposers: Array<() => void> = [];
+afterEach(() => disposeAll());
+function disposeAll() {
+  disposers.splice(0).forEach((dispose) => dispose());
 }
 const tick = () => new Promise((r) => setTimeout(r, 10));
 

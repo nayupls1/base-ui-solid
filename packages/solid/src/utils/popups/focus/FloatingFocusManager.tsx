@@ -328,7 +328,13 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
   const restoreFocusFrame = useAnimationFrame();
 
   const isInsidePortal = portalContext != null;
-  const floatingFocusElement = createMemo(() => getFloatingFocusElement(floating()));
+  // The popup is created after its positioner, so also track the popup element: the DOM query in
+  // `getFloatingFocusElement` isn't reactive on its own.
+  const popupElement = store.useState('popupElement');
+  const floatingFocusElement = createMemo(() => {
+    popupElement();
+    return getFloatingFocusElement(floating());
+  });
 
   const getTabbableContent = (container: Element | null = untrack(floatingFocusElement)) => {
     return container ? tabbable(container) : [];

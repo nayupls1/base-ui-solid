@@ -8,7 +8,12 @@ function mount(fn: () => any) {
   const container = document.createElement('div');
   document.body.appendChild(container);
   const dispose = render(fn, container);
+  disposers.push(dispose);
   return { container, dispose };
+}
+const disposers: Array<() => void> = [];
+function disposeAll() {
+  disposers.splice(0).forEach((dispose) => dispose());
 }
 const tick = (ms = 20) => new Promise((r) => setTimeout(r, ms));
 async function settle() {
@@ -19,6 +24,7 @@ async function settle() {
 
 describe('Dialog', () => {
   afterEach(() => {
+    disposeAll();
     document.body.innerHTML = '';
     document.documentElement.removeAttribute('style');
     document.body.removeAttribute('style');
@@ -162,6 +168,7 @@ describe('Dialog', () => {
 
 describe('AlertDialog', () => {
   afterEach(() => {
+    disposeAll();
     document.body.innerHTML = '';
   });
 
