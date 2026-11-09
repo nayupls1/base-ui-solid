@@ -8,6 +8,7 @@ import { AccordionRootContext } from './AccordionRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { REASONS } from '../../internals/reasons';
+import { ownedProps } from '../../internals/ownedProps';
 
 const rootStateAttributesMapping = {
   value: () => null,
@@ -20,6 +21,7 @@ const rootStateAttributesMapping = {
  * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export function AccordionRoot<Value = any>(componentProps: AccordionRoot.Props<Value>) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

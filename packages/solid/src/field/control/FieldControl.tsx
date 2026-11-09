@@ -15,6 +15,7 @@ import { createChangeEventDetails } from '../../internals/createBaseUIEventDetai
 import { REASONS } from '../../internals/reasons';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * The form control to label and validate.
@@ -27,6 +28,7 @@ import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldControl(componentProps: FieldControl.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

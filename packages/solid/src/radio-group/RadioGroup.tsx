@@ -20,6 +20,7 @@ import { RadioGroupContext } from './RadioGroupContext';
 import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
 import type { REASONS } from '../internals/reasons';
 import { assignRefs, type RefInput } from '../internals/useRenderElement';
+import { ownedProps } from '../internals/ownedProps';
 
 const MODIFIER_KEYS = [SHIFT];
 
@@ -30,6 +31,7 @@ const MODIFIER_KEYS = [SHIFT];
  * Documentation: [Base UI Radio Group](https://base-ui.com/react/components/radio-group)
  */
 export function RadioGroup<Value>(componentProps: RadioGroup.Props<Value>) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

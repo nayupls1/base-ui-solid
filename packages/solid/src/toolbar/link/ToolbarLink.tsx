@@ -3,6 +3,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
+import { ownedProps } from '../../internals/ownedProps';
 
 const TOOLBAR_LINK_METADATA = {
   // links cannot be disabled
@@ -17,6 +18,7 @@ const TOOLBAR_LINK_METADATA = {
  * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export function ToolbarLink(componentProps: ToolbarLink.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'style', 'children', 'ref');
 
   const rootContext = useToolbarRootContext();

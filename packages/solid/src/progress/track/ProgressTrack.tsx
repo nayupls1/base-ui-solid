@@ -4,6 +4,7 @@ import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
 import type { ProgressRootState } from '../root/ProgressRoot';
 import type { BaseUIComponentProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Contains the progress bar indicator.
@@ -12,6 +13,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
  * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
  */
 export function ProgressTrack(componentProps: ProgressTrack.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const context = useProgressRootContext();

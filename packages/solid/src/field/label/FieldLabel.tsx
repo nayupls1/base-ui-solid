@@ -8,6 +8,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { useLabel } from '../../internals/labelable-provider/useLabel';
 import { useFieldItemContext } from '../item/FieldItemContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * An accessible label that is automatically associated with the field control.
@@ -16,6 +17,7 @@ import { useFieldItemContext } from '../item/FieldItemContext';
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldLabel(componentProps: FieldLabel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

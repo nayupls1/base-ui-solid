@@ -25,6 +25,7 @@ import { useValueChanged } from '../../internals/useValueChanged';
 import { handleHiddenInputInvalid } from '../../internals/handleHiddenInputInvalid';
 import { syncCheckedState } from '../../internals/syncCheckedState';
 import { spread } from '@solidjs/web';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Represents the switch itself.
@@ -33,6 +34,7 @@ import { spread } from '@solidjs/web';
  * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
  */
 export function SwitchRoot(componentProps: SwitchRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'checked',

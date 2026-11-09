@@ -12,6 +12,7 @@ import { accordionStateAttributesMapping } from '../item/stateAttributesMapping'
 import * as AccordionPanelCssVars from './AccordionPanelCssVars';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A collapsible panel with the accordion item contents.
@@ -20,6 +21,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export function AccordionPanel(componentProps: AccordionPanel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

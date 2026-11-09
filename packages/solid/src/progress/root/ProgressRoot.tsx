@@ -9,6 +9,7 @@ import { useFormatLocale } from '../../utils/useFormatLocale';
 import { ProgressRootContext } from './ProgressRootContext';
 import { progressStateAttributesMapping } from './stateAttributesMapping';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups all parts of the progress bar and provides the task completion status to screen readers.
@@ -17,6 +18,7 @@ import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
  * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
  */
 export function ProgressRoot(componentProps: ProgressRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'format',

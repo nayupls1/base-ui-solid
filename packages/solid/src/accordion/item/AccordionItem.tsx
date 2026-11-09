@@ -14,6 +14,7 @@ import { accordionStateAttributesMapping } from './stateAttributesMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { REASONS } from '../../internals/reasons';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups an accordion header with the corresponding panel.
@@ -22,6 +23,7 @@ import type { REASONS } from '../../internals/reasons';
  * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export function AccordionItem(componentProps: AccordionItem.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

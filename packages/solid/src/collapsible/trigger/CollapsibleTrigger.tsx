@@ -7,6 +7,7 @@ import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/ty
 import { useButton } from '../../internals/use-button';
 import { useCollapsibleRootContext } from '../root/CollapsibleRootContext';
 import type { CollapsibleRootState } from '../root/CollapsibleRoot';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping: StateAttributesMapping<CollapsibleRootState> = {
   ...triggerOpenStateMapping,
@@ -20,6 +21,7 @@ const stateAttributesMapping: StateAttributesMapping<CollapsibleRootState> = {
  * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export function CollapsibleTrigger(componentProps: CollapsibleTrigger.Props) {
+  componentProps = ownedProps(componentProps);
   const context = useCollapsibleRootContext();
 
   const elementProps = omit(

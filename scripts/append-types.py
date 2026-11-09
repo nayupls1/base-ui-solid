@@ -12,6 +12,8 @@ if 'JSX.' in tail and 'JSX }' not in body and 'JSX,' not in body:
     body = "import type { JSX } from '@solidjs/web';\n" + body
 if 'RefInput<' in tail and 'RefInput' not in body.split('\n\n')[0] and 'type RefInput' not in body:
     body = "import type { RefInput } from '" + '../' * (len(pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else rel).parts) - 1) + "internals/useRenderElement';\n" + body
+if 'RefObject<' in tail and 'RefObject' not in body.split('export function')[0]:
+    body = "import type { RefObject } from '@base-ui-solid/utils/types';\n" + body
 content = body.rstrip('\n') + '\n\n' + tail.lstrip('\n')
 dest.write_text(content)
 print(dest)

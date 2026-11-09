@@ -4,6 +4,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { AvatarRootContext } from './AvatarRootContext';
 import { avatarStateAttributesMapping } from './stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Displays a user's profile picture, initials, or fallback icon.
@@ -12,6 +13,7 @@ import { avatarStateAttributesMapping } from './stateAttributesMapping';
  * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export function AvatarRoot(componentProps: AvatarRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'style', 'children', 'ref');
 
   const [imageLoadingStatus, setImageLoadingStatus] =

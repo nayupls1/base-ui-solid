@@ -19,6 +19,7 @@ import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDet
 import type { REASONS } from '../internals/reasons';
 import { useFormContext } from '../internals/form-context/FormContext';
 import { useValueChanged } from '../internals/useValueChanged';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * Provides a shared state to a series of checkboxes.
@@ -26,6 +27,7 @@ import { useValueChanged } from '../internals/useValueChanged';
  * Documentation: [Base UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
  */
 export function CheckboxGroup(componentProps: CheckboxGroup.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'allValues',

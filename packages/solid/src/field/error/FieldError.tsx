@@ -14,6 +14,7 @@ import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping: StateAttributesMapping<FieldErrorState> = {
   ...fieldValidityMapping,
@@ -27,6 +28,7 @@ const stateAttributesMapping: StateAttributesMapping<FieldErrorState> = {
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldError(componentProps: FieldError.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

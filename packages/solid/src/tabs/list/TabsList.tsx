@@ -7,6 +7,7 @@ import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsRootContext } from '../root/TabsRootContext';
 import { TabsListContext } from './TabsListContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups the individual tab buttons.
@@ -15,6 +16,7 @@ import { TabsListContext } from './TabsListContext';
  * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export function TabsList(componentProps: TabsList.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'activateOnFocus',

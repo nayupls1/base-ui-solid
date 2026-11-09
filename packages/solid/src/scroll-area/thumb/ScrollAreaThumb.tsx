@@ -3,6 +3,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { useScrollAreaScrollbarContext } from '../scrollbar/ScrollAreaScrollbarContext';
 import { useRenderElement } from '../../internals/useRenderElement';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * The draggable part of the scrollbar that indicates the current scroll position.
@@ -11,6 +12,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaThumb(componentProps: ScrollAreaThumb.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const root = useScrollAreaRootContext();

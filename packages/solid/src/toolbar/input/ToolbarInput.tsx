@@ -5,6 +5,7 @@ import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import { useToolbarGroupContext } from '../group/ToolbarGroupContext';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A native input element that integrates with Toolbar keyboard navigation.
@@ -13,6 +14,7 @@ import { CompositeItem } from '../../internals/composite/item/CompositeItem';
  * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export function ToolbarInput(componentProps: ToolbarInput.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

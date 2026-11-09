@@ -9,6 +9,7 @@ import { useToolbarGroupContext } from '../toolbar/group/ToolbarGroupContext';
 import { ToggleGroupContext } from './ToggleGroupContext';
 import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
 import type { REASONS } from '../internals/reasons';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * Provides a shared state to a series of toggle buttons.
@@ -16,6 +17,7 @@ import type { REASONS } from '../internals/reasons';
  * Documentation: [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group)
  */
 export function ToggleGroup<Value extends string>(componentProps: ToggleGroup.Props<Value>) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'defaultValue',

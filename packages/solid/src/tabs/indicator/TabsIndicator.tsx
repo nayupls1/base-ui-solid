@@ -12,6 +12,7 @@ import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsListContext } from '../list/TabsListContext';
 import type { TabsTab } from '../tab/TabsTab';
 import * as TabsIndicatorCssVars from './TabsIndicatorCssVars';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping = {
   ...tabsStateAttributesMapping,
@@ -52,6 +53,7 @@ const EMPTY_LAYOUT: IndicatorLayout = {
  * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export function TabsIndicator(componentProps: TabsIndicator.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

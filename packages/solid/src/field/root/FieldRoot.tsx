@@ -14,6 +14,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldValidation } from './useFieldValidation';
 import { useFieldControlRegistration } from '../../internals/field-register-control/useFieldControlRegistration';
 import { assignRefs, type RefInput } from '../../internals/useRenderElement';
+import { ownedProps } from '../../internals/ownedProps';
 
 type SetStateAction<T> = T | ((prev: T) => T);
 
@@ -21,6 +22,7 @@ type SetStateAction<T> = T | ((prev: T) => T);
  * @internal
  */
 function FieldRootInner(componentProps: FieldRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const formContext = useFormContext();
   const { submitCountRef } = formContext;
 
@@ -234,6 +236,7 @@ type FieldRootContext = import('../../internals/field-root-context/FieldRootCont
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldRoot(componentProps: FieldRoot.Props) {
+  componentProps = ownedProps(componentProps);
   return (
     <LabelableProvider>
       <FieldRootInner {...componentProps} />

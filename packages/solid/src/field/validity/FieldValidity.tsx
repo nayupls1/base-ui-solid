@@ -5,6 +5,7 @@ import { getCombinedFieldValidityData } from '../utils/getCombinedFieldValidityD
 import type { FieldValidityData } from '../root/FieldRoot';
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Used to display a custom message based on the field's validity.
@@ -14,6 +15,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldValidity(props: FieldValidity.Props) {
+  props = ownedProps(props);
   const fieldRootContext = useFieldRootContext(false);
 
   const combinedFieldValidityData = createMemo(() =>

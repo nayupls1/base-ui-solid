@@ -6,6 +6,7 @@ import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import { useToolbarGroupContext } from '../group/ToolbarGroupContext';
 import { CompositeItem } from '../../internals/composite/item/CompositeItem';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A button that can be used as-is or as a trigger for other components.
@@ -14,6 +15,7 @@ import { CompositeItem } from '../../internals/composite/item/CompositeItem';
  * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export function ToolbarButton(componentProps: ToolbarButton.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

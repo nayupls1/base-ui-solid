@@ -5,6 +5,7 @@ import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
 import type { ProgressRootState } from '../root/ProgressRoot';
 import type { BaseUIComponentProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * An accessible label for the progress bar.
@@ -13,6 +14,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
  * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
  */
 export function ProgressLabel(componentProps: ProgressLabel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'id', 'children', 'ref');
 
   const context = useProgressRootContext();

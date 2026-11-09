@@ -3,6 +3,7 @@ import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
 import { FieldsetRootContext, useFieldsetRootContext } from './FieldsetRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups a shared legend with related controls.
@@ -11,6 +12,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
  */
 export function FieldsetRoot(componentProps: FieldsetRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'disabled', 'children', 'ref');
 
   const [legendId, setLegendId] = createSyncSignal<string | undefined>(undefined);

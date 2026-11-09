@@ -4,6 +4,7 @@ import { useSwitchRootContext } from '../root/SwitchRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { stateAttributesMapping } from '../stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * The movable part of the switch that indicates whether the switch is on or off.
@@ -12,6 +13,7 @@ import { stateAttributesMapping } from '../stateAttributesMapping';
  * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
  */
 export function SwitchThumb(componentProps: SwitchThumb.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const state = useSwitchRootContext();

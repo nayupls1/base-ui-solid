@@ -4,6 +4,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import type { ToolbarRootState } from '../root/ToolbarRoot';
 import { ToolbarGroupContext } from './ToolbarGroupContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups several toolbar items or toggles.
@@ -12,6 +13,7 @@ import { ToolbarGroupContext } from './ToolbarGroupContext';
  * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export function ToolbarGroup(componentProps: ToolbarGroup.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'disabled', 'render', 'style', 'children', 'ref');
 
   const rootContext = useToolbarRootContext();

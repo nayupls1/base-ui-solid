@@ -6,6 +6,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';
 import type { AvatarRootState } from '../root/AvatarRoot';
 import { avatarStateAttributesMapping } from '../root/stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Rendered when the image fails to load or when no image is provided.
@@ -14,6 +15,7 @@ import { avatarStateAttributesMapping } from '../root/stateAttributesMapping';
  * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export function AvatarFallback(componentProps: AvatarFallback.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'delay', 'style', 'children', 'ref');
 
   const delay = () => componentProps.delay ?? 0;

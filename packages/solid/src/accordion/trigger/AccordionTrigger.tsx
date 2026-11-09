@@ -8,6 +8,7 @@ import type { AccordionItemState } from '../item/AccordionItem';
 import { useAccordionItemContext } from '../item/AccordionItemContext';
 import { accordionStateAttributesMapping } from '../item/stateAttributesMapping';
 import { useRenderElement } from '../../internals/useRenderElement';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping: StateAttributesMapping<AccordionItemState> = {
   ...accordionStateAttributesMapping,
@@ -21,6 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<AccordionItemState> = {
  * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export function AccordionTrigger(componentProps: AccordionTrigger.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'disabled',

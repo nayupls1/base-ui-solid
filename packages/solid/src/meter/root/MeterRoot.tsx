@@ -8,6 +8,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useFormatLocale } from '../../utils/useFormatLocale';
 import { MeterRootContext } from './MeterRootContext';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups all parts of the meter and provides the value for screen readers.
@@ -16,6 +17,7 @@ import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
  * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
  */
 export function MeterRoot(componentProps: MeterRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'format',

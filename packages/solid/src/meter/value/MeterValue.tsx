@@ -5,6 +5,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { formatRangeValue } from '../../utils/formatRangeValue';
 import { useFormatLocale } from '../../utils/useFormatLocale';
 import { useMeterRootContext } from '../root/MeterRootContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A text element displaying the current value.
@@ -13,6 +14,7 @@ import { useMeterRootContext } from '../root/MeterRootContext';
  * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
  */
 export function MeterValue(componentProps: MeterValue.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'children', 'style', 'ref');
 
   const context = useMeterRootContext();

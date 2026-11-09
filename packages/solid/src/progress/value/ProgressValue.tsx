@@ -7,6 +7,7 @@ import { useFormatLocale } from '../../utils/useFormatLocale';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import type { ProgressRootState } from '../root/ProgressRoot';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A text label displaying the current value.
@@ -15,6 +16,7 @@ import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
  * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
  */
 export function ProgressValue(componentProps: ProgressValue.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'children', 'style', 'ref');
 
   const context = useProgressRootContext();

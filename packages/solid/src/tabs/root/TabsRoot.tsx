@@ -12,6 +12,7 @@ import type { TabsPanel } from '../panel/TabsPanel';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups the tabs and the corresponding panels.
@@ -20,6 +21,7 @@ import { REASONS } from '../../internals/reasons';
  * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export function TabsRoot(componentProps: TabsRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

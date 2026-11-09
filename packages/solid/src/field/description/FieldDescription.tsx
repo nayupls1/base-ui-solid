@@ -7,6 +7,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import { useBaseUiId } from '../../internals/useBaseUiId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldItemContext } from '../item/FieldItemContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A paragraph with additional information about the field.
@@ -15,6 +16,7 @@ import { useFieldItemContext } from '../item/FieldItemContext';
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldDescription(componentProps: FieldDescription.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'id', 'class', 'style', 'children', 'ref');
 
   const id = useBaseUiId(() => componentProps.id);

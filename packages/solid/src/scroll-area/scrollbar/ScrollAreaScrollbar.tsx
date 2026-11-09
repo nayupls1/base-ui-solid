@@ -12,6 +12,7 @@ import { scrollAreaStateAttributesMapping } from '../root/stateAttributes';
 import type { ScrollAreaRootState } from '../root/ScrollAreaRoot';
 import * as ScrollAreaRootCssVars from '../root/ScrollAreaRootCssVars';
 import * as ScrollAreaScrollbarCssVars from './ScrollAreaScrollbarCssVars';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A vertical or horizontal scrollbar for the scroll area.
@@ -20,6 +21,7 @@ import * as ScrollAreaScrollbarCssVars from './ScrollAreaScrollbarCssVars';
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaScrollbar(componentProps: ScrollAreaScrollbar.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

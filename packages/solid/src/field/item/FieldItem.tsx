@@ -6,6 +6,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { FieldItemContext } from './FieldItemContext';
 import { LabelableProvider } from '../../internals/labelable-provider';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups individual items in a checkbox group or radio group with a label and description.
@@ -14,6 +15,7 @@ import { LabelableProvider } from '../../internals/labelable-provider';
  * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
  */
 export function FieldItem(componentProps: FieldItem.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'disabled', 'children', 'ref');
 
   const fieldRootContext = useFieldRootContext(false);

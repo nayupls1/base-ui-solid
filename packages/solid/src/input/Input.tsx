@@ -1,6 +1,7 @@
 import type { BaseUIComponentProps } from '../internals/types';
 import { Field } from '../field';
 import type { FieldControlState } from '../field';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
@@ -9,6 +10,7 @@ import type { FieldControlState } from '../field';
  * Documentation: [Base UI Input](https://base-ui.com/react/components/input)
  */
 export function Input(props: Input.Props) {
+  props = ownedProps(props);
   return <Field.Control {...props} />;
 }
 

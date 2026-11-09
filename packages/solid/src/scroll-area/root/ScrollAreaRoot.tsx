@@ -13,6 +13,7 @@ import { scrollAreaStateAttributesMapping } from './stateAttributes';
 import { useCSPContext } from '../../internals/csp-context/CSPContext';
 import * as ScrollAreaRootCssVars from './ScrollAreaRootCssVars';
 import * as ScrollAreaScrollbarDataAttributes from '../scrollbar/ScrollAreaScrollbarDataAttributes';
+import { ownedProps } from '../../internals/ownedProps';
 
 const DEFAULT_COORDS = { x: 0, y: 0 };
 const DEFAULT_SIZE = { width: 0, height: 0 };
@@ -31,6 +32,7 @@ export type Coords = typeof DEFAULT_COORDS;
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaRoot(componentProps: ScrollAreaRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

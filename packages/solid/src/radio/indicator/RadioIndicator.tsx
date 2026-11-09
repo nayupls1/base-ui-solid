@@ -7,6 +7,7 @@ import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { useOpenChangeComplete } from '../../internals/useOpenChangeComplete';
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Indicates whether the radio button is selected.
@@ -15,6 +16,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio-group)
  */
 export function RadioIndicator(componentProps: RadioIndicator.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'keepMounted', 'children', 'ref');
 
   const rootState = useRadioRootContext();

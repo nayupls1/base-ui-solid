@@ -17,6 +17,7 @@ import { normalizeScrollOffset } from '../../utils/scrollEdges';
 import { getFiniteAnimations } from '../../utils/getFiniteAnimations';
 import * as ScrollAreaViewportCssVars from './ScrollAreaViewportCssVars';
 import * as ScrollAreaScrollbarCssVars from '../scrollbar/ScrollAreaScrollbarCssVars';
+import { ownedProps } from '../../internals/ownedProps';
 
 const OVERFLOW_EDGE_VARS = [
   ScrollAreaViewportCssVars.scrollAreaOverflowXStart,
@@ -72,6 +73,7 @@ function removeCSSVariableInheritance() {
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaViewport(componentProps: ScrollAreaViewport.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const root = useScrollAreaRootContext();

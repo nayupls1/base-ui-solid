@@ -2,6 +2,7 @@ import { omit } from 'solid-js';
 import { useButton } from '../internals/use-button/useButton';
 import { useRenderElement } from '../internals/useRenderElement';
 import type { BaseUIComponentProps, NativeButtonProps } from '../internals/types';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * A button component that can be used to trigger actions.
@@ -10,6 +11,7 @@ import type { BaseUIComponentProps, NativeButtonProps } from '../internals/types
  * Documentation: [Base UI Button](https://base-ui.com/react/components/button)
  */
 export function Button(componentProps: Button.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

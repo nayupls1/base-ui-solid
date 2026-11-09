@@ -5,6 +5,7 @@ import type { ProgressRootState } from '../root/ProgressRoot';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
 import type { BaseUIComponentProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Visualizes the completion status of the task.
@@ -13,6 +14,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
  * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
  */
 export function ProgressIndicator(componentProps: ProgressIndicator.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const context = useProgressRootContext();

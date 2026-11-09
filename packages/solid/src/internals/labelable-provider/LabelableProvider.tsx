@@ -3,8 +3,10 @@ import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
 import type { HTMLProps } from '../types';
 import { useBaseUiId } from '../useBaseUiId';
 import { LabelableContext, useLabelableContext } from './LabelableContext';
+import { ownedProps } from '../ownedProps';
 
 export function LabelableProvider(props: LabelableProvider.Props) {
+  props = ownedProps(props);
   const defaultId = useBaseUiId();
 
   const [controlIdState, setControlIdState] = createSyncSignal<string | null | undefined>(

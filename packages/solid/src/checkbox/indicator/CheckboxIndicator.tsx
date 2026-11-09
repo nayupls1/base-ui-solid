@@ -9,6 +9,7 @@ import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import type { StateAttributesMapping } from '../../internals/getStateAttributesProps';
 import { transitionStatusMapping } from '../../internals/stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Indicates whether the checkbox is ticked.
@@ -17,6 +18,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
  * Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
  */
 export function CheckboxIndicator(componentProps: CheckboxIndicator.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'keepMounted', 'children', 'ref');
 
   const rootState = useCheckboxRootContext();

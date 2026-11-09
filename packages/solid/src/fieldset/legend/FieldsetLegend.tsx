@@ -3,6 +3,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useFieldsetRootContext } from '../root/FieldsetRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * An accessible label that is automatically associated with the fieldset.
@@ -11,6 +12,7 @@ import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
  * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
  */
 export function FieldsetLegend(componentProps: FieldsetLegend.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'id', 'children', 'ref');
 
   const context = useFieldsetRootContext();

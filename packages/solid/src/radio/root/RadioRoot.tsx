@@ -27,6 +27,7 @@ import { serializeValue } from '../../internals/serializeValue';
 import { handleHiddenInputInvalid } from '../../internals/handleHiddenInputInvalid';
 import { syncCheckedState } from '../../internals/syncCheckedState';
 import { RadioRootContext } from './RadioRootContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Represents the radio button itself.
@@ -35,6 +36,7 @@ import { RadioRootContext } from './RadioRootContext';
  * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio-group)
  */
 export function RadioRoot<Value>(componentProps: RadioRoot.Props<Value>) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

@@ -10,6 +10,7 @@ import { CompositeItem } from '../internals/composite/item/CompositeItem';
 import { createChangeEventDetails } from '../internals/createBaseUIEventDetails';
 import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
 import { REASONS } from '../internals/reasons';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * A two-state button that can be on or off.
@@ -18,6 +19,7 @@ import { REASONS } from '../internals/reasons';
  * Documentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)
  */
 export function Toggle<Value extends string>(componentProps: Toggle.Props<Value>) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

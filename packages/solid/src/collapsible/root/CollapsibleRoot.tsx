@@ -8,6 +8,7 @@ import { collapsibleStateAttributesMapping } from './stateAttributesMapping';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { REASONS } from '../../internals/reasons';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * Groups all parts of the collapsible.
@@ -16,6 +17,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export function CollapsibleRoot(componentProps: CollapsibleRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'render',

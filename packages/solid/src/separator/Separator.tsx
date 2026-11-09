@@ -1,6 +1,7 @@
 import { omit } from 'solid-js';
 import type { BaseUIComponentProps, Orientation } from '../internals/types';
 import { useRenderElement } from '../internals/useRenderElement';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * A separator element accessible to screen readers.
@@ -9,6 +10,7 @@ import { useRenderElement } from '../internals/useRenderElement';
  * Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
  */
 export function Separator(componentProps: Separator.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'class', 'render', 'orientation', 'style', 'children', 'ref');
   const orientation = () => componentProps.orientation ?? 'horizontal';
 

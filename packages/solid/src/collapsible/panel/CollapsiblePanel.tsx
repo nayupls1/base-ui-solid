@@ -9,6 +9,7 @@ import { collapsibleStateAttributesMapping } from '../root/stateAttributesMappin
 import { useCollapsiblePanel } from './useCollapsiblePanel';
 import * as CollapsiblePanelCssVars from './CollapsiblePanelCssVars';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A panel with the collapsible contents.
@@ -17,6 +18,7 @@ import type { TransitionStatus } from '../../internals/useTransitionStatus';
  * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export function CollapsiblePanel(componentProps: CollapsiblePanel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

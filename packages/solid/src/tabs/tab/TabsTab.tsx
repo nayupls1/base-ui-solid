@@ -14,6 +14,7 @@ import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsListContext } from '../list/TabsListContext';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * An individual interactive tab button that toggles the corresponding panel.
@@ -22,6 +23,7 @@ import { REASONS } from '../../internals/reasons';
  * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export function TabsTab(componentProps: TabsTab.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

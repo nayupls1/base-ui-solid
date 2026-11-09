@@ -1,6 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { CSPContext } from '../internals/csp-context/CSPContext';
 import type { CSPContextValue } from '../internals/csp-context/CSPContext';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * Provides a default Content Security Policy (CSP) configuration for Base UI components that
@@ -9,6 +10,7 @@ import type { CSPContextValue } from '../internals/csp-context/CSPContext';
  * Documentation: [Base UI CSP Provider](https://base-ui.com/react/utils/csp-provider)
  */
 export function CSPProvider(props: CSPProvider.Props) {
+  props = ownedProps(props);
   const contextValue: CSPContextValue = {
     get nonce() {
       return props.nonce;

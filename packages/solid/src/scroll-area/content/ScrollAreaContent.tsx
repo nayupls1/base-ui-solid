@@ -6,6 +6,7 @@ import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { scrollAreaStateAttributesMapping } from '../root/stateAttributes';
 import type { ScrollAreaRootState } from '../root/ScrollAreaRoot';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A container for the content of the scroll area.
@@ -14,6 +15,7 @@ import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaContent(componentProps: ScrollAreaContent.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const { computeThumbPosition } = useScrollAreaViewportContext();

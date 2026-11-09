@@ -4,6 +4,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import type { AccordionItemState } from '../item/AccordionItem';
 import { useAccordionItemContext } from '../item/AccordionItemContext';
 import { accordionStateAttributesMapping } from '../item/stateAttributesMapping';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A heading that labels the corresponding panel.
@@ -12,6 +13,7 @@ import { accordionStateAttributesMapping } from '../item/stateAttributesMapping'
  * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export function AccordionHeader(componentProps: AccordionHeader.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const { state } = useAccordionItemContext();

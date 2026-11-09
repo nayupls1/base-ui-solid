@@ -76,3 +76,13 @@ See the checklist in `PORTING-STATUS.md`.
   in the owner tree at that point.
 - Hook parameters are objects with getters (`useButton({ get disabled() { … } })`). Hooks never
   destructure them; they read `params.x` lazily.
+- **Never read component props inside effect callbacks without `ownedProps`.** Solid compiles
+  conditional JSX props (`x={a ? b : c}`) into getters that create a memo when read, which throws
+  `PRIMITIVE_IN_EFFECT_CALLBACK` in an effect callback. Every component starts with
+  `props = ownedProps(props)` (`scripts/apply-owned-props.py` inserts it), which re-parents such
+  reads to the component owner.
+- Solid's event delegation bubbles through portals via `_$host`. Upstream's "inside React tree"
+  capture-phase marking is replaced by `isInsideLogicalTree()` (utils/popups/element.ts).
+- `@floating-ui/react-dom`'s `useFloating` is ported as `usePosition`
+  (utils/popups/positioning/usePosition.ts); middleware wrappers that fold `deps` into options
+  live in positioning/middleware.ts.

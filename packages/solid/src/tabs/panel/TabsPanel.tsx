@@ -13,6 +13,7 @@ import { useTabsRootContext } from '../root/TabsRootContext';
 import type { TabsRootState } from '../root/TabsRoot';
 import type { TabsTab } from '../tab/TabsTab';
 import * as TabsPanelDataAttributes from './TabsPanelDataAttributes';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping: StateAttributesMapping<TabsPanelState> = {
   ...tabsStateAttributesMapping,
@@ -26,6 +27,7 @@ const stateAttributesMapping: StateAttributesMapping<TabsPanelState> = {
  * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export function TabsPanel(componentProps: TabsPanel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

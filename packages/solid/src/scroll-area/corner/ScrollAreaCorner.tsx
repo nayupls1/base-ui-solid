@@ -2,6 +2,7 @@ import { omit } from 'solid-js';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A small rectangular area that appears at the intersection of horizontal and vertical scrollbars.
@@ -10,6 +11,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
  * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export function ScrollAreaCorner(componentProps: ScrollAreaCorner.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'children', 'ref');
 
   const root = useScrollAreaRootContext();

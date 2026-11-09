@@ -35,6 +35,7 @@ import { REASONS } from '../../internals/reasons';
 import { useValueChanged } from '../../internals/useValueChanged';
 import { handleHiddenInputInvalid } from '../../internals/handleHiddenInputInvalid';
 import { syncCheckedState } from '../../internals/syncCheckedState';
+import { ownedProps } from '../../internals/ownedProps';
 
 export const PARENT_CHECKBOX = 'data-parent';
 
@@ -45,6 +46,7 @@ export const PARENT_CHECKBOX = 'data-parent';
  * Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
  */
 export function CheckboxRoot(componentProps: CheckboxRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'checked',

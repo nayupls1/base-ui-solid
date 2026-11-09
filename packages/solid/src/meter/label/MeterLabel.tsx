@@ -3,6 +3,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
 import { useMeterRootContext } from '../root/MeterRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * An accessible label for the meter.
@@ -11,6 +12,7 @@ import type { BaseUIComponentProps } from '../../internals/types';
  * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
  */
 export function MeterLabel(componentProps: MeterLabel.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(componentProps, 'render', 'class', 'style', 'id', 'children', 'ref');
 
   const context = useMeterRootContext();

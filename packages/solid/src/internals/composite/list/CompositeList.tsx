@@ -3,6 +3,7 @@ import { onCleanup, type JSX } from 'solid-js';
 import type { RefObject } from '@base-ui-solid/utils/types';
 import { CompositeListContext } from './CompositeListContext';
 import type { CompositeListRegistration } from './CompositeListContext';
+import { ownedProps } from '../../ownedProps';
 
 export type CompositeMetadata<CustomMetadata> = {
   index: number;
@@ -19,6 +20,7 @@ interface CompositeListItem<Metadata> {
  * Items register their elements; indices are derived from DOM order.
  */
 export function CompositeList<Metadata>(props: CompositeList.Props<Metadata>) {
+  props = ownedProps(props);
   const listeners = new Set<Function>();
   const map = new Map<Element, CompositeListRegistration<Metadata>>();
   const nextIndexRef = { current: 0 };

@@ -11,6 +11,7 @@ import { transitionStatusMapping } from '../../internals/stateAttributesMapping'
 import { useTransitionStatus } from '../../internals/useTransitionStatus';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import { useImageLoadingStatus } from './useImageLoadingStatus';
+import { ownedProps } from '../../internals/ownedProps';
 
 const stateAttributesMapping: StateAttributesMapping<AvatarImageState> = {
   ...avatarStateAttributesMapping,
@@ -24,6 +25,7 @@ const stateAttributesMapping: StateAttributesMapping<AvatarImageState> = {
  * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export function AvatarImage(componentProps: AvatarImage.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'class',

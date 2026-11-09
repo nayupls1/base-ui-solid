@@ -8,6 +8,7 @@ import type {
 import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';
 import type { CompositeMetadata } from '../../internals/composite/list/CompositeList';
 import { ToolbarRootContext } from './ToolbarRootContext';
+import { ownedProps } from '../../internals/ownedProps';
 
 /**
  * A container for grouping a set of controls, such as buttons, toggle groups, or menus.
@@ -16,6 +17,7 @@ import { ToolbarRootContext } from './ToolbarRootContext';
  * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export function ToolbarRoot(componentProps: ToolbarRoot.Props) {
+  componentProps = ownedProps(componentProps);
   const elementProps = omit(
     componentProps,
     'disabled',

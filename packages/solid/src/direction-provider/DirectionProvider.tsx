@@ -1,6 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { DirectionContext } from '../internals/direction-context/DirectionContext';
 import type { TextDirection } from '../internals/direction-context/DirectionContext';
+import { ownedProps } from '../internals/ownedProps';
 
 /**
  * Enables RTL behavior for Base UI components.
@@ -8,6 +9,7 @@ import type { TextDirection } from '../internals/direction-context/DirectionCont
  * Documentation: [Base UI Direction Provider](https://base-ui.com/react/utils/direction-provider)
  */
 export function DirectionProvider(props: DirectionProvider.Props) {
+  props = ownedProps(props);
   const contextValue = {
     get direction() {
       return props.direction ?? 'ltr';
