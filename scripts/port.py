@@ -1,0 +1,77 @@
+#!/usr/bin/env python3
+"""Mechanical first pass for porting a Base UI React source file to Solid.
+
+Usage: port.py <upstream-relative-path> [<dest-relative-path>]
+Paths are relative to packages/react/src (upstream) and packages/solid/src (dest).
+Prints the destination path. The result still needs a manual pass.
+"""
+import pathlib
+import re
+import sys
+
+UP = pathlib.Path('/tmp/upstream/base-ui/packages/react/src')
+DEST = pathlib.Path(__file__).resolve().parent.parent / 'packages/solid/src'
+
+EVENT_TYPES = {
+    'KeyboardEvent': 'KeyboardEvent',
+    'MouseEvent': 'MouseEvent',
+    'PointerEvent': 'PointerEvent',
+    'FocusEvent': 'FocusEvent',
+    'TouchEvent': 'TouchEvent',
+    'WheelEvent': 'WheelEvent',
+    'ChangeEvent': 'Event',
+    'FormEvent': 'Event',
+    'SyntheticEvent': 'Event',
+    'UIEvent': 'UIEvent',
+    'DragEvent': 'DragEvent',
+    'ClipboardEvent': 'ClipboardEvent',
+    'CompositionEvent': 'CompositionEvent',
+    'AnimationEvent': 'AnimationEvent',
+    'TransitionEvent': 'TransitionEvent',
+    'InputEvent': 'InputEvent',
+}
+
+
+def transform(src: str) -> str:
+    s = src
+    s = s.replace("'use client';\n", '')
+    s = s.replace('@base-ui/utils/', '@base-ui-solid/utils/')
+    s = s.replace("'@base-ui/react/", "'@base-ui-solid/solid/")
+    s = re.sub(r"import type \* as React from 'react';\n", '', s)
+    s = re.sub(r"import \* as React from 'react';\n", '', s)
+    s = re.sub(r"import \* as ReactDOM from 'react-dom';\n", '', s)
+    for k, v in EVENT_TYPES.items():
+        s = re.sub(r'React\.' + k + r'(<[^<>]*(?:<[^<>]*>[^<>]*)*>)?', v, s)
+    s = re.sub(r'React\.RefObject<', 'RefObject<', s)
+    s = re.sub(r'React\.MutableRefObject<', 'RefObject<', s)
+    s = s.replace('React.CSSProperties', 'JSX.CSSProperties')
+    s = s.replace('React.ReactNode', 'JSX.Element')
+    s = s.replace('React.ReactElement', 'JSX.Element')
+    s = s.replace('React.JSX.IntrinsicElements', 'JSX.IntrinsicElements')
+    s = s.replace('React.HTMLAttributes', 'JSX.HTMLAttributes')
+    s = s.replace('React.AriaRole', 'string')
+    s = s.replace('event.nativeEvent', 'event')
+    s = s.replace('.nativeEvent', '')
+    s = s.replace("from '@floating-ui/react-dom'", "from '@floating-ui/dom'")
+    s = s.replace('tabIndex', 'tabindex')
+    s = s.replace("'@base-ui-solid/utils/useIsoLayoutEffect'", "'solid-js' /* TODO useIsoLayoutEffect */")
+    if 'RefObject<' in s and 'type RefObject' not in s:
+        s = "import type { RefObject } from '@base-ui-solid/utils/types';\n" + s
+    if 'JSX.' in s and "type JSX" not in s:
+        s = "import type { JSX } from '@solidjs/web';\n" + s
+    return s
+
+
+def main():
+    rel = sys.argv[1]
+    dest_rel = sys.argv[2] if len(sys.argv) > 2 else rel
+    src = (UP / rel).read_text()
+    out = transform(src)
+    dest = DEST / dest_rel
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(out)
+    print(dest)
+
+
+if __name__ == '__main__':
+    main()

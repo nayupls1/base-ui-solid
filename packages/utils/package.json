@@ -1,0 +1,23 @@
+{
+  "name": "@base-ui-solid/utils",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Shared utilities for Base UI Solid.",
+  "license": "MIT",
+  "exports": {
+    "./*": "./src/*.ts",
+    "./store": "./src/store/index.ts"
+  },
+  "dependencies": {
+    "@floating-ui/utils": "^0.2.10",
+    "reselect": "^5.1.1"
+  },
+  "peerDependencies": {
+    "solid-js": "^2.0.0-rc.21",
+    "@solidjs/web": "^2.0.0-rc.21"
+  },
+  "devDependencies": {
+    "solid-js": "2.0.0-rc.21",
+    "@solidjs/web": "2.0.0-rc.21"
+  }
+}
