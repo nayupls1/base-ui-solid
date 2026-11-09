@@ -5,8 +5,9 @@
   "description": "Shared utilities for Base UI Solid.",
   "license": "MIT",
   "exports": {
-    "./*": "./src/*.ts",
-    "./store": "./src/store/index.ts"
+    "./platform": "./src/platform/index.ts",
+    "./store": "./src/store/index.ts",
+    "./*": "./src/*.ts"
   },
   "dependencies": {
     "@floating-ui/utils": "^0.2.10",
