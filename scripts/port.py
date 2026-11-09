@@ -38,7 +38,8 @@ def transform(src: str) -> str:
     s = s.replace('@base-ui/utils/', '@base-ui-solid/utils/')
     s = s.replace("'@base-ui/react/", "'@base-ui-solid/solid/")
     s = re.sub(r"import type \* as React from 'react';\n", '', s)
-    s = re.sub(r"import \* as React from 'react';\n", '', s)
+    if 'React.createContext' not in s:
+        s = re.sub(r"import \* as React from 'react';\n", '', s)
     s = re.sub(r"import \* as ReactDOM from 'react-dom';\n", '', s)
     for k, v in EVENT_TYPES.items():
         s = re.sub(r'React\.' + k + r'(<[^<>]*(?:<[^<>]*>[^<>]*)*>)?', v, s)
@@ -63,11 +64,24 @@ def transform(src: str) -> str:
     return s
 
 
+def transform_context(s: str) -> str:
+    """React context modules → Solid (`null` means "no provider")."""
+    if 'React.createContext' not in s:
+        return s
+    s = re.sub(r'React\.createContext<(.+?) \| undefined>\(\s*undefined,?\s*\)', r'createContext<\1 | null>(null)', s, flags=re.S)
+    s = s.replace('React.createContext', 'createContext').replace('React.useContext(', 'useContext(')
+    s = re.sub(r'(\w+) === undefined', r'\1 == null', s)
+    s = re.sub(r'return (context|value|store);\n', r'return \1 ?? undefined;\n', s)
+    s = s.replace("import * as React from 'react';\n", '')
+    s = "import { createContext, useContext } from 'solid-js';\n" + s
+    return s
+
+
 def main():
     rel = sys.argv[1]
     dest_rel = sys.argv[2] if len(sys.argv) > 2 else rel
     src = (UP / rel).read_text()
-    out = transform(src)
+    out = transform_context(transform(src))
     dest = DEST / dest_rel
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(out)
