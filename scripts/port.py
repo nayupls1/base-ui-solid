@@ -42,6 +42,7 @@ def transform(src: str) -> str:
     s = re.sub(r"import \* as ReactDOM from 'react-dom';\n", '', s)
     for k, v in EVENT_TYPES.items():
         s = re.sub(r'React\.' + k + r'(<[^<>]*(?:<[^<>]*>[^<>]*)*>)?', v, s)
+    s = re.sub(r'React\.createRef<([^>]+)>\(\)', r'{ current: null } as RefObject<\1 | null>', s)
     s = re.sub(r'React\.RefObject<', 'RefObject<', s)
     s = re.sub(r'React\.MutableRefObject<', 'RefObject<', s)
     s = s.replace('React.CSSProperties', 'JSX.CSSProperties')

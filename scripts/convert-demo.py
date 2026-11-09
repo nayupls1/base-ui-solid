@@ -94,6 +94,23 @@ def convert_hooks(s: str) -> str:
         # undo the declaration
         s = s.replace(f'const [{name}(), ', f'const [{name}, ')
 
+    refs = []
+
+    def use_ref(m):
+        refs.append(m.group(1))
+        type_arg = m.group(2) or '<any>'
+        init = m.group(3) or 'null'
+        type_name = type_arg[1:-1]
+        if init == 'null' and 'null' not in type_name:
+            type_name += ' | null'
+        return f'const {m.group(1)}: {{ current: {type_name} }} = {{ current: {init} }};'
+
+    s = re.sub(r'const (\w+) = React\.useRef(<[^\n]*?>)?\(([^)]*)\);', use_ref, s)
+    for name in refs:
+        # Native elements need callback refs; Base UI components accept ref objects.
+        s = re.sub(r'(<[a-z][\w-]*\b[^<>]*?)\bref=\{' + name + r'\}',
+                   lambda m: m.group(1) + 'ref={(el) => {\n' + f'          {name}.current = el;\n' + '        }}', s, flags=re.S)
+
     def effect(m):
         imports.add('onSettled')
         return 'onSettled(() => {' + m.group(1) + '});'

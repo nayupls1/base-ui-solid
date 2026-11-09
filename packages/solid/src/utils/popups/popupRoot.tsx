@@ -1,4 +1,4 @@
-import { createEffect, createMemo, onCleanup, untrack, type Accessor } from 'solid-js';
+import { createEffect, createMemo, createRoot, onCleanup, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import type { ReactStore } from '@base-ui-solid/utils/store';
 import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
@@ -222,17 +222,44 @@ export function renderPopupRootChildren<Store, Payload>(parameters: {
       {interactions?.()}
       {(() => {
         const resolved = children();
-        if (typeof resolved === 'function') {
-          return (resolved as PayloadChildRenderFunction<Payload>)({
-            get payload() {
-              return payload();
-            },
-          });
+        // Payload render functions take an argument; Solid's resolved JSX children can also be
+        // (zero-argument) accessors, which are returned as they are.
+        if (typeof resolved === 'function' && resolved.length > 0) {
+          return renderPayloadChildren(resolved as PayloadChildRenderFunction<Payload>, payload);
         }
         return resolved;
       })()}
     </>
   );
+}
+
+/**
+ * Calls a payload render function again whenever the payload changes, so destructuring
+ * `({ payload }) => …` works like upstream. The previous subtree is disposed *before* the next one
+ * is created: otherwise its ref cleanups (which reset store elements such as the popup) would run
+ * after the new subtree registered its elements.
+ */
+function renderPayloadChildren<Payload>(
+  render: PayloadChildRenderFunction<Payload>,
+  payload: Accessor<Payload | undefined>,
+) {
+  let disposePrevious: (() => void) | undefined;
+  onCleanup(() => disposePrevious?.());
+  const rendered = createMemo(() => {
+    const value = payload();
+    disposePrevious?.();
+    return createRoot((dispose) => {
+      disposePrevious = dispose;
+      return untrack(() =>
+        render({
+          get payload() {
+            return value;
+          },
+        }),
+      );
+    });
+  });
+  return rendered as unknown as JSX.Element;
 }
 
 export type PayloadChildRenderFunction<Payload> = (arg: {

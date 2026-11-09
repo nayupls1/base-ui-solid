@@ -28,3 +28,21 @@ export function createDemoWithVariants(
 export function createDemo(component: Component, files: DemoFile[], meta: DemoMeta = {}) {
   return createDemoWithVariants({ Default: { component, files } }, meta);
 }
+
+/**
+ * Placeholder for upstream demos that use components which aren't ported yet.
+ */
+export function createPendingDemo(components: string[]) {
+  return function PendingDemo() {
+    return (
+      <div class="DemoRoot">
+        <div class="DemoPlayground">
+          <p class="DemoPlaygroundInner" style={{ 'text-align': 'center' }}>
+            This demo uses {components.join(', ')}, which {components.length > 1 ? "aren't" : "isn't"}{' '}
+            ported to Solid yet.
+          </p>
+        </div>
+      </div>
+    );
+  };
+}

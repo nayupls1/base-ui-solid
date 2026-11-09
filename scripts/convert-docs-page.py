@@ -99,9 +99,30 @@ def convert_demos(src_dir: pathlib.Path, dest_dir: pathlib.Path, force: bool):
     return todo
 
 
+SOLID_SRC = pathlib.Path(__file__).resolve().parent.parent / 'packages/solid/src'
+
+
+def missing_components(demo_dir: pathlib.Path):
+    """Base UI modules a demo imports that aren't ported yet."""
+    missing = set()
+    for file in demo_dir.rglob('*.tsx'):
+        for module in re.findall(r"from '@base-ui/react/([\w-]+)'", file.read_text()):
+            if not (SOLID_SRC / module / 'index.ts').exists():
+                missing.add(module)
+    return sorted(missing)
+
+
 def write_demo_index(src: pathlib.Path, dest: pathlib.Path):
     text = src.read_text()
     name = re.search(r'export const (\w+)', text).group(1)
+    missing = missing_components(src.parent)
+    if missing:
+        dest.write_text(
+            "import { createPendingDemo } from 'docs/src/utils/createDemo';\n\n"
+            f"export const {name} = createPendingDemo({missing!r});\n".replace("'", "'")
+        )
+        print('PENDING', dest, missing)
+        return
     variants = re.findall(r"import (\w+) from '\./([\w-]+)';", text)
     lines = ["import { createDemoWithVariants } from 'docs/src/utils/createDemo';"]
     for ident, folder in variants:

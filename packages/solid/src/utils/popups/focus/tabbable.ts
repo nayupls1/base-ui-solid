@@ -95,7 +95,7 @@ function isVisibleInTabbableTree(element: Element, isAncestor: boolean) {
 }
 
 function getTabIndex(element: FocusableElement) {
-  const tabindex = element.tabindex;
+  const tabindex = (element as HTMLElement).tabIndex;
   if (tabindex < 0) {
     const nodeName = getNodeName(element);
     if (
