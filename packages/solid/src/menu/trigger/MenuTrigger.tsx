@@ -310,7 +310,9 @@ export function MenuTrigger<Payload = unknown>(componentProps: MenuTrigger.Props
         refs={ref as any}
         props={props as any}
         stateAttributesMapping={pressableTriggerOpenStateMapping as any}
-      />
+      >
+        {componentProps.children}
+      </CompositeItem>
     );
   }
 

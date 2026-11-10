@@ -3,7 +3,8 @@ import type { RefObject } from '@base-ui-solid/utils/types';
 import type { ContextMenuRoot } from './ContextMenuRoot';
 
 export interface ContextMenuRootContext {
-  anchor: { getBoundingClientRect: () => DOMRect };
+  /** A getter: the anchor changes on each open. */
+  readonly anchor: { getBoundingClientRect: () => DOMRect };
   setAnchor: (value: ContextMenuRootContext['anchor'] | ((prev: ContextMenuRootContext['anchor']) => ContextMenuRootContext['anchor'])) => void;
   backdropRef: RefObject<HTMLDivElement | null>;
   internalBackdropRef: RefObject<HTMLDivElement | null>;

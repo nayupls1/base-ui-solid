@@ -84,7 +84,7 @@ export function useButton(parameters: UseButtonParameters = {}): UseButtonReturn
   createEffect(
     () => [isCompositeItem(), disabled(), focusableWhenDisabledProps.disabled] as const,
     () => {
-      updateDisabled();
+      untrack(updateDisabled);
     },
   );
 
