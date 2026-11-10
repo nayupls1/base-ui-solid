@@ -1,4 +1,4 @@
-import { createEffect, createMemo, type Accessor } from 'solid-js';
+import { createEffect, createMemo, type Accessor, untrack } from 'solid-js';
 import type { VirtualElement } from '@floating-ui/dom';
 import { isElement } from '@floating-ui/utils/dom';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
@@ -33,7 +33,7 @@ export function useBaseUIFloating(
 
   const domReferenceRef = { current: null as NarrowedElement<ReferenceType> | null };
 
-  const tree = useFloatingTree(options.externalTree);
+  const tree = useFloatingTree(untrack(() => options.externalTree));
 
   const position = usePosition<ReferenceType>({
     get placement() {

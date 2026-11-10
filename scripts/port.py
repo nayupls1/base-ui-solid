@@ -46,6 +46,8 @@ def transform(src: str) -> str:
     s = re.sub(r'React\.createRef<([^>]+)>\(\)', r'{ current: null } as RefObject<\1 | null>', s)
     s = re.sub(r'React\.RefObject<', 'RefObject<', s)
     s = re.sub(r'React\.MutableRefObject<', 'RefObject<', s)
+    s = re.sub(r'React\.Dispatch<React\.SetStateAction<(.+?)>>', r'(value: \1 | ((prev: \1) => \1)) => void', s)
+    s = re.sub(r"React\.ComponentPropsWithRef<'(\w+)'>", r"JSX.IntrinsicElements['\1']", s)
     s = s.replace('React.CSSProperties', 'JSX.CSSProperties')
     s = s.replace('React.ReactNode', 'JSX.Element')
     s = s.replace('React.ReactElement', 'JSX.Element')

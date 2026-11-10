@@ -83,7 +83,7 @@ export function usePopupRoot<Store extends PopupRootStore>(
 export function usePopupRootWithPopupId<Store extends PopupRootStore>(
   props: PopupRootProps<Store>,
   createStore: (initialState: PopupRootInitialState, defaultPopupId: string | undefined) => Store,
-  defaultPopupId: string | undefined,
+  defaultPopupId: string | undefined | Accessor<string | undefined>,
   options: UsePopupRootOptions = {},
 ) {
   const disabled = () => options.disabled ?? false;
@@ -272,13 +272,15 @@ interface PopupRootStoreHandle<Store> {
 
 function usePopupRootStore<Store extends PopupRootStore>(
   createStore: (defaultPopupId: string | undefined) => Store,
-  defaultPopupId: string | undefined,
+  defaultPopupId: string | undefined | Accessor<string | undefined>,
 ): Store {
   const nested = useFloatingParentNodeId() != null;
+  const getDefaultPopupId =
+    typeof defaultPopupId === 'function' ? defaultPopupId : () => defaultPopupId;
 
-  const store = createStore(defaultPopupId);
+  const store = createStore(untrack(getDefaultPopupId));
 
-  store.useSyncedValue('defaultPopupId', () => defaultPopupId);
+  store.useSyncedValue('defaultPopupId', getDefaultPopupId);
   store.context.nested = nested;
 
   return store;

@@ -1,4 +1,4 @@
-import { createContext, createEffect, useContext } from 'solid-js';
+import { createContext, createEffect, useContext, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { useId } from '@base-ui-solid/utils/useId';
 import type { FloatingNodeType, FloatingTreeType } from '../types';
@@ -12,8 +12,10 @@ const FloatingTreeContext = createContext<FloatingTreeType | null>(null);
  * Returns the parent node id for nested floating elements, if available.
  * Returns `null` for top-level floating elements.
  */
-export const useFloatingParentNodeId = (): string | null =>
-  useContext(FloatingNodeContext)?.id || null;
+export const useFloatingParentNodeId = (): string | null => {
+  const node = useContext(FloatingNodeContext);
+  return untrack(() => node?.id) || null;
+};
 
 /**
  * Returns the nearest floating tree context, if available.

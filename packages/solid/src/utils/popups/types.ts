@@ -1,3 +1,4 @@
+import type { Accessor } from 'solid-js';
 import type { RefObject } from '@base-ui-solid/utils/types';
 import type { VirtualElement } from '@floating-ui/dom';
 import type { HTMLProps } from '../../internals/types';
@@ -68,6 +69,33 @@ export interface PopupInteractionReader {
 }
 
 /**
+ * Reactive variant of `PopupInteractionReader`: returns accessors.
+ */
+export interface PopupInteractionAccessorReader {
+  (key: 'open'): Accessor<boolean>;
+  (key: 'transitionStatus'): Accessor<TransitionStatus | undefined>;
+  /**
+   * The active trigger's element. Popup stores keep it after the popup unmounts;
+   * `FloatingRootStore` clears it while the popup isn't mounted.
+   */
+  (key: 'anchorElement'): Accessor<Element | null>;
+  /**
+   * The anchor the interaction hooks see: the anchor override, such as the cursor position from
+   * `useClientPoint`, or else the owner's anchor (usually the active trigger). A Positioner's
+   * `anchor` prop isn't included; positioning applies it on its own.
+   */
+  (key: 'anchor'): Accessor<ReferenceType | null>;
+  /**
+   * The popup's positioner element, or the popup itself when it has no positioner.
+   */
+  (key: 'positionerElement'): Accessor<HTMLElement | null>;
+  /**
+   * The popup's id unless its element sets one.
+   */
+  (key: 'defaultPopupId'): Accessor<string | undefined>;
+}
+
+/**
  * Non-reactive values shared by the interaction hooks of one popup.
  * The inert stores that detached triggers use before a Root attaches freeze their context, so
  * code that can run against them only reads these fields.
@@ -114,7 +142,7 @@ export interface PopupInteractionContext {
  */
 export interface PopupInteractionStore {
   select: PopupInteractionReader;
-  useState: PopupInteractionReader;
+  useState: PopupInteractionAccessorReader;
   set(key: 'anchorOverride', value: ReferenceType | null): void;
   set(key: 'anchorElement', value: Element | null): void;
   setOpen(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;

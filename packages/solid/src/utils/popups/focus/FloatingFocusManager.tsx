@@ -284,7 +284,7 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
   const storeContext = store.context;
   const { events } = storeContext;
 
-  const getNodeId = () => storeContext.positioning?.nodeId;
+  const getNodeId = () => untrack(() => storeContext.positioning?.nodeId);
 
   // A typeable combobox reference (e.g. input/textarea) with `initialFocus={false}`
   // has different focus semantics: focus is not trapped inside the floating element,
@@ -341,7 +341,9 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
   };
 
   const getResolvedInsideElements = () =>
-    props.getInsideElements?.().filter((element): element is Element => element != null) ?? [];
+    untrack(() => props.getInsideElements)
+      ?.()
+      .filter((element): element is Element => element != null) ?? [];
 
   createEffect(
     () => [disabled(), modal(), floatingFocusElement(), isUntrappedTypeableCombobox()] as const,
@@ -480,8 +482,8 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
               portalContext?.afterInsideRef.current,
               portalContext?.beforeOutsideRef.current,
               portalContext?.afterOutsideRef.current,
-              resolveRef(props.previousFocusableElement as any),
-              resolveRef(props.nextFocusableElement as any),
+              resolveRef(untrack(() => props.previousFocusableElement) as any),
+              resolveRef(untrack(() => props.nextFocusableElement) as any),
             ].includes(relatedTarget);
 
           const movedToUnrelatedNode = !(
@@ -646,8 +648,8 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
       const insideElements = [
         ...controlInsideElements,
         rootAncestorComboboxDomReference,
-        resolveRef(props.previousFocusableElement as any),
-        resolveRef(props.nextFocusableElement as any),
+        resolveRef(untrack(() => props.previousFocusableElement) as any),
+        resolveRef(untrack(() => props.nextFocusableElement) as any),
         untrappedCombobox ? reference : null,
       ].filter((x): x is Element => x != null);
 
