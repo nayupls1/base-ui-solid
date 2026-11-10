@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "dev": "bun run --cwd docs dev",
+    "build": "node scripts/build-packages.mjs",
     "build:docs": "bun run --cwd docs build",
     "test": "vitest run",
     "typecheck": "tsc -p packages/solid/tsconfig.json --noEmit && tsc -p packages/utils/tsconfig.json --noEmit"

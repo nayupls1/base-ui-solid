@@ -21,6 +21,10 @@ The port targets Solid 2.0 (rc.21) and is client-only for now. See
 
 ## Usage
 
+```sh
+npm install @base-ui-solid/solid
+```
+
 ```tsx
 import { Popover } from '@base-ui-solid/solid/popover';
 
@@ -43,8 +47,30 @@ rc.21 runtime.
 bun install
 bun run dev          # docs site
 bun run test         # vitest (jsdom)
+bun run build        # the npm packages, into packages/*/dist
 bun run build:docs
 ```
+
+## Releasing
+
+Both packages are published together, at the same version, by the
+[release workflow](.github/workflows/release.yml). Publish a GitHub release whose tag is the
+version, such as `v0.1.0`:
+
+```sh
+gh release create v0.1.0 --generate-notes
+```
+
+The workflow runs the tests, builds `packages/*/dist` at that version and publishes them to npm
+with provenance. A prerelease tag such as `v0.2.0-beta.1` is published under the `next` dist-tag
+instead of `latest`. The versions in the repo's `package.json` files stay at `0.0.0`; the tag is
+the version.
+
+One-time setup: the workflow authenticates with npm
+[trusted publishing](https://docs.npmjs.com/trusted-publishers), which is configured per package
+(repository `nayupls1/base-ui-solid`, workflow `release.yml`) and so needs the packages to exist.
+For the first release, add an npm access token that may publish to the scope as the `NPM_TOKEN`
+repository secret; once trusted publishing is set up, delete it.
 
 ## Layout
 

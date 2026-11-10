@@ -4,6 +4,16 @@
   "type": "module",
   "description": "A 1:1 SolidJS 2.0 port of Base UI: unstyled, accessible UI components.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayupls1/base-ui-solid.git",
+    "directory": "packages/solid"
+  },
+  "homepage": "https://github.com/nayupls1/base-ui-solid#readme",
+  "bugs": "https://github.com/nayupls1/base-ui-solid/issues",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "solid",
     "solidjs",

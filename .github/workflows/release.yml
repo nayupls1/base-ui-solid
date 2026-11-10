@@ -1,0 +1,49 @@
+name: Release
+
+# Publishing a GitHub release tagged `v1.2.3` publishes both packages to npm as version 1.2.3.
+# See "Releasing" in the README for the one-time npm setup.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # npm trusted publishing and provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: bun install --frozen-lockfile
+      - run: bun run test
+      - name: Build
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: bun run build --version "${TAG#v}"
+      - name: Publish
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          # Only needed until trusted publishing is set up; npm prefers that when it is.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          version="${TAG#v}"
+          # Prereleases (1.2.3-beta.1) go to the `next` dist-tag so `npm install` keeps resolving
+          # to the latest stable version.
+          dist_tag=latest
+          case "$version" in *-*) dist_tag=next ;; esac
+          # `utils` first: `solid` depends on it. Already published versions are skipped, so a
+          # run that failed halfway can be re-run.
+          for dir in packages/utils/dist packages/solid/dist; do
+            name=$(node -p "require('./$dir/package.json').name")
+            if npm view "$name@$version" version >/dev/null 2>&1; then
+              echo "$name@$version is already published, skipping"
+            else
+              npm publish "$dir" --access public --provenance --tag "$dist_tag"
+            fi
+          done
