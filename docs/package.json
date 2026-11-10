@@ -12,7 +12,9 @@
     "@base-ui-solid/utils": "workspace:*",
     "@solidjs/router": "2.0.0-next.44",
     "@solidjs/web": "2.0.0-rc.21",
+    "@tanstack/virtual-core": "^3.19.11",
     "clsx": "^2.1.1",
+    "match-sorter": "^8.3.1",
     "solid-js": "2.0.0-rc.21",
     "zod": "^4.6.7"
   },
