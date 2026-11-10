@@ -17,7 +17,15 @@ import { ownedProps } from '../../internals/ownedProps';
  */
 export function MenuRadioItemIndicator(componentProps: MenuRadioItemIndicator.Props) {
   componentProps = ownedProps(componentProps);
-  const elementProps = omit(componentProps, 'render', 'class', 'style', 'keepMounted', 'children', 'ref');
+  const elementProps = omit(
+    componentProps,
+    'render',
+    'class',
+    'style',
+    'keepMounted',
+    'children',
+    'ref',
+  );
 
   const item = useMenuRadioItemContext();
   const [indicator, setIndicator] = createSyncSignal<HTMLSpanElement | null>(null);

@@ -17,6 +17,4 @@ export interface MenuFilterProviderContext {
  * Non-null only directly below a provider. The root that consumes it resets it, so a plain
  * `Menu.SubmenuRoot` inside a filterable menu stays plain.
  */
-export const MenuFilterProviderContext = createContext<MenuFilterProviderContext | null>(
-  null,
-);
+export const MenuFilterProviderContext = createContext<MenuFilterProviderContext | null>(null);

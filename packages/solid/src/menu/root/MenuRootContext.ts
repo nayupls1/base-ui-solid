@@ -11,7 +11,9 @@ export interface MenuRootContext<Payload = unknown> {
   allowEscape: boolean;
   generatedPopupId: string | undefined;
   /** Records the id the popup rendered with, when it differs from `generatedPopupId`. */
-  setRenderedPopupId: (value: string | undefined | ((prev: string | undefined) => string | undefined)) => void;
+  setRenderedPopupId: (
+    value: string | undefined | ((prev: string | undefined) => string | undefined),
+  ) => void;
   virtualFocus: boolean;
   parentVirtualFocus: boolean;
   /** Re-emits `onItemHighlighted` after the item registry settles. */

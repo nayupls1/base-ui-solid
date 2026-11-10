@@ -19,12 +19,15 @@ export type * from './submenu-root/MenuSubmenuRoot';
 export type * from './trigger/MenuTrigger';
 export type * from './submenu-trigger/MenuSubmenuTrigger';
 export type * from './viewport/MenuViewport';
-// TODO(solid-port): filtering pending — export type * from './filter-provider/MenuFilterProvider';
-// TODO(solid-port): filtering pending — export type * from './input/MenuInput';
+export type * from './filter-provider/MenuFilterProvider';
+export type * from './input/MenuInput';
 export type * from './list/MenuList';
-// TODO(solid-port): filtering pending — export type * from './clear/MenuClear';
-// TODO(solid-port): filtering pending — export type * from './empty/MenuEmpty';
-// TODO(solid-port): filtering pending — export type { Filter as MenuFilter, GetFilterParameters as MenuFilterOptions } from '../internals/filter';
+export type * from './clear/MenuClear';
+export type * from './empty/MenuEmpty';
+export type {
+  Filter as MenuFilter,
+  GetFilterParameters as MenuFilterOptions,
+} from '../internals/filter';
 
 export * as MenuArrowDataAttributes from './arrow/MenuArrowDataAttributes';
 export * as MenuBackdropDataAttributes from './backdrop/MenuBackdropDataAttributes';
@@ -42,5 +45,5 @@ export * as MenuViewportCssVariables from './viewport/MenuViewportCssVars';
 export * as MenuViewportDataAttributes from './viewport/MenuViewportDataAttributes';
 export * as MenuSeparatorDataAttributes from '../separator/SeparatorDataAttributes';
 export * as MenuSubmenuTriggerDataAttributes from './submenu-trigger/MenuSubmenuTriggerDataAttributes';
-// TODO(solid-port): filtering pending — export * as MenuInputDataAttributes from './input/MenuInputDataAttributes';
-// TODO(solid-port): filtering pending — export * as MenuClearDataAttributes from './clear/MenuClearDataAttributes';
+export * as MenuInputDataAttributes from './input/MenuInputDataAttributes';
+export * as MenuClearDataAttributes from './clear/MenuClearDataAttributes';

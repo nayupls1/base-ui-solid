@@ -1,5 +1,13 @@
 import type { JSX } from '@solidjs/web';
-import { createEffect, createMemo, createSignal, omit, Show, untrack, type Accessor } from 'solid-js';
+import {
+  createEffect,
+  createMemo,
+  createSignal,
+  omit,
+  Show,
+  untrack,
+  type Accessor,
+} from 'solid-js';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
 import { useTimeout } from '@base-ui-solid/utils/useTimeout';
 import { ownerDocument } from '@base-ui-solid/utils/owner';
@@ -187,46 +195,52 @@ export function MenuTrigger<Payload = unknown>(componentProps: MenuTrigger.Props
     parent.type === 'menubar' && parent.context.hasSubmenuOpen;
   const openOnHover = () => componentProps.openOnHover ?? parentMenubarHasSubmenuOpen();
 
-  const hoverProps = useHoverTriggerInteraction(store as any, {
-    get enabled() {
-      return (
-        openOnHover() &&
-        !disabled() &&
-        (!isInMenubar || (parentMenubarHasSubmenuOpen() && !isMountedByThisTrigger()))
-      );
-    },
-    handleClose: safePolygon({ blockPointerEvents: !isInMenubar }),
-    mouseOnly: true,
-    move: false,
-    get restMs() {
-      return parent.type === undefined ? delay() : undefined;
-    },
-    get delay() {
-      return { close: closeDelay() };
-    },
-    triggerElement,
-    externalTree: floatingTreeRoot,
-    get isActiveTrigger() {
-      return isTriggerActive();
-    },
-  } as any);
+  const hoverProps = useHoverTriggerInteraction(
+    store as any,
+    {
+      get enabled() {
+        return (
+          openOnHover() &&
+          !disabled() &&
+          (!isInMenubar || (parentMenubarHasSubmenuOpen() && !isMountedByThisTrigger()))
+        );
+      },
+      handleClose: safePolygon({ blockPointerEvents: !isInMenubar }),
+      mouseOnly: true,
+      move: false,
+      get restMs() {
+        return parent.type === undefined ? delay() : undefined;
+      },
+      get delay() {
+        return { close: closeDelay() };
+      },
+      triggerElement,
+      externalTree: floatingTreeRoot,
+      get isActiveTrigger() {
+        return isTriggerActive();
+      },
+    } as any,
+  );
 
   // Whether to ignore clicks to open the menu.
   const stickIfOpen = useStickIfOpen(isOpenedByThisTrigger, () =>
     store.select('lastOpenChangeReason'),
   );
 
-  const click = useClick(store as any, {
-    get enabled() {
-      return !disabled();
-    },
-    get event() {
-      return isOpenedByThisTrigger() && isInMenubar ? 'click' : 'mousedown';
-    },
-    toggle: true,
-    ignoreMouse: false,
-    stickIfOpen: () => (parent.type === undefined ? stickIfOpen() : false),
-  } as any);
+  const click = useClick(
+    store as any,
+    {
+      get enabled() {
+        return !disabled();
+      },
+      get event() {
+        return isOpenedByThisTrigger() && isInMenubar ? 'click' : 'mousedown';
+      },
+      toggle: true,
+      ignoreMouse: false,
+      stickIfOpen: () => (parent.type === undefined ? stickIfOpen() : false),
+    } as any,
+  );
 
   const focus = useFocus(store as any, {
     get enabled() {
@@ -400,7 +414,6 @@ export namespace MenuTrigger {
   export type Props<Payload = unknown> = MenuTriggerProps<Payload>;
   export type State = MenuTriggerState;
 }
-
 
 /**
  * Determines whether to ignore clicks after a hover-open.

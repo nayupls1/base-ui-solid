@@ -632,9 +632,12 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): JSX.Elem
       );
 
       const ancestors = tree ? getNodeAncestors(tree.nodesRef.current, getNodeId()) : [];
-      const rootAncestorComboboxDomReference = ancestors.find((node) =>
-        isTypeableCombobox(node.context?.elements.domReference || null),
-      )?.context?.elements.domReference;
+      // The tree's positioning contexts are read imperatively here.
+      const rootAncestorComboboxDomReference = untrack(
+        () =>
+          ancestors.find((node) => isTypeableCombobox(node.context?.elements.domReference || null))
+            ?.context?.elements.domReference,
+      );
 
       const controlInsideElements = [
         floatingEl,

@@ -95,7 +95,6 @@ export function MenuRadioGroup(props: MenuRadioGroup.Props) {
   return <RadioGroup {...props} />;
 }
 
-
 export interface MenuRadioGroupProps extends BaseUIComponentProps<'div', MenuRadioGroupState> {
   /**
    * The content of the component.

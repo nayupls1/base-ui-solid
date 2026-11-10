@@ -7,6 +7,7 @@ import { getTarget } from '@base-ui-solid/utils/shadowDom';
 import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
 import { useMenuFilterItem } from '../filter-root/MenuFilterContext';
 import { mergeProps } from '../../merge-props';
+import { reactiveMergeProps } from '../../internals/reactiveMergeProps';
 import { safePolygon } from '../../utils/popups/interactions/safePolygon';
 import { useClick } from '../../utils/popups/interactions/useClick';
 import { useHoverTriggerInteraction } from '../../utils/popups/interactions/useHoverTriggerInteraction';
@@ -186,44 +187,50 @@ function MenuSubmenuTriggerPlain(componentProps: MenuSubmenuTrigger.Props) {
 
   const hoverEnabled = store.useState('hoverEnabled');
 
-  const hoverProps = useHoverTriggerInteraction(store as any, {
-    get enabled() {
-      return hoverEnabled() && openOnHover() && !disabled();
-    },
-    handleClose: safePolygon({ blockPointerEvents: true }),
-    mouseOnly: true,
-    move: true,
-    get restMs() {
-      return delay();
-    },
-    get delay() {
-      return { open: delay(), close: closeDelay() };
-    },
-    get shouldOpen() {
-      return delay() > 0 ? () => parentMenuStore.select('allowMouseEnter') : undefined;
-    },
-    triggerElement,
-    get externalTree() {
-      return floatingTreeRoot();
-    },
-    // Chrome can drop the trigger's `mouseleave` during a fast pointer sweep,
-    // leaving a stale submenu open (see #5152) — cancel from `mouseout` too.
-    guardStaleOpen: true,
-  } as any);
+  const hoverProps = useHoverTriggerInteraction(
+    store as any,
+    {
+      get enabled() {
+        return hoverEnabled() && openOnHover() && !disabled();
+      },
+      handleClose: safePolygon({ blockPointerEvents: true }),
+      mouseOnly: true,
+      move: true,
+      get restMs() {
+        return delay();
+      },
+      get delay() {
+        return { open: delay(), close: closeDelay() };
+      },
+      get shouldOpen() {
+        return delay() > 0 ? () => parentMenuStore.select('allowMouseEnter') : undefined;
+      },
+      triggerElement,
+      get externalTree() {
+        return floatingTreeRoot();
+      },
+      // Chrome can drop the trigger's `mouseleave` during a fast pointer sweep,
+      // leaving a stale submenu open (see #5152) — cancel from `mouseout` too.
+      guardStaleOpen: true,
+    } as any,
+  );
 
-  const click = useClick(store as any, {
-    get enabled() {
-      return !disabled();
-    },
-    event: 'mousedown',
-    // Without toggling, TalkBack users cannot close the submenu to reach the next parent menu
-    // item. Keep toggling enabled so activating its trigger closes it.
-    toggle: true,
-    get ignoreMouse() {
-      return openOnHover();
-    },
-    stickIfOpen: () => untrack(openOnHover),
-  } as any);
+  const click = useClick(
+    store as any,
+    {
+      get enabled() {
+        return !disabled();
+      },
+      event: 'mousedown',
+      // Without toggling, TalkBack users cannot close the submenu to reach the next parent menu
+      // item. Keep toggling enabled so activating its trigger closes it.
+      toggle: true,
+      get ignoreMouse() {
+        return openOnHover();
+      },
+      stickIfOpen: () => untrack(openOnHover),
+    } as any,
+  );
 
   const rootTriggerProps = store.useState('triggerProps', true);
 
@@ -308,7 +315,9 @@ export function MenuSubmenuTrigger(props: MenuSubmenuTrigger.Props) {
   return (
     <Show when={filterItem.visible()}>
       <MenuSubmenuTriggerPlain
-        {...((filterItem.props ? mergeProps(filterItem.props as any, props) : props) as any)}
+        {...((filterItem.props
+          ? reactiveMergeProps(filterItem.props as any, props)
+          : props) as any)}
         ref={[props.ref, filterItem.ref] as any}
       />
     </Show>

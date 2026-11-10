@@ -94,56 +94,60 @@ export function MenuPositioner(componentProps: MenuPositioner.Props) {
     positioning: positioner,
     open,
     mounted,
-  } = usePopupPositioner(store as any, componentProps as any, {
-    keepMounted,
-    positioning: {
-      get anchor() {
-        return placement().anchor;
+  } = usePopupPositioner(
+    store as any,
+    componentProps as any,
+    {
+      keepMounted,
+      positioning: {
+        get anchor() {
+          return placement().anchor;
+        },
+        get collisionAvoidance() {
+          return placement().collisionAvoidance;
+        },
+        get positionMethod() {
+          return contextMenuContext ? 'fixed' : componentProps.positionMethod;
+        },
+        get side() {
+          return placement().side;
+        },
+        get sideOffset() {
+          return placement().sideOffset;
+        },
+        get align() {
+          return placement().align;
+        },
+        get alignOffset() {
+          return placement().alignOffset;
+        },
+        get arrowPadding() {
+          return placement().contextMenu ? 0 : componentProps.arrowPadding;
+        },
+        get nodeId() {
+          return floatingNodeId();
+        },
+        get shift() {
+          const { contextMenu, collisionAvoidance } = placement();
+          return contextMenu
+            ? {
+                crossAxis: !(
+                  'side' in collisionAvoidance && (collisionAvoidance as any).side === 'flip'
+                ),
+                rootBoundary: 'layoutViewport',
+              }
+            : undefined;
+        },
+        get externalTree() {
+          return floatingTreeRoot();
+        },
+        lazyFlip: virtualFocus ? 'placement' : false,
       },
-      get collisionAvoidance() {
-        return placement().collisionAvoidance;
+      get state() {
+        return { nested: parent().type === 'menu' };
       },
-      get positionMethod() {
-        return contextMenuContext ? 'fixed' : componentProps.positionMethod;
-      },
-      get side() {
-        return placement().side;
-      },
-      get sideOffset() {
-        return placement().sideOffset;
-      },
-      get align() {
-        return placement().align;
-      },
-      get alignOffset() {
-        return placement().alignOffset;
-      },
-      get arrowPadding() {
-        return placement().contextMenu ? 0 : componentProps.arrowPadding;
-      },
-      get nodeId() {
-        return floatingNodeId();
-      },
-      get shift() {
-        const { contextMenu, collisionAvoidance } = placement();
-        return contextMenu
-          ? {
-              crossAxis: !(
-                'side' in collisionAvoidance && (collisionAvoidance as any).side === 'flip'
-              ),
-              rootBoundary: 'layoutViewport',
-            }
-          : undefined;
-      },
-      get externalTree() {
-        return floatingTreeRoot();
-      },
-      lazyFlip: virtualFocus ? 'placement' : false,
-    },
-    get state() {
-      return { nested: parent().type === 'menu' };
-    },
-  } as any);
+    } as any,
+  );
 
   createEffect(
     () => [floatingTreeRoot(), floatingNodeId()] as const,

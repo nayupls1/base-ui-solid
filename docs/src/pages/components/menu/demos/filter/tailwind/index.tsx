@@ -55,9 +55,7 @@ export default function ExampleMenuFilter() {
                         <Menu.Popup class={popupClass}>
                           <Menu.List class={submenuListClass}>
                             {sharingOptions.map((option) => (
-                              <Menu.Item class={itemClass}>
-                                {option}
-                              </Menu.Item>
+                              <Menu.Item class={itemClass}>{option}</Menu.Item>
                             ))}
                           </Menu.List>
                         </Menu.Popup>
@@ -159,9 +157,7 @@ function FilterableSubmenu(props: FilterableSubmenuProps) {
               <Menu.Empty class={emptyClass}>{props.emptyText}</Menu.Empty>
               <Menu.List class={submenuListClass}>
                 {props.options.map((option) => (
-                  <Menu.Item class={itemClass}>
-                    {option}
-                  </Menu.Item>
+                  <Menu.Item class={itemClass}>{option}</Menu.Item>
                 ))}
               </Menu.List>
             </Menu.Popup>

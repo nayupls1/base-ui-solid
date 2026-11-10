@@ -17,7 +17,15 @@ import { ownedProps } from '../../internals/ownedProps';
  */
 export function MenuCheckboxItemIndicator(componentProps: MenuCheckboxItemIndicator.Props) {
   componentProps = ownedProps(componentProps);
-  const elementProps = omit(componentProps, 'render', 'class', 'style', 'keepMounted', 'children', 'ref');
+  const elementProps = omit(
+    componentProps,
+    'render',
+    'class',
+    'style',
+    'keepMounted',
+    'children',
+    'ref',
+  );
 
   const item = useMenuCheckboxItemContext();
   const [indicator, setIndicator] = createSyncSignal<HTMLSpanElement | null>(null);

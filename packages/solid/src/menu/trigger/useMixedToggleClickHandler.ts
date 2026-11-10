@@ -13,7 +13,11 @@ export function useMixedToggleClickHandler(params: UseMixedToggleClickHandlerPar
 
   const handlers = {
     onMouseDown: (event: MouseEvent) => {
-      const { enabled = true, mouseDownAction, open } = untrack(() => ({
+      const {
+        enabled = true,
+        mouseDownAction,
+        open,
+      } = untrack(() => ({
         enabled: params.enabled,
         mouseDownAction: params.mouseDownAction,
         open: params.open,

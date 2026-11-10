@@ -1,4 +1,12 @@
-import { createEffect, createMemo, createSignal, onCleanup, Show, untrack, useContext } from 'solid-js';
+import {
+  createEffect,
+  createMemo,
+  createSignal,
+  onCleanup,
+  Show,
+  untrack,
+  useContext,
+} from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import type { RefObject } from '@base-ui-solid/utils/types';
 import { useTimeout } from '@base-ui-solid/utils/useTimeout';

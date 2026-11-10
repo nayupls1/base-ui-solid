@@ -142,7 +142,8 @@ export function MenuPopupPlain(componentProps: MenuPopupPlainProps) {
   const setPopupElement = store.useStateSetter('popupElement');
 
   // Only a menu under a filter root bundles the handoff to a filterable parent.
-  const useParentHandoff = useContext(MenuFilterImplContext)?.useParentHandoff ?? useNoParentHandoff;
+  const useParentHandoff =
+    useContext(MenuFilterImplContext)?.useParentHandoff ?? useNoParentHandoff;
   const { parentVirtualFocusRef, handleFocus } = useParentHandoff(
     store as any,
     untrack(parent),
@@ -172,8 +173,7 @@ export function MenuPopupPlain(componentProps: MenuPopupPlainProps) {
   };
 
   // Internal defaults rather than consumer targets, so focus that already moved is respected.
-  const dynamicReturnFocus = () =>
-    submenuRootContext()?.getReturnElement ?? parentVirtualFocusRef;
+  const dynamicReturnFocus = () => submenuRootContext()?.getReturnElement ?? parentVirtualFocusRef;
 
   return (
     <FloatingFocusManager
@@ -274,7 +274,9 @@ function useNoParentHandoff() {
  * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
  */
 export function MenuPopup(props: MenuPopup.Props) {
-  const Popup = (useMenuFilterImpl()?.Popup ?? MenuPopupPlain) as (p: MenuPopup.Props) => JSX.Element;
+  const Popup = (useMenuFilterImpl()?.Popup ?? MenuPopupPlain) as (
+    p: MenuPopup.Props,
+  ) => JSX.Element;
   return <Popup {...props} />;
 }
 

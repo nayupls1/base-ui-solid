@@ -41,10 +41,11 @@ export function MenuGroupPlain(componentProps: MenuGroup.Props) {
  * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
  */
 export function MenuGroup(props: MenuGroup.Props) {
-  const Group = (useMenuFilterImpl()?.Group ?? MenuGroupPlain) as (p: MenuGroup.Props) => JSX.Element;
+  const Group = (useMenuFilterImpl()?.Group ?? MenuGroupPlain) as (
+    p: MenuGroup.Props,
+  ) => JSX.Element;
   return <Group {...props} />;
 }
-
 
 export interface MenuGroupProps extends BaseUIComponentProps<'div', MenuGroupState> {
   /**

@@ -95,3 +95,11 @@ See the checklist in `PORTING-STATUS.md`.
 - Payload render functions (`{({ payload }) => …}`) re-run when the payload changes; the previous
   subtree is disposed first (see `renderPayloadChildren` in utils/popups/popupRoot.tsx). Demos that
   passed JSX elements as payloads pass render functions instead (a JSX element is a single DOM node).
+- Custom props proxies marked with `$PROXY` must return `undefined` for other symbol keys: Solid's
+  `merge`/spread reads internal symbols (its merge record) off `$PROXY` objects, and forwarding
+  them to an underlying props object makes a spread silently resolve to that object instead.
+  `internals/reactiveMergeProps.ts` merges Base UI props reactively for forwarding to a child
+  component; calling `mergeProps(ours, componentProps)` at setup reads every prop untracked.
+- Hooks bind to the store passed at setup. A part whose store changes over its lifetime (the
+  navigation menu positioner follows the active trigger) uses
+  `utils/popups/floating-root/createForwardingStore.ts`.
