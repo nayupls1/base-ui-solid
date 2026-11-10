@@ -195,6 +195,20 @@
     gap: var(--space-8);
   }
 
+  .SideNavNote {
+    margin-top: 1rem;
+    font-size: var(--font-size-13);
+    line-height: 1.4;
+    color: var(--gray-t1);
+    text-wrap: pretty;
+
+    & a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+  }
+
   .SideNavVersion {
     /* inline-block keeps the version out of the link's hover underline */
     display: inline-block;

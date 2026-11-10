@@ -21,7 +21,7 @@ function MdxPage(props: { load: () => Promise<any> }) {
         onSettled(() => {
           const heading = document.querySelector(`#${MAIN_CONTENT_ID} h1`);
           if (heading?.textContent) {
-            setPageMeta({ title: `${heading.textContent} · Base UI Solid` });
+            setPageMeta({ title: `${heading.textContent} · Base UI Solid (unofficial)` });
           }
           if (window.location.hash) {
             document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView();
@@ -101,17 +101,25 @@ export function Layout(props: { children?: JSX.Element }) {
               <SideNav.Separator />
               <SideNav.Section>
                 <SideNav.List>
-                  <SideNav.Item href="https://github.com/mui/base-ui" icon={<GitHubIcon />} external>
+                  <SideNav.Item
+                    href="https://github.com/nayupls1/base-ui-solid"
+                    icon={<GitHubIcon />}
+                    external
+                  >
                     GitHub
                   </SideNav.Item>
                   <SideNav.Item
-                    href="https://www.npmjs.com/package/@base-ui/react"
+                    href="https://www.npmjs.com/package/@base-ui-solid/solid"
                     icon={<NpmIcon />}
                     external
                   >
-                    <span>upstream npm</span>
+                    npm
                   </SideNav.Item>
                 </SideNav.List>
+                <p class="SideNavNote">
+                  An unofficial community port. Not affiliated with or endorsed by MUI or the Base UI
+                  team. The official library is at <a href="https://base-ui.com">base-ui.com</a>.
+                </p>
               </SideNav.Section>
             </SideNav.Root>
             <main class="ContentLayoutMain" id={MAIN_CONTENT_ID}>
