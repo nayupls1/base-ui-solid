@@ -106,3 +106,7 @@ See the checklist in `PORTING-STATUS.md`.
 - Never write `ref={props.ref}`: Solid compiles a non-function `ref` expression as an assignment
   (`props.ref = el`), which throws on a props proxy. Forward with
   `ref={(el) => assignRefs(props.ref, el)}` or pass it through `useRenderElement`'s `ref` option.
+- `render` functions run once, unlike React where they run on every render. Branch on state
+  inside the returned JSX (`{state.pressed ? <A /> : <B />}`), not in the function body; a body
+  read never updates. `useRenderElement` warns in development when a render function reads
+  `state` untracked in its body.

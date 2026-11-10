@@ -6,21 +6,11 @@ export default function ExampleToggle() {
     <Toggle
       aria-label="Favorite"
       class="flex size-8 items-center justify-center border-none rounded-none bg-transparent text-neutral-950 dark:text-white select-none hover:not-data-disabled:bg-neutral-100 dark:hover:not-data-disabled:bg-neutral-800 active:not-data-disabled:bg-neutral-200 dark:active:not-data-disabled:bg-neutral-700 data-pressed:text-neutral-950 dark:data-pressed:text-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-neutral-950 dark:focus-visible:outline-white"
-      render={(props, state) => {
-        if (state.pressed) {
-          return (
-            <button type="button" {...props}>
-              <HeartFilledIcon />
-            </button>
-          );
-        }
-
-        return (
-          <button type="button" {...props}>
-            <HeartOutlineIcon />
-          </button>
-        );
-      }}
+      render={(props, state) => (
+        <button type="button" {...props}>
+          {state.pressed ? <HeartFilledIcon /> : <HeartOutlineIcon />}
+        </button>
+      )}
     />
   );
 }

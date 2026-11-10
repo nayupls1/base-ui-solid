@@ -1,12 +1,18 @@
-import { createMemo, untrack, Show, onCleanup, $PROXY, type Accessor } from 'solid-js';
+import { createMemo, untrack, Show, onCleanup, getObserver, $PROXY, type Accessor } from 'solid-js';
 import { spread, insert, type JSX } from '@solidjs/web';
 import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { warn } from '@base-ui-solid/utils/warn';
 import type { HTMLProps } from './types';
 import type { StateAttributesMapping } from './getStateAttributesProps';
 import { getStateAttributesProps } from './getStateAttributesProps';
 import { resolveClassName } from '../utils/resolveClassName';
 import { resolveStyle } from '../utils/resolveStyle';
-import { mergeClassNames, mergePropsSkipping, mergeStyles, toStyleObject } from '../merge-props/mergeProps';
+import {
+  mergeClassNames,
+  mergePropsSkipping,
+  mergeStyles,
+  toStyleObject,
+} from '../merge-props/mergeProps';
 
 type IntrinsicTagName = keyof JSX.IntrinsicElements;
 
@@ -19,12 +25,7 @@ export type RefInput<T> =
   | RefInput<T>[];
 
 export type PropsInput =
-  | HTMLProps
-  | Record<string, any>
-  | ((props: HTMLProps) => HTMLProps)
-  | undefined
-  | null
-  | false;
+  HTMLProps | Record<string, any> | ((props: HTMLProps) => HTMLProps) | undefined | null | false;
 
 const SKIP_KEYS = { children: true, ref: true } as const;
 
@@ -107,8 +108,36 @@ export function useRenderElement<State extends Record<string, any>>(
 
     if (typeof renderProp === 'function') {
       const props = createReactiveProps(resolvedProps, getChildren, ref);
-      const state = createReactiveState(getState);
-      return untrack(() => (renderProp as Function)(props, state));
+      // The render function runs once (unlike React, which calls it on every render), so state
+      // read synchronously in its body never updates. Reads inside its JSX stay reactive.
+      let renderCallActive = false;
+      const keysReadInBody = new Set<PropertyKey>();
+      const state = createReactiveState(
+        getState,
+        process.env.NODE_ENV !== 'production'
+          ? (key) => {
+              // Reads inside JSX expressions run in a computation (an observer) even when it
+              // evaluates during the call; only untracked reads in the body are a problem.
+              if (renderCallActive && getObserver() === null) {
+                keysReadInBody.add(key);
+              }
+            }
+          : undefined,
+      );
+      renderCallActive = true;
+      try {
+        return untrack(() => (renderProp as Function)(props, state));
+      } finally {
+        renderCallActive = false;
+        if (process.env.NODE_ENV !== 'production' && keysReadInBody.size > 0) {
+          const keys = [...keysReadInBody].map((key) => `state.${String(key)}`).join(', ');
+          warn(
+            `A \`render\` function read ${keys} in its body, outside of JSX.`,
+            'Render functions run once in Solid, so that read will not update.',
+            'Read state inside the returned JSX instead, e.g. `{state.pressed ? <A /> : <B />}`.',
+          );
+        }
+      }
     }
 
     if (isDOMElement(renderProp)) {
@@ -221,7 +250,13 @@ function createReactiveProps(
       return read(key);
     },
     has(_target, key) {
-      return key === $PROXY || key === 'children' || key === 'ref' || key in resolvedProps() || (!!defaults && key in defaults);
+      return (
+        key === $PROXY ||
+        key === 'children' ||
+        key === 'ref' ||
+        key in resolvedProps() ||
+        (!!defaults && key in defaults)
+      );
     },
     ownKeys() {
       return keys();
@@ -237,12 +272,16 @@ function createReactiveProps(
   return proxy;
 }
 
-function createReactiveState<State extends Record<string, any>>(getState: Accessor<State>): State {
+function createReactiveState<State extends Record<string, any>>(
+  getState: Accessor<State>,
+  onRead?: (key: PropertyKey) => void,
+): State {
   const proxy: State = new Proxy({} as State, {
     get(_target, key) {
       if (key === $PROXY) {
         return proxy;
       }
+      onRead?.(key);
       return (getState() as any)[key];
     },
     has(_target, key) {
@@ -396,7 +435,11 @@ export interface UseRenderElementComponentProps<State> {
    * The style to apply to the rendered element.
    * Can be a style object or a function that accepts the state and returns a style object.
    */
-  style?: JSX.CSSProperties | string | ((state: State) => JSX.CSSProperties | string | undefined) | undefined;
+  style?:
+    | JSX.CSSProperties
+    | string
+    | ((state: State) => JSX.CSSProperties | string | undefined)
+    | undefined;
   ref?: any;
   children?: JSX.Element;
 }

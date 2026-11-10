@@ -1,6 +1,7 @@
 import { createSignal, flush } from 'solid-js';
 import { render } from '@solidjs/web';
 import { describe, it, expect, vi, afterEach } from 'vitest';
+import { reset as resetLogOnce } from '@base-ui-solid/utils/warn';
 import { Toggle } from '../src/toggle';
 import { ToggleGroup } from '../src/toggle-group';
 import { Toolbar } from '../src/toolbar';
@@ -33,6 +34,53 @@ describe('misc components', () => {
     expect(btn).toHaveAttribute('data-pressed');
   });
 
+  it('Toggle render function updates content from state in JSX', () => {
+    resetLogOnce();
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { container } = mount(() => (
+      <Toggle
+        aria-label="fav"
+        render={(props, state) => (
+          <button type="button" {...props}>
+            {state.pressed ? <b>on</b> : <i>off</i>}
+          </button>
+        )}
+      />
+    ));
+    const btn = container.querySelector('button')!;
+    expect(btn.textContent).toBe('off');
+    btn.click();
+    flush();
+    expect(btn).toHaveAttribute('aria-pressed', 'true');
+    expect(btn.textContent).toBe('on');
+    // The same element is kept, so focus isn't lost.
+    expect(container.querySelector('button')).toBe(btn);
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('warns when a render function reads state outside JSX', () => {
+    resetLogOnce();
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    mount(() => (
+      <Toggle
+        aria-label="fav2"
+        render={(props, state) => {
+          const label = state.pressed ? 'on' : 'off';
+          return (
+            <button type="button" {...props}>
+              {label}
+            </button>
+          );
+        }}
+      />
+    ));
+    expect(
+      warnSpy.mock.calls.some((args) => String(args.join(' ')).includes('state.pressed')),
+    ).toBe(true);
+    warnSpy.mockRestore();
+  });
+
   it('ToggleGroup single', async () => {
     const onValueChange = vi.fn();
     const { container } = mount(() => (
@@ -62,8 +110,14 @@ describe('misc components', () => {
     ));
     await tick();
     flush();
-    expect(container.querySelector('[role=toolbar]')).toHaveAttribute('aria-orientation', 'horizontal');
-    expect(container.querySelector('[role=separator]')).toHaveAttribute('aria-orientation', 'vertical');
+    expect(container.querySelector('[role=toolbar]')).toHaveAttribute(
+      'aria-orientation',
+      'horizontal',
+    );
+    expect(container.querySelector('[role=separator]')).toHaveAttribute(
+      'aria-orientation',
+      'vertical',
+    );
     const buttons = container.querySelectorAll('button');
     expect(buttons[0]).toHaveAttribute('tabindex', '0');
     expect(buttons[1]).toHaveAttribute('tabindex', '-1');
