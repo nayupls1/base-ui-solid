@@ -41,7 +41,7 @@ variants), API reference tables and quick nav.
 - **Solid dev warnings:** Solid's dev build reports `EFFECT_WRITES_OWN_SOURCE` /
   `EFFECT_RELAY_TEAR` advisories for effects that sync state the way upstream's layout effects
   do. They're performance hints, not errors, and don't appear in production builds.
-- **API differences forced by Solid** (all documented in `PORTING.md`):
+- **API differences forced by Solid** (`PORTING.md` covers the general conventions):
   - Reactive values in contexts, hook results and render-prop state are getters/accessors
     (e.g. `Toast.useToastManager().toasts` is a getter, `Combobox.useFilteredItems()` returns an
     accessor).
