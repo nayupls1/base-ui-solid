@@ -353,7 +353,6 @@ export function ScrollAreaRoot(componentProps: ScrollAreaRoot.Props) {
   );
 }
 
-type ScrollAreaRootContext = import('./ScrollAreaRootContext').ScrollAreaRootContext;
 
 function normalizeOverflowEdgeThreshold(
   threshold: ScrollAreaRoot.Props['overflowEdgeThreshold'] | undefined,

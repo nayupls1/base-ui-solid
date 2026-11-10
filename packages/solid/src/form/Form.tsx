@@ -176,7 +176,6 @@ export function Form<FormValues extends Record<string, any> = Record<string, any
   );
 }
 
-type FormContext = import('../internals/form-context/FormContext').FormContext;
 
 export type FormSubmitEventReason = typeof REASONS.none;
 export type FormSubmitEventDetails = BaseUIGenericEventDetails<Form.SubmitEventReason>;

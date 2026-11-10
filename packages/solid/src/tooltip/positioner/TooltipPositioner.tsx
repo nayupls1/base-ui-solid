@@ -63,7 +63,6 @@ export function TooltipPositioner(componentProps: TooltipPositioner.Props) {
   );
 }
 
-type TooltipPositionerContext = import('./TooltipPositionerContext').TooltipPositionerContext;
 
 export interface TooltipPositionerState {
   /**

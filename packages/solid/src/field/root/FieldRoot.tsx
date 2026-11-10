@@ -227,7 +227,6 @@ function FieldRootInner(componentProps: FieldRoot.Props) {
   );
 }
 
-type FieldRootContext = import('../../internals/field-root-context/FieldRootContext').FieldRootContext;
 
 /**
  * Groups all parts of the field.

@@ -67,8 +67,6 @@ export function PreviewCardPositioner(componentProps: PreviewCardPositioner.Prop
   );
 }
 
-type PreviewCardPositionerContext =
-  import('./PreviewCardPositionerContext').PreviewCardPositionerContext;
 
 export interface PreviewCardPositionerState {
   /**

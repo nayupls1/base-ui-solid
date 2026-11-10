@@ -94,7 +94,6 @@ export function LabelableProvider(props: LabelableProvider.Props) {
   return <LabelableContext value={contextValue}>{props.children}</LabelableContext>;
 }
 
-type LabelableContext = import('./LabelableContext').LabelableContext;
 
 export interface LabelableProviderState {}
 

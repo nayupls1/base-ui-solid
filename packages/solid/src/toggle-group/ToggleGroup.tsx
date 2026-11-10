@@ -131,7 +131,6 @@ export function ToggleGroup<Value extends string>(componentProps: ToggleGroup.Pr
   );
 }
 
-type ToggleGroupContext<Value> = import('./ToggleGroupContext').ToggleGroupContext<Value>;
 
 export interface ToggleGroupState {
   /**

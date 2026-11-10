@@ -58,7 +58,6 @@ export function FieldsetRoot(componentProps: FieldsetRoot.Props) {
   );
 }
 
-type FieldsetRootContext = import('./FieldsetRootContext').FieldsetRootContext;
 
 export interface FieldsetRootState {
   /**

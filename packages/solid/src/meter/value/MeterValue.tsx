@@ -1,3 +1,4 @@
+import type { MeterRootState } from '../root/MeterRoot';
 import type { JSX } from '@solidjs/web';
 import { omit } from 'solid-js';
 import type { BaseUIComponentProps } from '../../internals/types';

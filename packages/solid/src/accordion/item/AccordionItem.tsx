@@ -120,7 +120,6 @@ export function AccordionItem(componentProps: AccordionItem.Props) {
   );
 }
 
-type AccordionItemContext = import('./AccordionItemContext').AccordionItemContext;
 
 export interface AccordionItemState extends AccordionRootState {
   /**

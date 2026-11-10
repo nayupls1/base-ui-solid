@@ -270,7 +270,6 @@ export function RadioGroup<Value>(componentProps: RadioGroup.Props<Value>) {
   );
 }
 
-type RadioGroupContext<Value> = import('./RadioGroupContext').RadioGroupContext<Value>;
 
 export interface RadioGroupState extends FieldRootState {
   /**

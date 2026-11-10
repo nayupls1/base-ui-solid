@@ -591,15 +591,15 @@ export interface SliderThumbProps extends Omit<
   /**
    * A blur handler forwarded to the `input`.
    */
-  onBlur?: FocusEventHandler<HTMLInputElement> | undefined;
+  onBlur?: JSX.EventHandlerUnion<HTMLInputElement, FocusEvent> | undefined;
   /**
    * A focus handler forwarded to the `input`.
    */
-  onFocus?: FocusEventHandler<HTMLInputElement> | undefined;
+  onFocus?: JSX.EventHandlerUnion<HTMLInputElement, FocusEvent> | undefined;
   /**
    * A keydown handler forwarded to the `input`.
    */
-  onKeyDown?: KeyboardEventHandler<HTMLInputElement> | undefined;
+  onKeyDown?: JSX.EventHandlerUnion<HTMLInputElement, KeyboardEvent> | undefined;
   /**
    * Optional tab index attribute forwarded to the `input`.
    */

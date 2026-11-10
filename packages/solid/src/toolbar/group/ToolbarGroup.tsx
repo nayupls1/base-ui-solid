@@ -43,7 +43,6 @@ export function ToolbarGroup(componentProps: ToolbarGroup.Props) {
   );
 }
 
-type ToolbarGroupContext = import('./ToolbarGroupContext').ToolbarGroupContext;
 
 export interface ToolbarGroupState extends ToolbarRootState {}
 

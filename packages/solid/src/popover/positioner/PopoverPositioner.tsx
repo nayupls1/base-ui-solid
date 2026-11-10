@@ -83,7 +83,6 @@ export function PopoverPositioner(componentProps: PopoverPositioner.Props) {
   );
 }
 
-type PopoverPositionerContext = import('./PopoverPositionerContext').PopoverPositionerContext;
 
 export interface PopoverPositionerState {
   /**

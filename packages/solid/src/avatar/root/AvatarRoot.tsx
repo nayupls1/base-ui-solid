@@ -45,7 +45,6 @@ export function AvatarRoot(componentProps: AvatarRoot.Props) {
   );
 }
 
-type AvatarRootContext = import('./AvatarRootContext').AvatarRootContext;
 
 export type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';
 

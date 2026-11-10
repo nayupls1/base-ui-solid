@@ -135,7 +135,6 @@ export function ProgressRoot(componentProps: ProgressRoot.Props) {
   );
 }
 
-type ProgressRootContext = import('./ProgressRootContext').ProgressRootContext;
 
 export type ProgressStatus = 'indeterminate' | 'progressing' | 'complete';
 

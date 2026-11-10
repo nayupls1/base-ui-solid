@@ -87,7 +87,6 @@ export function ToolbarRoot(componentProps: ToolbarRoot.Props) {
   );
 }
 
-type ToolbarRootContext = import('./ToolbarRootContext').ToolbarRootContext;
 
 export interface ToolbarRootItemMetadata {
   disabled: boolean;

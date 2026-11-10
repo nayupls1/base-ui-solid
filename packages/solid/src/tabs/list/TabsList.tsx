@@ -134,7 +134,6 @@ export function TabsList(componentProps: TabsList.Props) {
   );
 }
 
-type TabsListContext = import('./TabsListContext').TabsListContext;
 
 export interface TabsListState extends TabsRootState {}
 

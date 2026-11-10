@@ -182,7 +182,6 @@ export function CheckboxGroup(componentProps: CheckboxGroup.Props) {
   );
 }
 
-type CheckboxGroupContext = import('./CheckboxGroupContext').CheckboxGroupContext;
 
 export interface CheckboxGroupState extends FieldRootState {
   /**

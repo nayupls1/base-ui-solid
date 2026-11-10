@@ -48,7 +48,15 @@ export type BaseUIComponentProps<
   ElementType extends keyof JSX.IntrinsicElements,
   State,
   RenderFunctionProps = HTMLProps,
-> = Omit<IntrinsicProps<ElementType>, 'class' | 'style' | 'color'> & {
+> = Omit<IntrinsicProps<ElementType>, 'class' | 'style' | 'color' | 'id' | 'disabled'> & {
+  /**
+   * The id of the element.
+   */
+  id?: string | undefined;
+  /**
+   * Whether the component should ignore user interaction.
+   */
+  disabled?: boolean | undefined;
   /**
    * CSS class applied to the element, or a function that
    * returns a class based on the component's state.

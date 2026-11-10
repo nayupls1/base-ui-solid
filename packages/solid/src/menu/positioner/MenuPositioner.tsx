@@ -349,7 +349,6 @@ export function MenuPositioner(componentProps: MenuPositioner.Props) {
   );
 }
 
-type MenuPositionerContext = import('./MenuPositionerContext').MenuPositionerContext;
 
 export interface MenuPositionerState {
   /**

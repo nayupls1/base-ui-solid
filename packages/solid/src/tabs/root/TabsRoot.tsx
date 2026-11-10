@@ -304,7 +304,6 @@ export function TabsRoot(componentProps: TabsRoot.Props) {
   );
 }
 
-type TabsRootContext = import('./TabsRootContext').TabsRootContext;
 
 function findTabElement(
   tabMap: Map<Node, CompositeMetadata<TabsTab.Metadata>>,

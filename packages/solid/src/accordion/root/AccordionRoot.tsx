@@ -118,7 +118,6 @@ export function AccordionRoot<Value = any>(componentProps: AccordionRoot.Props<V
   );
 }
 
-type AccordionRootContext<Value> = import('./AccordionRootContext').AccordionRootContext<Value>;
 
 export type AccordionValue<Value = any> = Value[];
 

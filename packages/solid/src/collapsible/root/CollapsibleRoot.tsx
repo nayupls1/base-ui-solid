@@ -73,7 +73,6 @@ export function CollapsibleRoot(componentProps: CollapsibleRoot.Props) {
   );
 }
 
-type CollapsibleRootContext = import('./CollapsibleRootContext').CollapsibleRootContext;
 
 export interface CollapsibleRootState {
   /**

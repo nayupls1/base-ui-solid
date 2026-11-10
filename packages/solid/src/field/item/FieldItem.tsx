@@ -44,7 +44,6 @@ export function FieldItem(componentProps: FieldItem.Props) {
   );
 }
 
-type FieldItemContext = import('./FieldItemContext').FieldItemContext;
 
 export interface FieldItemState extends FieldRootState {}
 

@@ -118,7 +118,6 @@ export function MeterRoot(componentProps: MeterRoot.Props) {
   );
 }
 
-type MeterRootContext = import('./MeterRootContext').MeterRootContext;
 
 export interface MeterRootState {}
 

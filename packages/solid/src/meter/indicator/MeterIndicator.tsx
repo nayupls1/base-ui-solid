@@ -1,3 +1,4 @@
+import type { MeterRootState } from '../root/MeterRoot';
 import { omit } from 'solid-js';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps } from '../../internals/types';
