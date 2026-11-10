@@ -1,8 +1,8 @@
 import type { JSX } from '@solidjs/web';
-import { Toolbar } from '@base-ui-solid/solid/toolbar';
-import { ToggleGroup } from '@base-ui-solid/solid/toggle-group';
-import { Toggle } from '@base-ui-solid/solid/toggle';
-import { Select } from '@base-ui-solid/solid/select';
+import { Toolbar } from 'base-ui-solidjs/toolbar';
+import { ToggleGroup } from 'base-ui-solidjs/toggle-group';
+import { Toggle } from 'base-ui-solidjs/toggle';
+import { Select } from 'base-ui-solidjs/select';
 import styles from './index.module.css';
 
 export default function ExampleToolbar() {

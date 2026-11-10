@@ -1,4 +1,4 @@
-import { Avatar } from '@base-ui-solid/solid/avatar';
+import { Avatar } from 'base-ui-solidjs/avatar';
 import styles from './index.module.css';
 
 export default function ExampleAvatar() {

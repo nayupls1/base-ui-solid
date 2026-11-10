@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { omit, Show } from 'solid-js';
 import { FloatingPortalLite } from '../../utils/popups/portal/FloatingPortalLite';
 import type { BaseUIComponentProps } from '../../internals/types';

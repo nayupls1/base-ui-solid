@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, Show, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { useDismiss } from '../../utils/popups/interactions/useDismiss';

@@ -1,5 +1,5 @@
 {
-  "name": "@base-ui-solid/utils",
+  "name": "base-ui-solidjs-utils",
   "version": "0.0.0",
   "type": "module",
   "description": "Shared utilities for Base UI Solid.",

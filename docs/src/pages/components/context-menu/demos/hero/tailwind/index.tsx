@@ -1,4 +1,4 @@
-import { ContextMenu } from '@base-ui-solid/solid/context-menu';
+import { ContextMenu } from 'base-ui-solidjs/context-menu';
 
 export default function ExampleMenu() {
   return (

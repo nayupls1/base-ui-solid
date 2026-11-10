@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { NOOP } from '../noop';
 import { DEFAULT_FIELD_ROOT_STATE, DEFAULT_VALIDITY_STATE } from '../field-constants/constants';
 import type { FieldValidityData, FieldRootState } from '../../field/root/FieldRoot';

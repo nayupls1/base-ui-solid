@@ -1,5 +1,5 @@
 import { untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
 import type { BaseUIEvent } from '../../internals/types';
 
 /**

@@ -1,5 +1,5 @@
 import { createMemo, omit } from 'solid-js';
-import { contains } from '@base-ui-solid/utils/shadowDom';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';

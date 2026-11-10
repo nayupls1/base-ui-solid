@@ -1,5 +1,5 @@
 import { createEffect, untrack } from 'solid-js';
-import { useId } from '@base-ui-solid/utils/useId';
+import { useId } from 'base-ui-solidjs-utils/useId';
 import { PopupTriggerMap } from '../popupTriggerMap';
 import type { BaseUIChangeEventDetails } from '../../../internals/createBaseUIEventDetails';
 import { useFloatingParentNodeId } from '../tree/FloatingTree';

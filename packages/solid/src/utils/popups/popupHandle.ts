@@ -1,4 +1,4 @@
-import { AnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
+import { AnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';

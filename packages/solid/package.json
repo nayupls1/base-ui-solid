@@ -1,5 +1,5 @@
 {
-  "name": "@base-ui-solid/solid",
+  "name": "base-ui-solidjs",
   "version": "0.0.0",
   "type": "module",
   "description": "A 1:1 SolidJS 2.0 port of Base UI: unstyled, accessible UI components.",
@@ -30,7 +30,7 @@
     "./*": "./src/*/index.ts"
   },
   "dependencies": {
-    "@base-ui-solid/utils": "workspace:*",
+    "base-ui-solidjs-utils": "workspace:*",
     "@floating-ui/dom": "^1.7.4",
     "@floating-ui/utils": "^0.2.10"
   },

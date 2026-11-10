@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
 import { useMenubarContext } from '../../menubar/MenubarContext';
 import { isVirtualPointerEvent } from '../../utils/popups/event';
 import { FilterDropdownRoot } from '../../filter-dropdown/root/FilterDropdownRoot';

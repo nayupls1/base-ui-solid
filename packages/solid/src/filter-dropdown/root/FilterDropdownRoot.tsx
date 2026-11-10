@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, createSignal, untrack, useContext } from 'solid-js';
 import { getFilter } from '../../internals/filter';
 import { useBaseUiId } from '../../internals/useBaseUiId';

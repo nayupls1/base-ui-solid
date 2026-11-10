@@ -1,6 +1,6 @@
 import { createEffect, omit } from 'solid-js';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import type { TabsRootState } from '../root/TabsRoot';
 import { CompositeRoot } from '../../internals/composite/root/CompositeRoot';

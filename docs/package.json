@@ -8,8 +8,8 @@
     "preview": "vite preview --port 3010"
   },
   "dependencies": {
-    "@base-ui-solid/solid": "workspace:*",
-    "@base-ui-solid/utils": "workspace:*",
+    "base-ui-solidjs": "workspace:*",
+    "base-ui-solidjs-utils": "workspace:*",
     "@solidjs/router": "2.0.0-next.44",
     "@solidjs/web": "2.0.0-rc.21",
     "@tanstack/virtual-core": "^3.19.11",

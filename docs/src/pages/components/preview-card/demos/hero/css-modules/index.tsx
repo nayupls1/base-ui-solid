@@ -1,4 +1,4 @@
-import { PreviewCard } from '@base-ui-solid/solid/preview-card';
+import { PreviewCard } from 'base-ui-solidjs/preview-card';
 import styles from '../../index.module.css';
 
 export default function ExamplePreviewCard() {

@@ -1,7 +1,7 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useButton } from '../../internals/use-button';

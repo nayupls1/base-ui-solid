@@ -1,8 +1,8 @@
 import { createEffect, createMemo, createRoot, onCleanup, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { ReactStore } from '@base-ui-solid/utils/store';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { useId } from '@base-ui-solid/utils/useId';
+import type { ReactStore } from 'base-ui-solidjs-utils/store';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { useId } from 'base-ui-solidjs-utils/useId';
 import { useFloatingParentNodeId } from './tree/FloatingTree';
 import { useUnmountAfterClose } from '../../internals/useUnmountAfterClose';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';

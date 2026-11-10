@@ -1,6 +1,6 @@
 import { createMemo, omit } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { formatNumber } from '@base-ui-solid/utils/formatNumber';
+import { formatNumber } from 'base-ui-solidjs-utils/formatNumber';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFormatLocale } from '../../utils/useFormatLocale';

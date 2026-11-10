@@ -1,6 +1,6 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';
 import { mergeProps } from '../../merge-props';
 import { DEFAULT_VALIDITY_STATE } from '../../internals/field-constants/constants';

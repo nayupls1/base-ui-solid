@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal } from 'solid-js';
-import { PreviewCard } from '@base-ui-solid/solid/preview-card';
+import { PreviewCard } from 'base-ui-solidjs/preview-card';
 
 const demoPreviewCard = PreviewCard.createHandle<() => JSX.Element>();
 

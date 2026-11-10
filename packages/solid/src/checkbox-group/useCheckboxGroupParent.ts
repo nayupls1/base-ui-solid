@@ -1,7 +1,7 @@
 import { untrack } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { BaseUIChangeEventDetails } from '../internals/createBaseUIEventDetails';
 import type { BaseUIEventReasons } from '../internals/reasons';
 

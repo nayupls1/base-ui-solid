@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { warn } from '@base-ui-solid/utils/warn';
-import { formatNumber } from '@base-ui-solid/utils/formatNumber';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { formatNumber } from 'base-ui-solidjs-utils/formatNumber';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';

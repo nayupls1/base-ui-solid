@@ -1,6 +1,6 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { createGenericEventDetails } from '../internals/createBaseUIEventDetails';
 import type { BaseUIGenericEventDetails } from '../internals/createBaseUIEventDetails';
 import { REASONS } from '../internals/reasons';

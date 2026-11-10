@@ -1,8 +1,8 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import { areArraysEqual } from '@base-ui-solid/utils/areArraysEqual';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import { areArraysEqual } from 'base-ui-solidjs-utils/areArraysEqual';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { useBaseUiId } from '../internals/useBaseUiId';
 import { useRenderElement } from '../internals/useRenderElement';
 import { CheckboxGroupContext } from './CheckboxGroupContext';

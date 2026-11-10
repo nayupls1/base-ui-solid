@@ -1,7 +1,7 @@
 import { createSignal, flush } from 'solid-js';
 import { render } from '@solidjs/web';
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { reset as resetLogOnce } from '@base-ui-solid/utils/warn';
+import { reset as resetLogOnce } from 'base-ui-solidjs-utils/warn';
 import { Toggle } from '../src/toggle';
 import { ToggleGroup } from '../src/toggle-group';
 import { Toolbar } from '../src/toolbar';

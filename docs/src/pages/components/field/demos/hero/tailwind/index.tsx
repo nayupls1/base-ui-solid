@@ -1,4 +1,4 @@
-import { Field } from '@base-ui-solid/solid/field';
+import { Field } from 'base-ui-solidjs/field';
 
 export default function ExampleField() {
   return (

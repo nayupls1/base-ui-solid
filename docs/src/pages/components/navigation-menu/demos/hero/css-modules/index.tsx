@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { NavigationMenu } from '@base-ui-solid/solid/navigation-menu';
+import { NavigationMenu } from 'base-ui-solidjs/navigation-menu';
 import styles from './index.module.css';
 
 export default function ExampleNavigationMenu() {

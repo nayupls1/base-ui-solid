@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 
 // Calculates the bounds the virtual cursor wraps within, as absolute edge coordinates.
 export function getViewportRect(teleportDistance: number | undefined, scrubAreaEl: HTMLElement) {

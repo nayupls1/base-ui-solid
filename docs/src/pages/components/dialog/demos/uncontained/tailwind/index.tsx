@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Dialog } from '@base-ui-solid/solid/dialog';
+import { Dialog } from 'base-ui-solidjs/dialog';
 
 export default function ExampleUncontainedDialog() {
   return (

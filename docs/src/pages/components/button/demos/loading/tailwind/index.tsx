@@ -1,5 +1,5 @@
 import { createSignal, createUniqueId } from 'solid-js';
-import { Button } from '@base-ui-solid/solid/button';
+import { Button } from 'base-ui-solidjs/button';
 
 export default function ExampleButton() {
   const [loading, setLoading] = createSignal(false);

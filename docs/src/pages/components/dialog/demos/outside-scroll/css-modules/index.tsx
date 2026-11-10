@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Dialog } from '@base-ui-solid/solid/dialog';
+import { Dialog } from 'base-ui-solidjs/dialog';
 import styles from './index.module.css';
 
 export default function OutsideScrollDialog() {

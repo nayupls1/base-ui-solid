@@ -1,7 +1,7 @@
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { warn } from '@base-ui-solid/utils/warn';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
 import type { BaseUIComponentProps, Orientation } from '../../internals/types';
 import { CompositeList } from '../../internals/composite/list/CompositeList';
 import { AccordionRootContext } from './AccordionRootContext';

@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
-import { NavigationMenu } from '@base-ui-solid/solid/navigation-menu';
-import { useMediaQuery } from '@base-ui-solid/solid/unstable-use-media-query';
+import { NavigationMenu } from 'base-ui-solidjs/navigation-menu';
+import { useMediaQuery } from 'base-ui-solidjs/unstable-use-media-query';
 import { audienceMenus, guideLinks, guidesPanel } from '../data';
 
 export default function ExampleNavigationMenu() {

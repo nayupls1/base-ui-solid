@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { For, Show } from 'solid-js';
-import { Autocomplete } from '@base-ui-solid/solid/autocomplete';
+import { Autocomplete } from 'base-ui-solidjs/autocomplete';
 import { createVirtualizer, type SolidVirtualizer } from 'docs/src/utils/createVirtualizer';
 import styles from './index.module.css';
 

@@ -1,4 +1,4 @@
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menu } from 'base-ui-solidjs/menu';
 
 type MenuContent = {
   heading: string;

@@ -1,6 +1,6 @@
 import { omit, Show } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { Collapsible } from '@base-ui-solid/solid/collapsible';
+import { Collapsible } from 'base-ui-solidjs/collapsible';
 import * as ScrollArea from '../ScrollArea';
 import { selectAllOnModA } from '../CodeBlock';
 

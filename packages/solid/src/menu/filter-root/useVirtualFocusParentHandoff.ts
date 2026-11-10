@@ -1,6 +1,6 @@
 import { createEffect, untrack, type Accessor } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import type { MenuParent, MenuRoot } from '../root/MenuRoot';
 import type { MenuStore } from '../store/MenuStore';
 import { REASONS } from '../../internals/reasons';

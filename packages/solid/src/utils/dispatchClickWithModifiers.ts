@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 
 interface ModifierState {
   shiftKey: boolean;

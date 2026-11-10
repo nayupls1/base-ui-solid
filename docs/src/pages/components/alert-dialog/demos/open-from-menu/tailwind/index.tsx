@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal } from 'solid-js';
-import { AlertDialog } from '@base-ui-solid/solid/alert-dialog';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { AlertDialog } from 'base-ui-solidjs/alert-dialog';
+import { Menu } from 'base-ui-solidjs/menu';
 
 export default function ExampleAlertDialog() {
   const [dialogOpen, setDialogOpen] = createSignal(false);

@@ -1,7 +1,7 @@
 import { createEffect, onCleanup, untrack, type Accessor } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { contains } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
 import { isElement } from '@floating-ui/utils/dom';
 import { REASONS } from '../../../internals/reasons';
 import type { FloatingUIOpenChangeDetails, HTMLProps } from '../../../internals/types';

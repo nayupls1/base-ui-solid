@@ -1,9 +1,9 @@
 import { createEffect, createMemo, createSignal, omit, onCleanup, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { error } from '@base-ui-solid/utils/error';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { error } from 'base-ui-solidjs-utils/error';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { FloatingFocusManager } from '../../utils/popups/focus/FloatingFocusManager';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';

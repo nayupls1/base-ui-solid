@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal } from 'solid-js';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menu } from 'base-ui-solidjs/menu';
 
 export default function ExampleMenu() {
   const [value, setValue] = createSignal('date');

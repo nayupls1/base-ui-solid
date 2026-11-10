@@ -1,7 +1,7 @@
 import { createEffect, type Accessor } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { useScrollLock } from '@base-ui-solid/utils/useScrollLock';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { useScrollLock } from 'base-ui-solidjs-utils/useScrollLock';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 
 const VIEWPORT_WIDTH_TOLERANCE_PX = 20;
 

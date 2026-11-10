@@ -1,5 +1,5 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { contains } from '@base-ui-solid/utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
 import type { FloatingTreeType } from '../../utils/popups/types';
 import { getNodeChildren } from '../../utils/popups/tree/nodes';
 

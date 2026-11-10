@@ -1,10 +1,10 @@
 import { createEffect } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { platform } from '@base-ui-solid/utils/platform';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { getWindow, isElement, isHTMLElement } from '@floating-ui/utils/dom';
 import type { ElementProps, PopupInteractionStore } from '../types';
 import { createAttribute } from '../createAttribute';

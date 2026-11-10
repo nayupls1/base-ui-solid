@@ -1,5 +1,5 @@
 import { createEffect, createMemo, omit } from 'solid-js';
-import { warn } from '@base-ui-solid/utils/warn';
+import { warn } from 'base-ui-solidjs-utils/warn';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { resolveStyle } from '../../utils/resolveStyle';
 import { useRenderElement } from '../../internals/useRenderElement';

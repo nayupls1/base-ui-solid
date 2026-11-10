@@ -1,9 +1,9 @@
 import { createEffect, type Accessor } from 'solid-js';
-import { isElementDisabled } from '@base-ui-solid/utils/isElementDisabled';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import { getTarget } from '@base-ui-solid/utils/shadowDom';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { isElementDisabled } from 'base-ui-solidjs-utils/isElementDisabled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import { getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { TextDirection } from '../../direction-context/DirectionContext';
 import {
   COMPOSITE_KEYS,

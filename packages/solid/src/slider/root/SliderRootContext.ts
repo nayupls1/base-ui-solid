@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { Orientation } from '../../internals/types';
 import type { CompositeMetadata } from '../../internals/composite/list/CompositeList';
 import type { UseFieldValidationReturnValue } from '../../field/root/useFieldValidation';

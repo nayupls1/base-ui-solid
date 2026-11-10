@@ -1,7 +1,7 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { contains } from '@base-ui-solid/utils/shadowDom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import { ScrollAreaRootContext } from './ScrollAreaRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';

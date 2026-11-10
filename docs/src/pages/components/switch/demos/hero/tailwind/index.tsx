@@ -1,4 +1,4 @@
-import { Switch } from '@base-ui-solid/solid/switch';
+import { Switch } from 'base-ui-solidjs/switch';
 
 export default function ExampleSwitch() {
   return (

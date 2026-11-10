@@ -1,7 +1,7 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, Show, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { TooltipRootContext } from './TooltipRootContext';
 import { useClientPoint } from '../../utils/popups/interactions/useClientPoint';
 import { useDismiss } from '../../utils/popups/interactions/useDismiss';

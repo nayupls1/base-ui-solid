@@ -1,5 +1,5 @@
 import { createMemo, omit } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useMenuRadioItemContext } from '../radio-item/MenuRadioItemContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps } from '../../internals/types';

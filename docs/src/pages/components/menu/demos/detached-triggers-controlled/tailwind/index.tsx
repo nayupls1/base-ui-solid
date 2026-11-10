@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menu } from 'base-ui-solidjs/menu';
 
 interface MenuItemDefinition {
   label: string;

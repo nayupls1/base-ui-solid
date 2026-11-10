@@ -1,4 +1,4 @@
-import { generateId } from '@base-ui-solid/utils/generateId';
+import { generateId } from 'base-ui-solidjs-utils/generateId';
 import type {
   ToastObject,
   ToastManagerAddOptions,

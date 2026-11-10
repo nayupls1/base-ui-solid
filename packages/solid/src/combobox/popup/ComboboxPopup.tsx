@@ -1,7 +1,7 @@
 import { createEffect, createMemo, omit, Show, untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { FloatingFocusManager } from '../../utils/popups/focus/FloatingFocusManager';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';

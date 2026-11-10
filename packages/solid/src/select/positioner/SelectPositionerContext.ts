@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { Side, UseAnchorPositioningReturnValue } from '../../internals/useAnchorPositioning';
 
 /** Reactive values are getters. */

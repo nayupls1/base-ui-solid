@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 import { For, Show } from 'solid-js';
 import { createVirtualizer, type SolidVirtualizer } from 'docs/src/utils/createVirtualizer';
 import styles from './index.module.css';

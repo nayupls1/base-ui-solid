@@ -1,5 +1,5 @@
 import { createMemo, createUniqueId, For, Show } from 'solid-js';
-import { visuallyHidden } from '@base-ui-solid/utils/visuallyHidden';
+import { visuallyHidden } from 'base-ui-solidjs-utils/visuallyHidden';
 import * as Accordion from '../Accordion';
 import * as Table from '../Table';
 import * as DescriptionList from '../DescriptionList';

@@ -1,6 +1,6 @@
 import { createMemo, omit, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { ReactStore } from '@base-ui-solid/utils/store';
+import type { ReactStore } from 'base-ui-solidjs-utils/store';
 import { useAnchorPositioning } from '../../internals/useAnchorPositioning';
 import { POPUP_COLLISION_AVOIDANCE } from '../../internals/constants';
 import type {

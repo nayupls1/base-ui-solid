@@ -1,10 +1,10 @@
 import { createEffect, createMemo, omit, onCleanup, Show, untrack } from 'solid-js';
-import { isElementDisabled } from '@base-ui-solid/utils/isElementDisabled';
-import { warn } from '@base-ui-solid/utils/warn';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { platform } from '@base-ui-solid/utils/platform';
-import { getTarget } from '@base-ui-solid/utils/shadowDom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { isElementDisabled } from 'base-ui-solidjs-utils/isElementDisabled';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useMenuFilterItem } from '../filter-root/MenuFilterContext';
 import { mergeProps } from '../../merge-props';
 import { reactiveMergeProps } from '../../internals/reactiveMergeProps';

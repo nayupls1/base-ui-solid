@@ -1,8 +1,8 @@
 import { createEffect, createMemo, createSignal, onCleanup, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { Dimensions } from '@floating-ui/utils';
 import { useAnimationsFinished } from '../../../internals/useAnimationsFinished';
 import type { StateAttributesMapping } from '../../../internals/getStateAttributesProps';

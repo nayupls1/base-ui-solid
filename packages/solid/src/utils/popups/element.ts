@@ -1,6 +1,6 @@
 import { isElement, isHTMLElement } from '@floating-ui/utils/dom';
-import { platform } from '@base-ui-solid/utils/platform';
-import { closest, contains } from '@base-ui-solid/utils/shadowDom';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { closest, contains } from 'base-ui-solidjs-utils/shadowDom';
 import { FOCUSABLE_ATTRIBUTE, TYPEABLE_SELECTOR } from './constants';
 import type { PopupTriggerMap } from './popupTriggerMap';
 import * as TooltipTriggerDataAttributes from '../../tooltip/trigger/TooltipTriggerDataAttributes';

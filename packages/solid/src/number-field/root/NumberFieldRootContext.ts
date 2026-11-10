@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { NumberFieldRoot, NumberFieldRootState } from './NumberFieldRoot';
 import type { EventWithOptionalKeyState, IncrementValueParameters } from '../utils/types';
 

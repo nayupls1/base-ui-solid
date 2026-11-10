@@ -1,5 +1,5 @@
 import { createMemo, omit } from 'solid-js';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';
 import { useButton } from '../../internals/use-button';
 import type { ToolbarRootState } from '../root/ToolbarRoot';

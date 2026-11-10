@@ -1,6 +1,6 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';

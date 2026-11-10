@@ -1,5 +1,5 @@
 import { createMemo, createSignal, createEffect, type Accessor } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
 
 /**
  * Tracks whether a media query matches.

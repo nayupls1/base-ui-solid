@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal } from 'solid-js';
-import { Dialog } from '@base-ui-solid/solid/dialog';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Dialog } from 'base-ui-solidjs/dialog';
+import { Menu } from 'base-ui-solidjs/menu';
 import styles from './index.module.css';
 
 export default function ExampleDialog() {

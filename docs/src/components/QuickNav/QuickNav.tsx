@@ -1,6 +1,6 @@
 import { omit, Show } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { ScrollArea } from '@base-ui-solid/solid/scroll-area';
+import { ScrollArea } from 'base-ui-solidjs/scroll-area';
 import './QuickNav.css';
 
 export function Container(props: JSX.HTMLAttributes<HTMLDivElement>) {

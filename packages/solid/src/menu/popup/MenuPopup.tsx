@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, omit, untrack, useContext } from 'solid-js';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import { FloatingFocusManager } from '../../utils/popups/focus/FloatingFocusManager';
 import { useHoverPopupInteraction } from '../../utils/popups/interactions/useHoverPopupInteraction';
 import type { FloatingFocusManagerProps } from '../../utils/popups/focus/FloatingFocusManager';

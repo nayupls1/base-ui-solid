@@ -1,6 +1,6 @@
 import { createMemo, createSignal, omit, untrack } from 'solid-js';
 import { isElement } from '@floating-ui/utils/dom';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { useAnchorPositioning } from '../../internals/useAnchorPositioning';
 import type {
   Side,

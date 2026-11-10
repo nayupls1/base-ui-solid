@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import type { MenuSubmenuRoot, MenuSubmenuRootProps } from '../submenu-root/MenuSubmenuRoot';
 import { MenuRootInternal } from '../root/MenuRoot';

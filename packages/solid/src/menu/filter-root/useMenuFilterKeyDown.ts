@@ -1,5 +1,5 @@
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useMenuSubmenuRootContext } from '../submenu-root/MenuSubmenuRootContext';

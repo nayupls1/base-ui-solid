@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createMemo, omit, Show } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { useMenuFilterItem } from '../filter-root/MenuFilterContext';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';

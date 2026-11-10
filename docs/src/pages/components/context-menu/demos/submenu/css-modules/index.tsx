@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { ContextMenu } from '@base-ui-solid/solid/context-menu';
+import { ContextMenu } from 'base-ui-solidjs/context-menu';
 import styles from './index.module.css';
 
 export default function ExampleContextMenu() {

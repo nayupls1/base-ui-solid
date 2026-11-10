@@ -35,8 +35,8 @@ EVENT_TYPES = {
 def transform(src: str) -> str:
     s = src
     s = s.replace("'use client';\n", '')
-    s = s.replace('@base-ui/utils/', '@base-ui-solid/utils/')
-    s = s.replace("'@base-ui/react/", "'@base-ui-solid/solid/")
+    s = s.replace('@base-ui/utils/', 'base-ui-solidjs-utils/')
+    s = s.replace("'@base-ui/react/", "'base-ui-solidjs/")
     s = re.sub(r"import type \* as React from 'react';\n", '', s)
     if 'React.createContext' not in s:
         s = re.sub(r"import \* as React from 'react';\n", '', s)
@@ -58,9 +58,9 @@ def transform(src: str) -> str:
     s = s.replace('.nativeEvent', '')
     s = s.replace("from '@floating-ui/react-dom'", "from '@floating-ui/dom'")
     s = s.replace('tabIndex', 'tabindex')
-    s = s.replace("'@base-ui-solid/utils/useIsoLayoutEffect'", "'solid-js' /* TODO useIsoLayoutEffect */")
+    s = s.replace("'base-ui-solidjs-utils/useIsoLayoutEffect'", "'solid-js' /* TODO useIsoLayoutEffect */")
     if 'RefObject<' in s and 'type RefObject' not in s:
-        s = "import type { RefObject } from '@base-ui-solid/utils/types';\n" + s
+        s = "import type { RefObject } from 'base-ui-solidjs-utils/types';\n" + s
     if 'JSX.' in s and "type JSX" not in s:
         s = "import type { JSX } from '@solidjs/web';\n" + s
     return s

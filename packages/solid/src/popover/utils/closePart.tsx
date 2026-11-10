@@ -1,5 +1,5 @@
 import { createContext, createEffect, useContext } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 
 interface ClosePartContextValue {
   register: () => () => void;

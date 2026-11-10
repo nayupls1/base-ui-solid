@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import { Toast } from '@base-ui-solid/solid/toast';
+import { Toast } from 'base-ui-solidjs/toast';
 
 export default function ExampleToast() {
   return (

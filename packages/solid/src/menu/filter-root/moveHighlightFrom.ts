@@ -1,4 +1,4 @@
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
 import {
   getMaxListIndex,
   getMinListIndex,

@@ -22,11 +22,11 @@ The port targets Solid 2.0 (rc.21) and is client-only for now. See
 ## Usage
 
 ```sh
-npm install @base-ui-solid/solid
+npm install base-ui-solidjs
 ```
 
 ```tsx
-import { Popover } from '@base-ui-solid/solid/popover';
+import { Popover } from 'base-ui-solidjs/popover';
 
 <Popover.Root>
   <Popover.Trigger>Open</Popover.Trigger>
@@ -69,7 +69,7 @@ the version.
 One-time setup: the workflow authenticates with npm
 [trusted publishing](https://docs.npmjs.com/trusted-publishers), which is configured per package
 (repository `nayupls1/base-ui-solid`, workflow `release.yml`) and so needs the packages to exist.
-For the first release, add an npm access token that may publish to the scope as the `NPM_TOKEN`
+For the first release, add an npm access token that may publish new packages as the `NPM_TOKEN`
 repository secret; once trusted publishing is set up, delete it.
 
 ## Layout

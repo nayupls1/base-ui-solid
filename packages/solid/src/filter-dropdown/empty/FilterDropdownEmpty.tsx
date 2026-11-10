@@ -1,5 +1,5 @@
 import { createSignal, omit, onSettled, Show, untrack } from 'solid-js';
-import { useStore } from '@base-ui-solid/utils/store';
+import { useStore } from 'base-ui-solidjs-utils/store';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFilterDropdownItemContext } from '../root/FilterDropdownRootContext';

@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal } from 'solid-js';
-import { Tooltip } from '@base-ui-solid/solid/tooltip';
+import { Tooltip } from 'base-ui-solidjs/tooltip';
 import styles from '../../index.module.css';
 
 const demoTooltip = Tooltip.createHandle();

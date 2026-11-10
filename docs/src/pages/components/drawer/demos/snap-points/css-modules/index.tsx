@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Drawer } from '@base-ui-solid/solid/drawer';
+import { Drawer } from 'base-ui-solidjs/drawer';
 import styles from './index.module.css';
 
 const TOP_MARGIN_REM = 1;

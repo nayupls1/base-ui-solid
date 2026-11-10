@@ -21,7 +21,7 @@ DEST = pathlib.Path(__file__).resolve().parent.parent / 'docs/src/pages/componen
 
 
 def solidify_prose(text: str) -> str:
-    text = text.replace('@base-ui/react', '@base-ui-solid/solid')
+    text = text.replace('@base-ui/react', 'base-ui-solidjs')
     text = re.sub(r'\]\(/react/components/', '](/solid/components/', text)
     text = re.sub(r'\]\(/react/', '](https://base-ui.com/react/', text)
     text = re.sub(r'href="/react/components/', 'href="/solid/components/', text)

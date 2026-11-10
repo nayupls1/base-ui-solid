@@ -1,8 +1,8 @@
-import { ReactStore } from '@base-ui-solid/utils/store';
-import { generateId } from '@base-ui-solid/utils/generateId';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { ReactStore } from 'base-ui-solidjs-utils/store';
+import { generateId } from 'base-ui-solidjs-utils/generateId';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type {
   ToastManagerAddOptions,
   ToastManagerPromiseOptions,

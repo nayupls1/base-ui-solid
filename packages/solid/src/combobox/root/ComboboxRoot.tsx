@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { omit } from 'solid-js';
 import { AriaCombobox } from './AriaCombobox';
 import type { AriaComboboxState } from './AriaCombobox';

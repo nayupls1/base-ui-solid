@@ -1,5 +1,5 @@
 import { createMemo, type Accessor } from 'solid-js';
-import { useId } from '@base-ui-solid/utils/useId';
+import { useId } from 'base-ui-solidjs-utils/useId';
 
 /**
  * Generates an id prefixed with `base-ui-`, overridable by the reactive `idOverride`.

@@ -1,9 +1,9 @@
 import { createEffect, createMemo, omit, onCleanup } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { stopEvent } from '../../utils/popups/event';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useContextMenuRootContext } from '../root/ContextMenuRootContext';

@@ -29,7 +29,7 @@ export function solidifyType(type) {
 
 export function solidifyText(text) {
   return text
-    .replace(/@base-ui\/react/g, '@base-ui-solid/solid')
+    .replace(/@base-ui\/react/g, 'base-ui-solidjs')
     .replace(/\bReact element\b/g, 'JSX element')
     .replace(/\bReactElement\b/g, 'JSX.Element')
     .replace(/\bReact component\b/g, 'Solid component')

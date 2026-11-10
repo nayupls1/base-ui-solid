@@ -1,10 +1,10 @@
 import { createEffect, createMemo, createSignal, flush, omit, Show, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { closest, contains } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { closest, contains } from 'base-ui-solidjs-utils/shadowDom';
 import { safePolygon } from '../../utils/popups/interactions/safePolygon';
 import { useClick } from '../../utils/popups/interactions/useClick';
 import { useFloatingRootStore } from '../../utils/popups/floating-root/useFloatingRootStore';

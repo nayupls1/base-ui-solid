@@ -1,6 +1,6 @@
 import { createEffect, createSignal, type Accessor } from 'solid-js';
-import { platform } from '@base-ui-solid/utils/platform';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 
 // Word Joiner is invisible and zero-width, so it forces a text mutation without shifting layout.
 const LIVE_REGION_MARKER = '⁠';

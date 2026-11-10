@@ -1,6 +1,6 @@
 import { createMemo, omit, Show, untrack } from 'solid-js';
-import { NOOP } from '@base-ui-solid/utils/empty';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
 import { useMenuFilterItem } from '../filter-root/MenuFilterContext';
 import { MenuCheckboxItemContext } from './MenuCheckboxItemContext';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';

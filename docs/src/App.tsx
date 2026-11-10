@@ -109,7 +109,7 @@ export function Layout(props: { children?: JSX.Element }) {
                     GitHub
                   </SideNav.Item>
                   <SideNav.Item
-                    href="https://www.npmjs.com/package/@base-ui-solid/solid"
+                    href="https://www.npmjs.com/package/base-ui-solidjs"
                     icon={<NpmIcon />}
                     external
                   >

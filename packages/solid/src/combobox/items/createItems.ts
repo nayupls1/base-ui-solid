@@ -1,5 +1,5 @@
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import { error } from '@base-ui-solid/utils/error';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import { error } from 'base-ui-solidjs-utils/error';
 import { flattenLeafItems, stringifyAsLabel } from '../../internals/resolveValueLabel';
 import type { ItemEqualityComparer } from '../../internals/itemEquality';
 import { findCollectionItem } from './itemCollection';

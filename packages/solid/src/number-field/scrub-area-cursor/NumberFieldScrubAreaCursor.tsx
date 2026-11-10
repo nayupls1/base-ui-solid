@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { Portal } from '@solidjs/web';
 import { omit, Show, untrack } from 'solid-js';
-import { platform } from '@base-ui-solid/utils/platform';
+import { platform } from 'base-ui-solidjs-utils/platform';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';
 import type { NumberFieldRootState } from '../root/NumberFieldRoot';

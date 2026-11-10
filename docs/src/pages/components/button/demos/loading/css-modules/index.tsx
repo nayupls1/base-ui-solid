@@ -1,5 +1,5 @@
 import { createSignal, createUniqueId } from 'solid-js';
-import { Button } from '@base-ui-solid/solid/button';
+import { Button } from 'base-ui-solidjs/button';
 import styles from './index.module.css';
 
 export default function ExampleButton() {

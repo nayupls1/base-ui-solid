@@ -23,7 +23,7 @@ import { DemoComboboxHero } from './demos/hero';
 Import the components and place them together:
 
 ```jsx title="Anatomy"
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 
 <Combobox.Root>
   <Combobox.Label />
@@ -89,7 +89,7 @@ That item is what `value`, `defaultValue`, and `onValueChange` receive. To store
 The following example shows a typed wrapper around the Combobox component with correct type inference and type safety:
 
 ```tsx title="Specifying generic type parameters"
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 
 export function MyCombobox<Value, Multiple extends boolean | undefined = false, Item = Value>(
   props: Combobox.Root.Props<Value, Multiple, Item>,

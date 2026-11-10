@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Dialog } from '@base-ui-solid/solid/dialog';
+import { Dialog } from 'base-ui-solidjs/dialog';
 
 const demoDialog = Dialog.createHandle<number>();
 

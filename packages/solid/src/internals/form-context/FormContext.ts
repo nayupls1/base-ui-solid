@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { FieldValidityData } from '../../field/root/FieldRoot';
 import { NOOP } from '../noop';
 import type { Form } from '../../form/Form';

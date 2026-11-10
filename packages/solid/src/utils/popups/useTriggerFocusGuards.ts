@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { getTabbableNearElement, isOutsideEvent } from './focus/tabbable';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';

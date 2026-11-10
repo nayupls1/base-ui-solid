@@ -1,5 +1,5 @@
 import { createSignal, onSettled } from 'solid-js';
-import { Progress } from '@base-ui-solid/solid/progress';
+import { Progress } from 'base-ui-solidjs/progress';
 
 export default function ExampleProgress() {
   const [value, setValue] = createSignal(20);

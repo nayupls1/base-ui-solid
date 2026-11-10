@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createUniqueId } from 'solid-js';
-import { NumberField } from '@base-ui-solid/solid/number-field';
+import { NumberField } from 'base-ui-solidjs/number-field';
 import styles from './index.module.css';
 
 export default function ExampleNumberField() {

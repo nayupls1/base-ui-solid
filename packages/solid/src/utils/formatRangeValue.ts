@@ -1,4 +1,4 @@
-import { formatNumber } from '@base-ui-solid/utils/formatNumber';
+import { formatNumber } from 'base-ui-solidjs-utils/formatNumber';
 
 /**
  * Formats the value with `format` when provided, otherwise as a percentage of the range.

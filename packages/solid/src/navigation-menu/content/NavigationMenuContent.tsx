@@ -1,8 +1,8 @@
 import { createEffect, createMemo, createSignal, Match, omit, Switch, untrack } from 'solid-js';
 import { Portal } from '@solidjs/web';
-import { inertValue } from '@base-ui-solid/utils/inertValue';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { inertValue } from 'base-ui-solidjs-utils/inertValue';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { FloatingNode } from '../../utils/popups/tree/FloatingTree';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import {

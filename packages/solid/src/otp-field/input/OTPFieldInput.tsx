@@ -1,7 +1,7 @@
 import { createEffect, createMemo, createSignal, omit, untrack } from 'solid-js';
-import { warn } from '@base-ui-solid/utils/warn';
-import { platform } from '@base-ui-solid/utils/platform';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { stopEvent } from '../../utils/popups/event';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import type { BaseUIComponentProps } from '../../internals/types';

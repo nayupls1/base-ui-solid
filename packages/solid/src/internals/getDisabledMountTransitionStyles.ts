@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { DISABLED_TRANSITIONS_STYLE } from './constants';
 import type { TransitionStatus } from './useTransitionStatus';
 

@@ -1,4 +1,4 @@
-import { Meter } from '@base-ui-solid/solid/meter';
+import { Meter } from 'base-ui-solidjs/meter';
 
 export default function ExampleMeter() {
   return (

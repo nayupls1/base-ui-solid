@@ -1,13 +1,13 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, createSignal, For, Show, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
 import {
   visuallyHiddenInput,
   visuallyHiddenInputPinned,
-} from '@base-ui-solid/utils/visuallyHidden';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { activeElement, closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+} from 'base-ui-solidjs-utils/visuallyHidden';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { activeElement, closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { getOverflowAncestors } from '@floating-ui/dom';
 import type { ElementProps } from '../../utils/popups/types';

@@ -1,8 +1,8 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import { platform } from '@base-ui-solid/utils/platform';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { NOOP } from '@base-ui-solid/utils/empty';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaViewportContext } from './ScrollAreaViewportContext';

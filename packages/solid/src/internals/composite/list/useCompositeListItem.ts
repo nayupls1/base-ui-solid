@@ -1,6 +1,6 @@
 import { onCleanup, untrack, createEffect, type Accessor } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { useCompositeListContext } from './CompositeListContext';
 
 export interface UseCompositeListItemParameters<Metadata> {

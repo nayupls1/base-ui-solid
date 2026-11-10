@@ -1,4 +1,4 @@
-import { Input } from '@base-ui-solid/solid/input';
+import { Input } from 'base-ui-solidjs/input';
 import styles from './index.module.css';
 
 export default function ExampleInput() {

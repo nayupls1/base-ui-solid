@@ -1,9 +1,9 @@
 import { createEffect, createMemo, untrack, type Accessor } from 'solid-js';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { platform } from '@base-ui-solid/utils/platform';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { createChangeEventDetails } from '../../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../../internals/reasons';

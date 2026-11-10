@@ -1,7 +1,7 @@
 import { createEffect, createMemo, createSignal, omit, onCleanup, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { clamp } from '@base-ui-solid/utils/clamp';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps } from '../../internals/types';

@@ -37,9 +37,9 @@ differ. They're listed here and in `docs/src/content/handbook-solid.md`.
 - Internal style objects use kebab-case keys (`'transition-duration'`).
 - Attribute names are lowercase (`tabindex`, `for`, `readonly`, `autocomplete`...).
 - Internal signals that may be written from computations use `{ ownedWrite: true }`, or
-  `createSyncSignal` from `@base-ui-solid/utils/createSyncSignal` when imperative code must read
+  `createSyncSignal` from `base-ui-solidjs-utils/createSyncSignal` when imperative code must read
   the new value right after writing it (upstream relies on that a lot).
-- `ReactiveStore` (`@base-ui-solid/utils/store`) replaces upstream's `ReactStore`. `store.state`
+- `ReactiveStore` (`base-ui-solidjs-utils/store`) replaces upstream's `ReactStore`. `store.state`
   is synchronous; `store.useState(selector)` returns a memo accessor; `store.read(selector)` is
   a tracked read for use in getters.
 - Upstream `useIsoLayoutEffect(fn, deps)` → `createEffect(() => deps, fn)` (or

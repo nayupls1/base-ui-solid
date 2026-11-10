@@ -1,9 +1,9 @@
 import { createSignal, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { findScrollableAncestor, findScrollableTouchTarget } from './scrollable';
 import type { ScrollAxis } from './scrollable';
 import { getElementAtPoint } from './getElementAtPoint';

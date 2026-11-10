@@ -1,7 +1,7 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import { NOOP } from '@base-ui-solid/utils/empty';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import type { PopoverRoot } from '../root/PopoverRoot';
 import { REASONS } from '../../internals/reasons';
 import { NullStore } from '../../utils/popups/NullStore';

@@ -1,7 +1,7 @@
 import { createEffect, createSignal } from 'solid-js';
 import { isElement } from '@floating-ui/utils/dom';
-import { useScrollLock } from '@base-ui-solid/utils/useScrollLock';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { useScrollLock } from 'base-ui-solidjs-utils/useScrollLock';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useDismiss } from '../../utils/popups/interactions/useDismiss';
 import type { DialogStore } from '../store/DialogStore';
 import { usePopupInteractionProps } from '../../utils/popups/popupStoreUtils';

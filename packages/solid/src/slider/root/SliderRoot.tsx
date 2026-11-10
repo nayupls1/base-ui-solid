@@ -1,12 +1,12 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, createSignal, omit, untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { warn } from '@base-ui-solid/utils/warn';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { areArraysEqual } from '@base-ui-solid/utils/areArraysEqual';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { areArraysEqual } from 'base-ui-solidjs-utils/areArraysEqual';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps, Orientation } from '../../internals/types';
 import {
   createChangeEventDetails,

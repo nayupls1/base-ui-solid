@@ -1,6 +1,6 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { ReactStore } from '@base-ui-solid/utils/store';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { ReactStore } from 'base-ui-solidjs-utils/store';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { createEventEmitter } from './createEventEmitter';
 import { dispatchOpenChange } from './floating-root/dispatchOpenChange';
 import type { PopupEvents, PopupInteractionContext, ReferenceType } from './types';

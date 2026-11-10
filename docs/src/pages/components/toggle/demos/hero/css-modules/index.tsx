@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Toggle } from '@base-ui-solid/solid/toggle';
+import { Toggle } from 'base-ui-solidjs/toggle';
 import styles from './index.module.css';
 
 export default function ExampleToggle() {

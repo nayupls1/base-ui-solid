@@ -1,9 +1,9 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import type { BaseUIComponentProps, HTMLProps, NativeButtonProps } from '../../internals/types';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';

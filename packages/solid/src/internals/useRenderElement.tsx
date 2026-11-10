@@ -1,7 +1,7 @@
 import { createMemo, untrack, Show, onCleanup, getObserver, $PROXY, type Accessor } from 'solid-js';
 import { spread, insert, type JSX } from '@solidjs/web';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { warn } from '@base-ui-solid/utils/warn';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { warn } from 'base-ui-solidjs-utils/warn';
 import type { HTMLProps } from './types';
 import type { StateAttributesMapping } from './getStateAttributesProps';
 import { getStateAttributesProps } from './getStateAttributesProps';

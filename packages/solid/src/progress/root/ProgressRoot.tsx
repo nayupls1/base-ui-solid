@@ -1,7 +1,7 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import { visuallyHidden } from '@base-ui-solid/utils/visuallyHidden';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { visuallyHidden } from 'base-ui-solidjs-utils/visuallyHidden';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { formatRangeValue } from '../../utils/formatRangeValue';
 import { valueToPercent } from '../../utils/valueToPercent';
 import { useRenderElement } from '../../internals/useRenderElement';

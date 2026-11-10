@@ -1,8 +1,8 @@
 import { createEffect, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
-import { contains } from '@base-ui-solid/utils/shadowDom';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { isElementVisible, isListIndexDisabled } from '../../../internals/composite/listIndex';
 import type { DisabledIndices } from '../../../internals/composite/listIndex';
 import type { ElementProps, PopupInteractionStore } from '../types';

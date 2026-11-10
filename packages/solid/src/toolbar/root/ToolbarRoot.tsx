@@ -1,5 +1,5 @@
 import { createMemo, omit } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type {
   BaseUIComponentProps,
   Orientation as BaseOrientation,

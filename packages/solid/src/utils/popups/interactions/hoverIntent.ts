@@ -1,7 +1,7 @@
 import { untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import { closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import { closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { isElement } from '@floating-ui/utils/dom';
 import { createChangeEventDetails } from '../../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../../internals/reasons';

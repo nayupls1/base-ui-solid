@@ -1,6 +1,6 @@
 import { getComputedStyle, getNodeName, isHTMLElement, isShadowRoot } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import { isElementVisible } from '../../../internals/composite/listIndex';
 
 export type FocusableElement = HTMLElement | SVGElement;

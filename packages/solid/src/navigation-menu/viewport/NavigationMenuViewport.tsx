@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, omit, Show, untrack } from 'solid-js';
-import { inertValue } from '@base-ui-solid/utils/inertValue';
-import { contains } from '@base-ui-solid/utils/shadowDom';
+import { inertValue } from 'base-ui-solidjs-utils/inertValue';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';

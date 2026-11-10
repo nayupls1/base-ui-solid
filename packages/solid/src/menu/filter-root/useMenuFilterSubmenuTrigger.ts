@@ -1,5 +1,5 @@
 import { createEffect, untrack, type Accessor } from 'solid-js';
-import { useEnhancedClickHandler } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import { useEnhancedClickHandler } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { isVirtualPointerEvent } from '../../utils/popups/event';

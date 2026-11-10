@@ -1,5 +1,5 @@
 import { createEffect, createMemo, createSignal, omit, Show, untrack } from 'solid-js';
-import { platform } from '@base-ui-solid/utils/platform';
+import { platform } from 'base-ui-solidjs-utils/platform';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useBaseUiId } from '../../internals/useBaseUiId';
 import { useRenderElement } from '../../internals/useRenderElement';

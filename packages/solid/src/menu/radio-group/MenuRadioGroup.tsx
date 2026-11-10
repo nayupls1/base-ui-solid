@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal, omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
 import { useMenuFilterImpl } from '../filter-root/MenuFilterContext';
 import { MenuRadioGroupContext } from './MenuRadioGroupContext';
 import { MenuGroupContext } from '../group/MenuGroupContext';

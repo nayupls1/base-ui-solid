@@ -1,6 +1,6 @@
 import { createContext, createEffect, useContext, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { useId } from '@base-ui-solid/utils/useId';
+import { useId } from 'base-ui-solidjs-utils/useId';
 import type { FloatingNodeType, FloatingTreeType } from '../types';
 import { FloatingTreeStore } from './FloatingTreeStore';
 import { ownedProps } from '../../../internals/ownedProps';

@@ -1,10 +1,10 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, For, Show, untrack } from 'solid-js';
-import { visuallyHiddenInput, visuallyHiddenInputPinned } from '@base-ui-solid/utils/visuallyHidden';
-import { isElementDisabled } from '@base-ui-solid/utils/isElementDisabled';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { visuallyHiddenInput, visuallyHiddenInputPinned } from 'base-ui-solidjs-utils/visuallyHidden';
+import { isElementDisabled } from 'base-ui-solidjs-utils/isElementDisabled';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import { useClick } from '../../utils/popups/interactions/useClick';
 import { useDismiss } from '../../utils/popups/interactions/useDismiss';
 import { useListNavigation } from '../../utils/popups/interactions/useListNavigation';

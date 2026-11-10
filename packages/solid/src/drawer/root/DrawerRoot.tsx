@@ -1,11 +1,11 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, createSignal, onCleanup, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { NOOP } from '@base-ui-solid/utils/empty';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { platform } from '@base-ui-solid/utils/platform';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { platform } from 'base-ui-solidjs-utils/platform';
 import { DrawerRootContext, useDrawerRootContext } from './DrawerRootContext';
 import type {
   DrawerNestedSwipeProgressStore,

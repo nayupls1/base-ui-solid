@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 
 export default function ExamplePopoverCombobox() {
   return (

@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Popover } from '@base-ui-solid/solid/popover';
+import { Popover } from 'base-ui-solidjs/popover';
 
 const demoPopover = Popover.createHandle<Component>();
 

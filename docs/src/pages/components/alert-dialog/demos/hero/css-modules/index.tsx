@@ -1,4 +1,4 @@
-import { AlertDialog } from '@base-ui-solid/solid/alert-dialog';
+import { AlertDialog } from 'base-ui-solidjs/alert-dialog';
 import styles from './index.module.css';
 
 export default function ExampleAlertDialog() {

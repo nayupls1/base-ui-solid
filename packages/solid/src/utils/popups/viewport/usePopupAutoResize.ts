@@ -1,6 +1,6 @@
 import { createEffect, createMemo, untrack, type Accessor } from 'solid-js';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { NOOP, EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { NOOP, EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import type { Dimensions } from '@floating-ui/utils';
 import { useAnimationsFinished } from '../../../internals/useAnimationsFinished';
 import { getCssDimensions } from '../../getCssDimensions';

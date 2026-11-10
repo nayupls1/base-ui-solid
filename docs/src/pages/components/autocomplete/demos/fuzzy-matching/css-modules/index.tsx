@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Autocomplete } from '@base-ui-solid/solid/autocomplete';
+import { Autocomplete } from 'base-ui-solidjs/autocomplete';
 import { matchSorter } from 'match-sorter';
 import styles from './index.module.css';
 

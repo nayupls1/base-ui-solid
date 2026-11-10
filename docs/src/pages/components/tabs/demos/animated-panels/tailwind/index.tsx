@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui-solid/solid/tabs';
+import { Tabs } from 'base-ui-solidjs/tabs';
 
 export default function ExampleAnimatedTabs() {
   return (

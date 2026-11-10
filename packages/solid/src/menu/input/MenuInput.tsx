@@ -1,6 +1,6 @@
 import { createMemo, omit } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement } from 'base-ui-solidjs-utils/shadowDom';
 import { FilterDropdownInput } from '../../filter-dropdown/input/FilterDropdownInput';
 import type {
   FilterDropdownInputProps,

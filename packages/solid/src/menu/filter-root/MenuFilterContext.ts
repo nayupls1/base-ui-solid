@@ -1,6 +1,6 @@
 import { createContext, useContext, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { MenuRootContext } from '../root/MenuRootContext';
 import type { HTMLProps } from '../../internals/types';
 import type { MenuFilterPopup } from './MenuFilterPopup';

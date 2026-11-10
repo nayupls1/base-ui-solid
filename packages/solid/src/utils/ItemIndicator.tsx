@@ -1,5 +1,5 @@
 import { createMemo, omit } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps } from '../internals/types';
 import { useTransitionStatus } from '../internals/useTransitionStatus';
 import type { TransitionStatus } from '../internals/useTransitionStatus';

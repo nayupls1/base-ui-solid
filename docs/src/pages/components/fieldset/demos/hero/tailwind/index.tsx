@@ -1,5 +1,5 @@
-import { Field } from '@base-ui-solid/solid/field';
-import { Fieldset } from '@base-ui-solid/solid/fieldset';
+import { Field } from 'base-ui-solidjs/field';
+import { Fieldset } from 'base-ui-solidjs/fieldset';
 
 export default function ExampleField() {
   return (

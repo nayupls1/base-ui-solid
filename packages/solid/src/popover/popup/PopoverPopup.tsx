@@ -1,6 +1,6 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createMemo, omit, untrack } from 'solid-js';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { FloatingFocusManager } from '../../utils/popups/focus/FloatingFocusManager';
 import { useHoverPopupInteraction } from '../../utils/popups/interactions/useHoverPopupInteraction';

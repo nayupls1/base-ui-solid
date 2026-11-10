@@ -1,5 +1,5 @@
 import { isElement } from '@floating-ui/utils/dom';
-import { getTarget } from '@base-ui-solid/utils/shadowDom';
+import { getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';
 import { isInteractiveElement } from '../../utils/popups/element';

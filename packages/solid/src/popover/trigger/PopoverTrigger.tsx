@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createMemo, omit, Show, untrack } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useButton } from '../../internals/use-button/useButton';
 import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';

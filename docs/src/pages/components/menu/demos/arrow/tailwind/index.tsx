@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menu } from 'base-ui-solidjs/menu';
 
 export default function MenuArrowDemo() {
   return (
