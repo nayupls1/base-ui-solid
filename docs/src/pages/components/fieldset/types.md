@@ -13,9 +13,9 @@ Renders a `<fieldset>` element.
 
 | Prop      | Type                                                                                        | Default | Description                                                                                                                                                                                   |
 | :-------- | :------------------------------------------------------------------------------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| className | `string \| ((state: Fieldset.Root.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
-| style     | `React.CSSProperties \| ((state: Fieldset.Root.State) => React.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
-| render    | `ReactElement \| ((props: HTMLProps, state: Fieldset.Root.State) => ReactElement)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render. |
+| class     | `string \| ((state: Fieldset.Root.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
+| style     | `JSX.CSSProperties \| ((state: Fieldset.Root.State) => JSX.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
+| render    | `JSX.Element \| ((props: HTMLProps, state: Fieldset.Root.State) => JSX.Element)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `JSX.Element` or a function that returns the element to render. |
 
 ### Root.Props
 
@@ -39,9 +39,9 @@ Renders a `<div>` element.
 
 | Prop      | Type                                                                                          | Default | Description                                                                                                                                                                                   |
 | :-------- | :-------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| className | `string \| ((state: Fieldset.Legend.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
-| style     | `React.CSSProperties \| ((state: Fieldset.Legend.State) => React.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
-| render    | `ReactElement \| ((props: HTMLProps, state: Fieldset.Legend.State) => ReactElement)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render. |
+| class     | `string \| ((state: Fieldset.Legend.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
+| style     | `JSX.CSSProperties \| ((state: Fieldset.Legend.State) => JSX.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
+| render    | `JSX.Element \| ((props: HTMLProps, state: Fieldset.Legend.State) => JSX.Element)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `JSX.Element` or a function that returns the element to render. |
 
 **Legend Data Attributes:**
 

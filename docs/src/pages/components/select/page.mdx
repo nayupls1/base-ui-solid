@@ -81,7 +81,7 @@ import { Select } from '@base-ui-solid/solid/select';
 
 export function MySelect<Value, Multiple extends boolean | undefined = false>(
   props: Select.Root.Props<Value, Multiple>,
-): React.JSX.Element {
+): JSX.Element {
   return <Select.Root {...props}>{/* ... */}</Select.Root>;
 }
 ```
@@ -316,7 +316,7 @@ export const metadata = {
     'Option List',
     'Dropdown Menu',
     'Combo Box',
-    'Multi Select React',
+    'Multi Select Solid',
     'Multiselect',
     'Object Value Select',
     'Single Select',

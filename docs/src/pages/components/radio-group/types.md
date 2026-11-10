@@ -18,10 +18,10 @@ Renders a `<span>` element and a hidden `<input>` beside.
 | disabled     | `boolean`                                                                                | -       | Whether the component should ignore user interaction.                                                                                                                                         |
 | readOnly     | `boolean`                                                                                | -       | Whether the user should be unable to select the radio button.                                                                                                                                 |
 | required     | `boolean`                                                                                | -       | Whether the user must choose a value before submitting a form.                                                                                                                                |
-| inputRef     | `React.Ref<HTMLInputElement>`                                                            | -       | A ref to access the hidden input element.                                                                                                                                                     |
-| className    | `string \| ((state: Radio.Root.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
-| style        | `React.CSSProperties \| ((state: Radio.Root.State) => React.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
-| render       | `ReactElement \| ((props: HTMLProps, state: Radio.Root.State) => ReactElement)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render. |
+| inputRef     | `Ref<HTMLInputElement>`                                                            | -       | A ref to access the hidden input element.                                                                                                                                                     |
+| class        | `string \| ((state: Radio.Root.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
+| style        | `JSX.CSSProperties \| ((state: Radio.Root.State) => JSX.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
+| render       | `JSX.Element \| ((props: HTMLProps, state: Radio.Root.State) => JSX.Element)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `JSX.Element` or a function that returns the element to render. |
 
 **Root Data Attributes:**
 
@@ -77,10 +77,10 @@ Renders a `<span>` element.
 
 | Prop        | Type                                                                                          | Default | Description                                                                                                                                                                                   |
 | :---------- | :-------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| className   | `string \| ((state: Radio.Indicator.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
-| style       | `React.CSSProperties \| ((state: Radio.Indicator.State) => React.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
+| class       | `string \| ((state: Radio.Indicator.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
+| style       | `JSX.CSSProperties \| ((state: Radio.Indicator.State) => JSX.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
 | keepMounted | `boolean`                                                                                     | `false` | Whether to keep the HTML element in the DOM when the radio button is inactive.                                                                                                                |
-| render      | `ReactElement \| ((props: HTMLProps, state: Radio.Indicator.State) => ReactElement)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render. |
+| render      | `JSX.Element \| ((props: HTMLProps, state: Radio.Indicator.State) => JSX.Element)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `JSX.Element` or a function that returns the element to render. |
 
 **Indicator Data Attributes:**
 
@@ -148,10 +148,10 @@ Renders a `<div>` element.
 | disabled      | `boolean`                                                                                | `false` | Whether the component should ignore user interaction.                                                                                                                                         |
 | readOnly      | `boolean`                                                                                | `false` | Whether the user should be unable to select a different radio button in the group.                                                                                                            |
 | required      | `boolean`                                                                                | `false` | Whether the user must choose a value before submitting a form.                                                                                                                                |
-| inputRef      | `React.Ref<HTMLInputElement>`                                                            | -       | A ref to access the hidden input element.                                                                                                                                                     |
-| className     | `string \| ((state: RadioGroup.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
-| style         | `React.CSSProperties \| ((state: RadioGroup.State) => React.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
-| render        | `ReactElement \| ((props: HTMLProps, state: RadioGroup.State) => ReactElement)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render. |
+| inputRef      | `Ref<HTMLInputElement>`                                                            | -       | A ref to access the hidden input element.                                                                                                                                                     |
+| class         | `string \| ((state: RadioGroup.State) => string \| undefined)`                           | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component's state.                                                                                      |
+| style         | `JSX.CSSProperties \| ((state: RadioGroup.State) => JSX.CSSProperties \| undefined)` | -       | Style applied to the element, or a function that&#xA;returns a style object based on the component's state.                                                                                   |
+| render        | `JSX.Element \| ((props: HTMLProps, state: RadioGroup.State) => JSX.Element)`          | -       | Allows you to replace the component's HTML element&#xA;with a different tag, or compose it with another component. Accepts a `JSX.Element` or a function that returns the element to render. |
 
 **RadioGroup Data Attributes:**
 
@@ -284,14 +284,14 @@ type RadioIndicatorProps = {
    * Allows you to replace the component's HTML element
    * with a different tag, or compose it with another component.
    *
-   * Accepts a `ReactElement` or a function that returns the element to render.
+   * Accepts a `JSX.Element` or a function that returns the element to render.
    */
-  render?: ReactElement | ((props: HTMLProps, state: Radio.Indicator.State) => ReactElement);
+  render?: JSX.Element | ((props: HTMLProps, state: Radio.Indicator.State) => JSX.Element);
   /**
    * Style applied to the element, or a function that
    * returns a style object based on the component's state.
    */
-  style?: React.CSSProperties | ((state: Radio.Indicator.State) => React.CSSProperties | undefined);
+  style?: JSX.CSSProperties | ((state: Radio.Indicator.State) => JSX.CSSProperties | undefined);
 };
 ```
 
@@ -366,7 +366,7 @@ type RadioRootProps<Value = any> = {
   /** Whether the user should be unable to select the radio button. */
   readOnly?: boolean;
   /** A ref to access the hidden input element. */
-  inputRef?: React.Ref<HTMLInputElement>;
+  inputRef?: Ref<HTMLInputElement>;
   /**
    * Whether the component renders a native `<button>` element when replacing it
    * via the `render` prop.
@@ -383,14 +383,14 @@ type RadioRootProps<Value = any> = {
    * Style applied to the element, or a function that
    * returns a style object based on the component's state.
    */
-  style?: React.CSSProperties | ((state: Radio.Root.State) => React.CSSProperties | undefined);
+  style?: JSX.CSSProperties | ((state: Radio.Root.State) => JSX.CSSProperties | undefined);
   /**
    * Allows you to replace the component's HTML element
    * with a different tag, or compose it with another component.
    *
-   * Accepts a `ReactElement` or a function that returns the element to render.
+   * Accepts a `JSX.Element` or a function that returns the element to render.
    */
-  render?: ReactElement | ((props: HTMLProps, state: Radio.Root.State) => ReactElement);
+  render?: JSX.Element | ((props: HTMLProps, state: Radio.Root.State) => JSX.Element);
 };
 ```
 
