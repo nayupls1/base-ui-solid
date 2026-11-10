@@ -44,13 +44,17 @@ Use the `render` prop and set `nativeButton={false}` on `<Tabs.Tab>` to render t
 
 ```jsx title="Tabs as links"
 import { Tabs } from '@base-ui-solid/solid/tabs';
-import Link from 'next/link';
+import { A } from '@solidjs/router';
 
 <Tabs.Root>
   <Tabs.List>
     {/* @highlight-start */}
     {/* @highlight-text "nativeButton={false}" "render" */}
-    <Tabs.Tab nativeButton={false} render={<Link href="/overview" />} value="overview">
+    <Tabs.Tab
+      nativeButton={false}
+      render={(props) => <A {...props} href="/overview" />}
+      value="overview"
+    >
       Overview
     </Tabs.Tab>
     {/* @highlight-end */}
