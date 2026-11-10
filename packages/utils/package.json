@@ -1,9 +1,19 @@
 {
-  "name": "@base-ui-solid/utils",
+  "name": "base-ui-solidjs-utils",
   "version": "0.0.0",
   "type": "module",
   "description": "Shared utilities for Base UI Solid.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayupls1/base-ui-solid.git",
+    "directory": "packages/utils"
+  },
+  "homepage": "https://github.com/nayupls1/base-ui-solid#readme",
+  "bugs": "https://github.com/nayupls1/base-ui-solid/issues",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "./platform": "./src/platform/index.ts",
     "./store": "./src/store/index.ts",

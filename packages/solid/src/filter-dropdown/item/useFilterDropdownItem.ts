@@ -1,6 +1,6 @@
 import { createEffect, createSignal, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { useStore } from '@base-ui-solid/utils/store';
+import { useStore } from 'base-ui-solidjs-utils/store';
 import { useFilterDropdownItemContext } from '../root/FilterDropdownRootContext';
 import type { FilterDropdownItemContext } from '../root/FilterDropdownRootContext';
 import { useFilterDropdownGroupContext } from '../group/FilterDropdownGroupContext';

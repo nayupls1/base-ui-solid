@@ -1,6 +1,6 @@
 import { createEffect, untrack, type Accessor } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { useId } from '@base-ui-solid/utils/useId';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { useId } from 'base-ui-solidjs-utils/useId';
 
 /**
  * Resolves `aria-labelledby` for a control, falling back to an associated native `<label>`.

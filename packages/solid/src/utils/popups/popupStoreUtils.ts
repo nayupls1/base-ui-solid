@@ -1,8 +1,8 @@
 import { createEffect, onCleanup, untrack, type Accessor } from 'solid-js';
-import type { ReactStore } from '@base-ui-solid/utils/store';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { ReactStore } from 'base-ui-solidjs-utils/store';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { FOCUSABLE_ATTRIBUTE } from './constants';
 import type { HTMLProps } from '../../internals/types';
 import type {

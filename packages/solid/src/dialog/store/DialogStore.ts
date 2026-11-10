@@ -1,6 +1,6 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { NOOP } from '@base-ui-solid/utils/empty';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import type { DialogRoot } from '../root/DialogRoot';
 import { NullStore } from '../../utils/popups/NullStore';
 import type {

@@ -1,4 +1,4 @@
-import { platform } from '@base-ui-solid/utils/platform';
+import { platform } from 'base-ui-solidjs-utils/platform';
 
 export function stopEvent(event: Event) {
   event.preventDefault();

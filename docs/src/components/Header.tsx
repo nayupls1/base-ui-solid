@@ -9,7 +9,10 @@ export function Header() {
     <header class="Header">
       <div class="HeaderInner">
         <SkipNav>Skip to contents</SkipNav>
-        <LogoLink />
+        <div class="HeaderBrand">
+          <LogoLink />
+          <span class="HeaderUnofficial">Unofficial Solid port of Base UI</span>
+        </div>
         <div class="HeaderSearch" />
       </div>
     </header>

@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal, For, Show } from 'solid-js';
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 import { createVirtualizer, type SolidVirtualizer } from 'docs/src/utils/createVirtualizer';
 
 export default function ExampleVirtualizedCombobox() {

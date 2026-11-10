@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui-solid/solid/tabs';
+import { Tabs } from 'base-ui-solidjs/tabs';
 import styles from './index.module.css';
 
 export default function ExampleTabs() {

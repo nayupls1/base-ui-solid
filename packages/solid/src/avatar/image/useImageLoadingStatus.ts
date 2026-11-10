@@ -1,5 +1,5 @@
 import { createEffect, type Accessor } from 'solid-js';
-import { createSyncSignal, type SyncSetter } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal, type SyncSetter } from 'base-ui-solidjs-utils/createSyncSignal';
 import { NOOP } from '../../internals/noop';
 import type { ImageLoadingStatus } from '../root/AvatarRoot';
 

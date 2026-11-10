@@ -12,9 +12,9 @@ import type {
   AutoUpdateOptions,
   Middleware,
 } from '@floating-ui/dom';
-import { ownerDocument, ownerWindow } from '@base-ui-solid/utils/owner';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { ownerDocument, ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type {
   UseFloatingReturn,
   PositioningInteractionStore,

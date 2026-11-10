@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
-import { Field } from '@base-ui-solid/solid/field';
-import { Form } from '@base-ui-solid/solid/form';
-import { Button } from '@base-ui-solid/solid/button';
+import { Field } from 'base-ui-solidjs/field';
+import { Form } from 'base-ui-solidjs/form';
+import { Button } from 'base-ui-solidjs/button';
 import styles from './index.module.css';
 
 interface FormState {

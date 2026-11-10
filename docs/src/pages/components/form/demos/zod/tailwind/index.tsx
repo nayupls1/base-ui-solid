@@ -1,8 +1,8 @@
 import { createSignal } from 'solid-js';
 import { z } from 'zod';
-import { Field } from '@base-ui-solid/solid/field';
-import { Form } from '@base-ui-solid/solid/form';
-import { Button } from '@base-ui-solid/solid/button';
+import { Field } from 'base-ui-solidjs/field';
+import { Form } from 'base-ui-solidjs/form';
+import { Button } from 'base-ui-solidjs/button';
 
 const schema = z.object({
   name: z.string().min(1, 'Name is required'),

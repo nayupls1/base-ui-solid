@@ -1,4 +1,4 @@
-import { ScrollArea } from '@base-ui-solid/solid/scroll-area';
+import { ScrollArea } from 'base-ui-solidjs/scroll-area';
 import './ScrollArea.css';
 
 export const Root = ScrollArea.Root;

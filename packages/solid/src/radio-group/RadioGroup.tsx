@@ -1,8 +1,8 @@
 import { omit, onCleanup } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { contains } from '@base-ui-solid/utils/shadowDom';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { contains } from 'base-ui-solidjs-utils/shadowDom';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { BaseUIComponentProps, HTMLProps } from '../internals/types';
 import { useBaseUiId } from '../internals/useBaseUiId';
 import { SHIFT } from '../internals/composite/composite';

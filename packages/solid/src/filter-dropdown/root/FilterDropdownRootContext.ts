@@ -1,5 +1,5 @@
 import { createContext, useContext, type Accessor } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { REASONS } from '../../internals/reasons';
 import type { FilterDropdownStore } from '../store';

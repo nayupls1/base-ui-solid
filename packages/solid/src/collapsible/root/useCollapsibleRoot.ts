@@ -1,6 +1,6 @@
 import type { Accessor } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
 import { useBaseUiId } from '../../internals/useBaseUiId';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';

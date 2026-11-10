@@ -1,4 +1,4 @@
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 
 /**
  * Extracts the 2D translation and scale from the element's computed `transform` matrix.

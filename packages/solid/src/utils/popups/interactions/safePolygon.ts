@@ -1,6 +1,6 @@
 import { isElement } from '@floating-ui/utils/dom';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { Rect, Side } from '@floating-ui/dom';
 import type { HandleClose, HandleCloseOptions } from './useHoverShared';
 import { getNodeChildren } from '../tree/nodes';

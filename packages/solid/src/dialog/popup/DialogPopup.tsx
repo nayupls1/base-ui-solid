@@ -1,6 +1,6 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import { FloatingFocusManager } from '../../utils/popups/focus/FloatingFocusManager';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../internals/useRenderElement';

@@ -1,5 +1,5 @@
 import { omit } from 'solid-js';
-import { getTarget } from '@base-ui-solid/utils/shadowDom';
+import { getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useFilterDropdownRootContext } from '../root/FilterDropdownRootContext';

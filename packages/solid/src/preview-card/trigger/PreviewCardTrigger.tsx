@@ -1,5 +1,5 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { JSX } from '@solidjs/web';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import type { BaseUIComponentProps } from '../../internals/types';

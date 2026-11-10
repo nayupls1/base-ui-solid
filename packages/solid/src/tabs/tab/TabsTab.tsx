@@ -1,6 +1,6 @@
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import { useBaseUiId } from '../../internals/useBaseUiId';
 import { useRenderElement } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps, NativeButtonProps } from '../../internals/types';

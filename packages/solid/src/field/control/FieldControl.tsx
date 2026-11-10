@@ -1,5 +1,5 @@
 import { createEffect, flush, omit, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import type { FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useSetFieldFocused } from '../../internals/field-root-context/useSetFieldFocused';
@@ -14,7 +14,7 @@ import { useValueChanged } from '../../internals/useValueChanged';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { ownedProps } from '../../internals/ownedProps';
 
 /**

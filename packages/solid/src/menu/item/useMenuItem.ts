@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { useButton } from '../../internals/use-button';
 import { mergeProps } from '../../merge-props';
 import type { HTMLProps } from '../../internals/types';

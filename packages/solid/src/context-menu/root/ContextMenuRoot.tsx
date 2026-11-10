@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createSignal } from 'solid-js';
-import { useId } from '@base-ui-solid/utils/useId';
+import { useId } from 'base-ui-solidjs-utils/useId';
 import { ContextMenuRootContext } from './ContextMenuRootContext';
 import { MenuRoot } from '../../menu/root/MenuRoot';
 import type { Menu } from '../../menu';

@@ -1,5 +1,5 @@
 import { createMemo, createSignal } from 'solid-js';
-import { Autocomplete } from '@base-ui-solid/solid/autocomplete';
+import { Autocomplete } from 'base-ui-solidjs/autocomplete';
 
 const limit = 8;
 

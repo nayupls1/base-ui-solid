@@ -1,6 +1,6 @@
 import { createEffect, createRenderEffect, untrack, type Accessor } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { AnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { AnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
 
 export type TransitionStatus = 'starting' | 'ending' | 'idle' | undefined;
 

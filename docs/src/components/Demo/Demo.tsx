@@ -1,6 +1,6 @@
 import { createMemo, createSignal, flush, Show, untrack } from 'solid-js';
-import { Collapsible } from '@base-ui-solid/solid/collapsible';
-import { ScrollArea } from '@base-ui-solid/solid/scroll-area';
+import { Collapsible } from 'base-ui-solidjs/collapsible';
+import { ScrollArea } from 'base-ui-solidjs/scroll-area';
 import { CopyIcon } from '../../icons/CopyIcon';
 import { CheckIcon } from '../../icons/CheckIcon';
 import { GhostButton } from '../GhostButton';

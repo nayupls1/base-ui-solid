@@ -1,7 +1,7 @@
 import { createEffect, createMemo, omit, Show } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { useLocation } from '@solidjs/router';
-import { ScrollArea } from '@base-ui-solid/solid/scroll-area';
+import { ScrollArea } from 'base-ui-solidjs/scroll-area';
 import { HEADER_HEIGHT_DESKTOP } from './Header';
 import './SideNav.css';
 

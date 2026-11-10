@@ -1,4 +1,4 @@
-import { Tooltip } from '@base-ui-solid/solid/tooltip';
+import { Tooltip } from 'base-ui-solidjs/tooltip';
 import { TrashIcon } from '../../icons-tw';
 
 const demoTooltip = Tooltip.createHandle();

@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Tooltip } from '@base-ui-solid/solid/tooltip';
+import { Tooltip } from 'base-ui-solidjs/tooltip';
 import { HeadphonesIcon, StopwatchIcon, TrashIcon } from '../../icons-tw';
 
 const demoTooltip = Tooltip.createHandle<JSX.Element>();

@@ -1,7 +1,7 @@
 import { createEffect, createMemo, createSignal, omit, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { getParentNode, isHTMLElement, isLastTraversableNode } from '@floating-ui/utils/dom';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { getCssDimensions } from '../../utils/getCssDimensions';
 import { getElementTransform } from '../../utils/getElementTransform';

@@ -1,8 +1,8 @@
 import { createContext, createEffect, createSignal, onCleanup, untrack, useContext } from 'solid-js';
 import type { Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { useTimeout, Timeout } from '@base-ui-solid/utils/useTimeout';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { useTimeout, Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 
 import { getDelay } from '../interactions/useHoverShared';
 import type { PopupInteractionStore, Delay } from '../types';

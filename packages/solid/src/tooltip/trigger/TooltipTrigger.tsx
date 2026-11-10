@@ -1,9 +1,9 @@
 import type { JSX } from '@solidjs/web';
 import { createMemo, omit, untrack } from 'solid-js';
 import { isElement } from '@floating-ui/utils/dom';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import type { BaseUIComponentProps, BaseUIEvent } from '../../internals/types';
 import type { RefInput } from '../../internals/useRenderElement';

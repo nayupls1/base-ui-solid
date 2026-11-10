@@ -8,11 +8,11 @@ import {
   untrack,
   type Accessor,
 } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { safePolygon } from '../../utils/popups/interactions/safePolygon';
 import { useClick } from '../../utils/popups/interactions/useClick';
 import {

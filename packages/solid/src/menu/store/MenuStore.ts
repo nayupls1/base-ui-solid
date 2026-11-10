@@ -1,8 +1,8 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { EMPTY_OBJECT, NOOP } from '@base-ui-solid/utils/empty';
-import { platform } from '@base-ui-solid/utils/platform';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { EMPTY_OBJECT, NOOP } from 'base-ui-solidjs-utils/empty';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import type { MenuParent, MenuRoot } from '../root/MenuRoot';
 import { FloatingTreeStore } from '../../utils/popups/tree/FloatingTreeStore';
 import type { HTMLProps } from '../../internals/types';

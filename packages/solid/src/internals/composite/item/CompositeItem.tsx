@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { omit, untrack } from 'solid-js';
-import { EMPTY_OBJECT, EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT, EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
 import { useRenderElement, type PropsInput, type RefInput } from '../../useRenderElement';
 import { useCompositeItem } from './useCompositeItem';
 import type { BaseUIComponentProps } from '../../types';

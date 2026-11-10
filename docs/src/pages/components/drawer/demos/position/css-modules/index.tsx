@@ -1,4 +1,4 @@
-import { Drawer } from '@base-ui-solid/solid/drawer';
+import { Drawer } from 'base-ui-solidjs/drawer';
 import styles from './index.module.css';
 
 export default function ExampleDrawer() {

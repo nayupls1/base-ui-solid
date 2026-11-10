@@ -5,7 +5,7 @@ import { useRenderElement } from '../../internals/useRenderElement';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { scrollAreaStateAttributesMapping } from '../root/stateAttributes';
 import type { ScrollAreaRootState } from '../root/ScrollAreaRoot';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { ownedProps } from '../../internals/ownedProps';
 
 /**

@@ -1,7 +1,7 @@
 import { omit } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { platform } from '@base-ui-solid/utils/platform';
-import { visuallyHidden } from '@base-ui-solid/utils/visuallyHidden';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { visuallyHidden } from 'base-ui-solidjs-utils/visuallyHidden';
 import { ownedProps } from '../../../internals/ownedProps';
 import { assignRefs, type RefInput } from '../../../internals/useRenderElement';
 

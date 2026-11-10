@@ -1,5 +1,5 @@
 import { createEffect, onCleanup } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { getCombinedFieldValidityData } from '../../field/utils/getCombinedFieldValidityData';
 import { useFormContext } from '../form-context/FormContext';
 import type { FieldValidityData } from '../../field/root/FieldRoot';

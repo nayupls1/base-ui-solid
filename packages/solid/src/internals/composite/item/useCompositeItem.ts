@@ -1,4 +1,4 @@
-import { isElementDisabled } from '@base-ui-solid/utils/isElementDisabled';
+import { isElementDisabled } from 'base-ui-solidjs-utils/isElementDisabled';
 import { useCompositeRootContext } from '../root/CompositeRootContext';
 import { useCompositeListItem } from '../list/useCompositeListItem';
 import type { UseCompositeListItemParameters } from '../list/useCompositeListItem';

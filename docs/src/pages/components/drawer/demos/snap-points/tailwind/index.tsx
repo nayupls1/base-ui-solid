@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Drawer } from '@base-ui-solid/solid/drawer';
+import { Drawer } from 'base-ui-solidjs/drawer';
 
 const TOP_MARGIN_REM = 1;
 const VISIBLE_SNAP_POINTS_REM = [30];

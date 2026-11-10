@@ -1,5 +1,5 @@
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { FieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import {
   DEFAULT_VALIDITY_STATE,

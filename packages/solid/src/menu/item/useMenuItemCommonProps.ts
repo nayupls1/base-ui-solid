@@ -1,6 +1,6 @@
 import { untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { platform } from '@base-ui-solid/utils/platform';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { platform } from 'base-ui-solidjs-utils/platform';
 import type { HTMLProps } from '../../internals/types';
 import type { MenuStore } from '../store/MenuStore';
 import { REASONS } from '../../internals/reasons';

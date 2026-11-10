@@ -1,8 +1,8 @@
 import { createEffect, createMemo, createSignal, omit, onCleanup, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { inertValue } from '@base-ui-solid/utils/inertValue';
-import { activeElement, closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { inertValue } from 'base-ui-solidjs-utils/inertValue';
+import { activeElement, closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import type { ToastObject as ToastObjectType } from '../useToastManager';
 import { ToastRootContext } from './ToastRootContext';

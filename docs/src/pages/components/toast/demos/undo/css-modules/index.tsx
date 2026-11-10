@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import { Toast } from '@base-ui-solid/solid/toast';
+import { Toast } from 'base-ui-solidjs/toast';
 import styles from './index.module.css';
 
 export default function UndoToastExample() {

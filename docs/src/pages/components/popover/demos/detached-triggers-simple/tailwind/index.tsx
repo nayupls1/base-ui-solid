@@ -1,4 +1,4 @@
-import { Popover } from '@base-ui-solid/solid/popover';
+import { Popover } from 'base-ui-solidjs/popover';
 
 const demoPopover = Popover.createHandle();
 

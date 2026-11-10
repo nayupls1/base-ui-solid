@@ -1,11 +1,11 @@
 import { createEffect, createMemo, omit, Show, untrack } from 'solid-js';
 import { spread } from '@solidjs/web';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { visuallyHiddenInput, visuallyHiddenInputPinned } from '@base-ui-solid/utils/visuallyHidden';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { getDefaultFormSubmitter } from '@base-ui-solid/utils/getDefaultFormSubmitter';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { visuallyHiddenInput, visuallyHiddenInputPinned } from 'base-ui-solidjs-utils/visuallyHidden';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { getDefaultFormSubmitter } from 'base-ui-solidjs-utils/getDefaultFormSubmitter';
 import { getCheckboxStateAttributesMapping } from '../utils/getCheckboxStateAttributesMapping';
 import { dispatchClickWithModifiers } from '../../utils/dispatchClickWithModifiers';
 import { assignRefs, useRenderElement, type RefInput } from '../../internals/useRenderElement';

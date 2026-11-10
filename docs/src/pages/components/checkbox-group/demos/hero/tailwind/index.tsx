@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createUniqueId } from 'solid-js';
-import { Checkbox } from '@base-ui-solid/solid/checkbox';
-import { CheckboxGroup } from '@base-ui-solid/solid/checkbox-group';
+import { Checkbox } from 'base-ui-solidjs/checkbox';
+import { CheckboxGroup } from 'base-ui-solidjs/checkbox-group';
 
 export default function ExampleCheckboxGroup() {
   const id = createUniqueId();

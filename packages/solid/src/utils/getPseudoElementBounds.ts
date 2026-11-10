@@ -1,5 +1,5 @@
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { platform } from '@base-ui-solid/utils/platform';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { platform } from 'base-ui-solidjs-utils/platform';
 
 interface ElementBounds {
   left: number;

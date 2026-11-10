@@ -1,8 +1,8 @@
 import { createEffect, createMemo, onCleanup, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { Timeout, useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { Timeout, useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import {
   getComputedStyle,
   getParentNode,
@@ -11,8 +11,8 @@ import {
   isLastTraversableNode,
   isShadowRoot,
 } from '@floating-ui/utils/dom';
-import { platform } from '@base-ui-solid/utils/platform';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useFloatingTree } from '../tree/FloatingTree';
 import type { FloatingTreeStore } from '../tree/FloatingTreeStore';
 import type { ElementProps, PopupInteractionStore } from '../types';

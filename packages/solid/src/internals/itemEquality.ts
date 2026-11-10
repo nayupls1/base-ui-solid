@@ -1,4 +1,4 @@
-import { areArraysEqual } from '@base-ui-solid/utils/areArraysEqual';
+import { areArraysEqual } from 'base-ui-solidjs-utils/areArraysEqual';
 
 export type ItemEqualityComparer<Item = any, Value = Item> = (
   itemValue: Item,

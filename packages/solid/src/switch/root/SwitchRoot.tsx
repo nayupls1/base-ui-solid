@@ -1,7 +1,7 @@
 import { createEffect, createMemo, omit, Show, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { visuallyHiddenInput, visuallyHiddenInputPinned } from '@base-ui-solid/utils/visuallyHidden';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { visuallyHiddenInput, visuallyHiddenInputPinned } from 'base-ui-solidjs-utils/visuallyHidden';
 import { assignRefs, useRenderElement, type RefInput } from '../../internals/useRenderElement';
 import type { BaseUIComponentProps, NonNativeButtonProps } from '../../internals/types';
 import { useBaseUiId } from '../../internals/useBaseUiId';

@@ -1,5 +1,5 @@
 import { createMemo, omit, untrack } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useButton } from '../../internals/use-button/useButton';
 import { useRenderElement } from '../../internals/useRenderElement';

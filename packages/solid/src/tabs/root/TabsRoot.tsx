@@ -1,6 +1,6 @@
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps, Orientation as BaseOrientation } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { CompositeList } from '../../internals/composite/list/CompositeList';

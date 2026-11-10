@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import type { RefInput } from '../../internals/useRenderElement';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { DialogPortal } from '../../dialog/portal/DialogPortal';
 import type { BaseUIComponentProps } from '../../internals/types';
 

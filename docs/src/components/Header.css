@@ -50,6 +50,21 @@
     }
   }
 
+  .HeaderBrand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    min-width: 0;
+  }
+
+  /* Says on every page and viewport that this is not the real Base UI docs. Kept short enough
+     to stay within the sidebar column, since page content scrolls under the transparent header. */
+  .HeaderUnofficial {
+    font-size: var(--font-size-13);
+    line-height: 1.25;
+    color: var(--gray-t1);
+  }
+
   .HeaderSearch {
     display: flex;
     align-items: center;

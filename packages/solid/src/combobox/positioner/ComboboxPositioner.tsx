@@ -1,5 +1,5 @@
 import { createEffect, Show, untrack } from 'solid-js';
-import { inertValue } from '@base-ui-solid/utils/inertValue';
+import { inertValue } from 'base-ui-solidjs-utils/inertValue';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { ComboboxPositionerContext } from './ComboboxPositionerContext';
 import { useListEmpty } from '../utils/parts';

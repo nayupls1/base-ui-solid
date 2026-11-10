@@ -1,4 +1,4 @@
-import { clamp } from '@base-ui-solid/utils/clamp';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
 import { asc } from './asc';
 
 export function getSliderValue(

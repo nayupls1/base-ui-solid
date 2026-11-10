@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Accordion } from '@base-ui-solid/solid/accordion';
+import { Accordion } from 'base-ui-solidjs/accordion';
 import styles from '../../_index.module.css';
 
 export default function ExampleAccordion() {

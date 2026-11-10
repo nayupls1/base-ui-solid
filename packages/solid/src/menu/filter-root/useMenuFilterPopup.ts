@@ -1,8 +1,8 @@
 import { createEffect } from 'solid-js';
 import { isElement, isHTMLElement } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { warn } from '@base-ui-solid/utils/warn';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { isTypeableElement } from '../../utils/popups/element';
 import { useFilterDropdownRootContext } from '../../filter-dropdown/root/FilterDropdownRootContext';
 import { refocusOwner, isRefocusingOwner } from '../../filter-dropdown/utils/refocusOwner';

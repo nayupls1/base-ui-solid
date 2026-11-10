@@ -1,11 +1,11 @@
 import { createContext, createMemo, createEffect, omit, Show, untrack, useContext } from 'solid-js';
 import { Portal, type JSX } from '@solidjs/web';
 import { isNode } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { useId } from '@base-ui-solid/utils/useId';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { useId } from 'base-ui-solidjs-utils/useId';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { FocusGuard } from '../focus/FocusGuard';
 import {
   enableFocusInside,

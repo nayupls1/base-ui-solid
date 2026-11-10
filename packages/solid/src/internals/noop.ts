@@ -1,1 +1,1 @@
-export { NOOP } from '@base-ui-solid/utils/empty';
+export { NOOP } from 'base-ui-solidjs-utils/empty';

@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Collapsible } from '@base-ui-solid/solid/collapsible';
+import { Collapsible } from 'base-ui-solidjs/collapsible';
 import styles from './index.module.css';
 
 export default function ExampleCollapsible() {

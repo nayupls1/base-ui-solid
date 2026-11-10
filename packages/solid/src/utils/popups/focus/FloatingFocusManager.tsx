@@ -1,15 +1,15 @@
 import { createEffect, createMemo, Show, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { getNodeName, isHTMLElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { platform } from '@base-ui-solid/utils/platform';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { ownerDocument, ownerWindow } from '@base-ui-solid/utils/owner';
-import { activeElement, closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { ownerDocument, ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { activeElement, closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { FocusGuard } from './FocusGuard';
 import {
   isInsideLogicalTree,

@@ -1,6 +1,6 @@
 /* eslint-disable no-bitwise */
 import { onCleanup, type JSX } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { CompositeListContext } from './CompositeListContext';
 import type { CompositeListRegistration } from './CompositeListContext';
 import { ownedProps } from '../../ownedProps';

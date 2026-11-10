@@ -1,10 +1,10 @@
 import { createEffect, onCleanup, untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { NOOP } from '@base-ui-solid/utils/empty';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { useInterval } from '@base-ui-solid/utils/useInterval';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { useInterval } from 'base-ui-solidjs-utils/useInterval';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 
 const DEFAULT_TICK_DELAY = 60;
 const DEFAULT_START_DELAY = 400;

@@ -1,6 +1,6 @@
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { getTarget } from '@base-ui-solid/utils/shadowDom';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { ElementProps, PopupInteractionStore } from '../types';
 import { isTypeableElement } from '../element';
 import { isMouseLikePointerType, isVirtualPointerEvent } from '../event';

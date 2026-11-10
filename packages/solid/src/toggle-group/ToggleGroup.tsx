@@ -1,6 +1,6 @@
 import { omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { EMPTY_ARRAY } from '@base-ui-solid/utils/empty';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { EMPTY_ARRAY } from 'base-ui-solidjs-utils/empty';
 import { useRenderElement } from '../internals/useRenderElement';
 import type { BaseUIComponentProps, HTMLProps, Orientation } from '../internals/types';
 import { CompositeRoot } from '../internals/composite/root/CompositeRoot';

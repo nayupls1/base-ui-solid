@@ -1,6 +1,6 @@
 import { createUniqueId } from 'solid-js';
-import { Radio } from '@base-ui-solid/solid/radio';
-import { RadioGroup } from '@base-ui-solid/solid/radio-group';
+import { Radio } from 'base-ui-solidjs/radio';
+import { RadioGroup } from 'base-ui-solidjs/radio-group';
 import styles from './index.module.css';
 
 export default function ExampleRadioGroup() {

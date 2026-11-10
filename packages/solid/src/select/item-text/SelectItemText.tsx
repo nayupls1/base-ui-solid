@@ -1,5 +1,5 @@
 import { createEffect, omit } from 'solid-js';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useSelectItemContext } from '../item/SelectItemContext';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import type { BaseUIComponentProps } from '../../internals/types';

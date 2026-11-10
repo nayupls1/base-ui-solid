@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useCompositeListItem } from '../../internals/composite/list/useCompositeListItem';
 import type { BaseUIComponentProps, BaseUIEvent, HTMLProps, NonNativeButtonProps } from '../../internals/types';

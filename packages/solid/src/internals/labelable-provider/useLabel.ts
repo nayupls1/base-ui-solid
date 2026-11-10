@@ -1,6 +1,6 @@
 import { isHTMLElement, isShadowRoot } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { closest, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { closest, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useRegisteredLabelId } from '../../utils/useRegisteredLabelId';
 import { useLabelableContext } from './LabelableContext';
 import type { HTMLProps } from '../types';

@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal, omit, onCleanup, Show, untrack } from 'solid-js';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import { closest, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import { closest, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useDismiss } from '../../utils/popups/interactions/useDismiss';
 import { useHoverPopupInteraction } from '../../utils/popups/interactions/useHoverPopupInteraction';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';

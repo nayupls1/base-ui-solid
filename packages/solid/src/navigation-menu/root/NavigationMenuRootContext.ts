@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { FloatingRootStore } from '../../utils/popups/floating-root/FloatingRootStore';
 import type { TransitionStatus } from '../../internals/useTransitionStatus';
 import type { NavigationMenuRoot } from './NavigationMenuRoot';

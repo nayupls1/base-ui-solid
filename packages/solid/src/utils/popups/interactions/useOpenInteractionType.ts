@@ -1,8 +1,8 @@
 import { type Accessor } from 'solid-js';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { useEnhancedClickHandler } from '@base-ui-solid/utils/useEnhancedClickHandler';
-import { platform } from '@base-ui-solid/utils/platform';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { useEnhancedClickHandler } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
+import { platform } from 'base-ui-solidjs-utils/platform';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useValueChanged } from '../../../internals/useValueChanged';
 
 /**

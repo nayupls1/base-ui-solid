@@ -1,4 +1,4 @@
-import { ScrollArea } from '@base-ui-solid/solid/scroll-area';
+import { ScrollArea } from 'base-ui-solidjs/scroll-area';
 import styles from './index.module.css';
 
 export default function ExampleScrollAreaScrollFade() {

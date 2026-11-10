@@ -1,5 +1,5 @@
 import { createEffect, createMemo, omit, onCleanup } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import type { BaseUIComponentProps } from '../../internals/types';

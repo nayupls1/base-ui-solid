@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
-import { Menubar } from '@base-ui-solid/solid/menubar';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menubar } from 'base-ui-solidjs/menubar';
+import { Menu } from 'base-ui-solidjs/menu';
 
 export default function ExampleMenubar() {
   return (

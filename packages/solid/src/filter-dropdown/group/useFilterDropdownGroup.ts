@@ -1,5 +1,5 @@
 import { createEffect, type Accessor } from 'solid-js';
-import { useStore } from '@base-ui-solid/utils/store';
+import { useStore } from 'base-ui-solidjs-utils/store';
 import { useFilterDropdownItemContext } from '../root/FilterDropdownRootContext';
 import type { FilterDropdownGroupContext } from './FilterDropdownGroupContext';
 import { useFilterDropdownGroupContext } from './FilterDropdownGroupContext';

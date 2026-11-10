@@ -1,5 +1,5 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { NOOP } from '@base-ui-solid/utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
 import type {
   PopupStoreContext,
   PopupStoreState,

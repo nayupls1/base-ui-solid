@@ -1,5 +1,5 @@
 import { $PROXY } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { MenuFilterRootProps } from './MenuFilterRoot';
 
 /**

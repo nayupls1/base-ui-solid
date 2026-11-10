@@ -1,5 +1,5 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
-import type { InteractionType } from '@base-ui-solid/utils/useEnhancedClickHandler';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import type { InteractionType } from 'base-ui-solidjs-utils/useEnhancedClickHandler';
 import type { Side } from '../../../internals/useAnchorPositioning';
 import { BasePopupStore, popupStoreSelectors } from '../store';
 import type { PopupOpenChangeEventDetails, PopupStoreContext, PopupStoreState } from '../store';

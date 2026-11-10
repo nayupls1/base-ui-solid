@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { AlertDialog } from '@base-ui-solid/solid/alert-dialog';
+import { AlertDialog } from 'base-ui-solidjs/alert-dialog';
 
 type AlertPayload = { message: string };
 

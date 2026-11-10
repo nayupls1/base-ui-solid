@@ -1,5 +1,5 @@
 import type { Accessor } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { VirtualElement } from '@floating-ui/dom';
 import type { HTMLProps } from '../../internals/types';
 import type {

@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Popover } from '@base-ui-solid/solid/popover';
+import { Popover } from 'base-ui-solidjs/popover';
 import styles from '../../_index.module.css';
 
 const demoPopover = Popover.createHandle();

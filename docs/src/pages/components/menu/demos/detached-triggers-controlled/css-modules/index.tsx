@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Menu } from '@base-ui-solid/solid/menu';
+import { Menu } from 'base-ui-solidjs/menu';
 import styles from '../../_index.module.css';
 
 /* eslint-disable no-console */

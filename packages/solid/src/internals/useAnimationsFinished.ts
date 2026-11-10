@@ -1,6 +1,6 @@
 import { flush } from 'solid-js';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { NOOP } from '@base-ui-solid/utils/empty';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
 import { resolveRef } from '../utils/resolveRef';
 import { isFiniteAnimation } from '../utils/getFiniteAnimations';
 import * as TransitionStatusDataAttributes from './TransitionStatusDataAttributes';

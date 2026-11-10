@@ -1,10 +1,10 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { createEffect, createMemo, createSignal, omit, untrack } from 'solid-js';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains } from '@base-ui-solid/utils/shadowDom';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains } from 'base-ui-solidjs-utils/shadowDom';
 import {
   FloatingNode,
   FloatingTree,

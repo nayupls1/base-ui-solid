@@ -1,5 +1,5 @@
 import { createSignal, omit } from 'solid-js';
-import { platform } from '@base-ui-solid/utils/platform';
+import { platform } from 'base-ui-solidjs-utils/platform';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useBaseUiId } from '../../internals/useBaseUiId';

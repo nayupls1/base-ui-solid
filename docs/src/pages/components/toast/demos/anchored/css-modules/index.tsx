@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { For, createSignal } from 'solid-js';
-import { Toast } from '@base-ui-solid/solid/toast';
-import { Button } from '@base-ui-solid/solid/button';
+import { Toast } from 'base-ui-solidjs/toast';
+import { Button } from 'base-ui-solidjs/button';
 import styles from './index.module.css';
 
 const anchoredToastManager = Toast.createToastManager();

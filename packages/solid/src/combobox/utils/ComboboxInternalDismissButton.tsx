@@ -1,4 +1,4 @@
-import { visuallyHiddenInput } from '@base-ui-solid/utils/visuallyHidden';
+import { visuallyHiddenInput } from 'base-ui-solidjs-utils/visuallyHidden';
 import { useButton } from '../../internals/use-button';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';

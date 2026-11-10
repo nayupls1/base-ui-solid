@@ -1,6 +1,6 @@
 import { createEffect, createMemo, omit, untrack } from 'solid-js';
-import { useControlled } from '@base-ui-solid/utils/useControlled';
-import { error } from '@base-ui-solid/utils/error';
+import { useControlled } from 'base-ui-solidjs-utils/useControlled';
+import { error } from 'base-ui-solidjs-utils/error';
 import { useBaseUiId } from '../internals/useBaseUiId';
 import { useRenderElement } from '../internals/useRenderElement';
 import type { BaseUIComponentProps, NativeButtonProps } from '../internals/types';

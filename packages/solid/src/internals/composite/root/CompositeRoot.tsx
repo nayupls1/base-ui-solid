@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { CompositeList } from '../list/CompositeList';
 import type { CompositeMetadata } from '../list/CompositeList';
 import { useCompositeRoot } from './useCompositeRoot';

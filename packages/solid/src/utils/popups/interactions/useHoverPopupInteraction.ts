@@ -1,7 +1,7 @@
 import { createEffect, onCleanup } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import { isElement } from '@floating-ui/utils/dom';
 import { createChangeEventDetails } from '../../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../../internals/reasons';

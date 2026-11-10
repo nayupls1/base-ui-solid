@@ -1,4 +1,4 @@
-import { Slider } from '@base-ui-solid/solid/slider';
+import { Slider } from 'base-ui-solidjs/slider';
 import styles from './index.module.css';
 
 export default function EdgeAlignedThumb() {

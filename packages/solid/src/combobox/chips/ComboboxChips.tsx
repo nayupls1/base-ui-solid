@@ -1,5 +1,5 @@
 import { omit, untrack } from 'solid-js';
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import type { BaseUIComponentProps } from '../../internals/types';
 import { useRenderElement } from '../../internals/useRenderElement';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';

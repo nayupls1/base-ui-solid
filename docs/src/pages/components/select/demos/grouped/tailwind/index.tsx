@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Select } from '@base-ui-solid/solid/select';
+import { Select } from 'base-ui-solidjs/select';
 
 export default function ExampleSelectGrouped() {
   return (

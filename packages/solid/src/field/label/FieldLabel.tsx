@@ -1,5 +1,5 @@
 import { createEffect, omit } from 'solid-js';
-import { error } from '@base-ui-solid/utils/error';
+import { error } from 'base-ui-solidjs-utils/error';
 import type { FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { fieldValidityMapping } from '../../internals/field-constants/constants';

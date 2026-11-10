@@ -1,5 +1,5 @@
 import { For, Show } from 'solid-js';
-import { Tabs } from '@base-ui-solid/solid/tabs';
+import { Tabs } from 'base-ui-solidjs/tabs';
 import type { DemoFile } from './types';
 
 interface DemoFileSelectorProps {

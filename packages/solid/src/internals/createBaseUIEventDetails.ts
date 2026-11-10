@@ -1,4 +1,4 @@
-import { EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import { EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import type { REASONS } from './reasons';
 
 interface ReasonToEventMap {

@@ -1,7 +1,7 @@
 import type { JSX } from '@solidjs/web';
 import { createSignal, createUniqueId } from 'solid-js';
-import { Checkbox } from '@base-ui-solid/solid/checkbox';
-import { CheckboxGroup } from '@base-ui-solid/solid/checkbox-group';
+import { Checkbox } from 'base-ui-solidjs/checkbox';
+import { CheckboxGroup } from 'base-ui-solidjs/checkbox-group';
 import styles from './index.module.css';
 
 const fruits = ['fuji-apple', 'gala-apple', 'granny-smith-apple'];

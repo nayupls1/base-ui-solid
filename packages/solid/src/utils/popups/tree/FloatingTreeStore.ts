@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { FloatingNodeType, PopupEvents } from '../types';
 import { createEventEmitter } from '../createEventEmitter';
 

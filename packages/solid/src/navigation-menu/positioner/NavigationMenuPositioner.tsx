@@ -1,8 +1,8 @@
 import { createEffect, createMemo, createSignal, flush, omit, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import {
   disableFocusInside,
   enableFocusInside,

@@ -1,4 +1,4 @@
-import { Switch } from '@base-ui-solid/solid/switch';
+import { Switch } from 'base-ui-solidjs/switch';
 import styles from './index.module.css';
 
 export default function ExampleSwitch() {

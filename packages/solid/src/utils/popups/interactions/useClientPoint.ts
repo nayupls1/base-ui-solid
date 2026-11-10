@@ -1,6 +1,6 @@
 import { createEffect, createSignal, onCleanup, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { getWindow } from '@floating-ui/utils/dom';
 import type { ElementProps, PopupInteractionContext, PopupInteractionStore } from '../types';
 import { isMouseLikePointerType } from '../event';

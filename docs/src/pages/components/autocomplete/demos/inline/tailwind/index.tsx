@@ -1,4 +1,4 @@
-import { Autocomplete } from '@base-ui-solid/solid/autocomplete';
+import { Autocomplete } from 'base-ui-solidjs/autocomplete';
 
 export default function ExampleAutocompleteInline() {
   return (

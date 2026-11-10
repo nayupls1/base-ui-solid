@@ -1,4 +1,4 @@
-import { clamp } from '@base-ui-solid/utils/clamp';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
 
 export const SCROLL_EDGE_TOLERANCE_PX = 1;
 

@@ -1,6 +1,6 @@
 import { createEffect, onCleanup } from 'solid-js';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { FilterDropdownList } from '../../filter-dropdown/list/FilterDropdownList';
 import { reactiveMergeProps } from '../../internals/reactiveMergeProps';

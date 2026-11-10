@@ -1,5 +1,5 @@
-import { ReactStore } from '@base-ui-solid/utils/store';
-import { EMPTY_OBJECT, NOOP } from '@base-ui-solid/utils/empty';
+import { ReactStore } from 'base-ui-solidjs-utils/store';
+import { EMPTY_OBJECT, NOOP } from 'base-ui-solidjs-utils/empty';
 
 export type State = {
   visibleItemIds: ReadonlySet<symbol> | null;

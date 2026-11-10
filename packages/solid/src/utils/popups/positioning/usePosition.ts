@@ -10,8 +10,8 @@ import {
   type Strategy,
   type VirtualElement,
 } from '@floating-ui/dom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 
 export type ReferenceElement = Element | VirtualElement;
 

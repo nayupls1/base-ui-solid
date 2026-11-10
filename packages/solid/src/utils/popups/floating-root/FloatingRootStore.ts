@@ -1,4 +1,4 @@
-import { ReactStore } from '@base-ui-solid/utils/store';
+import { ReactStore } from 'base-ui-solidjs-utils/store';
 import type { PopupInteractionContext, PositioningInteractionStore, ReferenceType } from '../types';
 import type { BaseUIChangeEventDetails } from '../../../internals/createBaseUIEventDetails';
 import { createEventEmitter } from '../createEventEmitter';

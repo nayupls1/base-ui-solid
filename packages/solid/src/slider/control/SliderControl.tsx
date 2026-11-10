@@ -1,12 +1,12 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { isElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { ownerDocument, ownerWindow } from '@base-ui-solid/utils/owner';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { ownerDocument, ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import type { Coords } from '@floating-ui/dom';
 import type { BaseUIComponentProps } from '../../internals/types';
 import {

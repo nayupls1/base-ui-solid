@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
 import { createUniqueId } from 'solid-js';
-import { Combobox } from '@base-ui-solid/solid/combobox';
+import { Combobox } from 'base-ui-solidjs/combobox';
 import styles from './index.module.css';
 
 export default function ExampleMultipleCombobox() {

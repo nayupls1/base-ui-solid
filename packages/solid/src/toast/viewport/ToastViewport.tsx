@@ -1,11 +1,11 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, For, omit, Show, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { mergeCleanups } from '@base-ui-solid/utils/mergeCleanups';
-import { ownerDocument, ownerWindow } from '@base-ui-solid/utils/owner';
-import { visuallyHidden } from '@base-ui-solid/utils/visuallyHidden';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { activeElement, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { mergeCleanups } from 'base-ui-solidjs-utils/mergeCleanups';
+import { ownerDocument, ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { visuallyHidden } from 'base-ui-solidjs-utils/visuallyHidden';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { activeElement, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { FocusGuard } from '../../utils/popups/focus/FocusGuard';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import { useToastProviderContext } from '../provider/ToastProviderContext';

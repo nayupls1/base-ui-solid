@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { BaseUIChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import type { DialogRoot } from '../../dialog/root/DialogRoot';
 import { ownedProps } from '../../internals/ownedProps';

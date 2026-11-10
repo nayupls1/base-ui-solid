@@ -1,5 +1,5 @@
 import { createMemo, omit, Show, untrack } from 'solid-js';
-import { NOOP } from '@base-ui-solid/utils/empty';
+import { NOOP } from 'base-ui-solidjs-utils/empty';
 import { useMenuFilterItem } from '../filter-root/MenuFilterContext';
 import { MenuRadioItemContext } from './MenuRadioItemContext';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';

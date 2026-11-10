@@ -1,7 +1,7 @@
 import { createEffect, omit, untrack } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { contains, getTarget } from '@base-ui-solid/utils/shadowDom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { BaseUIComponentProps, HTMLProps } from '../../internals/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaScrollbarContext } from './ScrollAreaScrollbarContext';

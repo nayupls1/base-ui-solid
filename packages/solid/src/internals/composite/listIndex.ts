@@ -1,9 +1,9 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { floor } from '@floating-ui/utils';
 import { getComputedStyle } from '@floating-ui/utils/dom';
 
-import { closest } from '@base-ui-solid/utils/shadowDom';
-import { isElementDisabled } from '@base-ui-solid/utils/isElementDisabled';
+import { closest } from 'base-ui-solidjs-utils/shadowDom';
+import { isElementDisabled } from 'base-ui-solidjs-utils/isElementDisabled';
 import type { Dimensions } from '@floating-ui/dom';
 import { stopEvent } from '../../utils/popups/event';
 import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from '../../utils/popups/constants';

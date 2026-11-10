@@ -1,4 +1,4 @@
-import { Separator } from '@base-ui-solid/solid/separator';
+import { Separator } from 'base-ui-solidjs/separator';
 
 export default function ExampleSeparator() {
   return (

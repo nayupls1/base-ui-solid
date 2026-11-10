@@ -1,6 +1,6 @@
 import { createEffect, untrack } from 'solid-js';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { error } from '@base-ui-solid/utils/error';
+import { error } from 'base-ui-solidjs-utils/error';
 import { makeEventPreventable, mergeProps } from '../../merge-props';
 import { useCompositeRootContext } from '../composite/root/CompositeRootContext';
 import type { BaseUIEvent, HTMLProps } from '../types';

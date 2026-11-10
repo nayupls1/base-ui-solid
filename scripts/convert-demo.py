@@ -126,9 +126,9 @@ def transform(src: str) -> str:
     s = s.replace("'use client';\n", '')
     s = re.sub(r"import \* as React from 'react';\n", '', s)
     s = re.sub(r"import React from 'react';\n", '', s)
-    s = s.replace("'@base-ui/react/", "'@base-ui-solid/solid/")
-    s = s.replace("'@base-ui/react'", "'@base-ui-solid/solid'")
-    s = s.replace("'@base-ui/utils/", "'@base-ui-solid/utils/")
+    s = s.replace("'@base-ui/react/", "'base-ui-solidjs/")
+    s = s.replace("'@base-ui/react'", "'base-ui-solidjs'")
+    s = s.replace("'@base-ui/utils/", "'base-ui-solidjs-utils/")
     for k, v in ATTRS.items():
         s = re.sub(r'(?<=[\s{(,])' + k + r'(?==)', v, s)
     # style={{ camelCase: ... }}

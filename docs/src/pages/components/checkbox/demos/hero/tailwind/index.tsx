@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import { Checkbox } from '@base-ui-solid/solid/checkbox';
+import { Checkbox } from 'base-ui-solidjs/checkbox';
 
 export default function ExampleCheckbox() {
   return (

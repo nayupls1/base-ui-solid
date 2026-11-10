@@ -1,6 +1,6 @@
 import type { JSX } from '@solidjs/web';
-import { Toggle } from '@base-ui-solid/solid/toggle';
-import { ToggleGroup } from '@base-ui-solid/solid/toggle-group';
+import { Toggle } from 'base-ui-solidjs/toggle';
+import { ToggleGroup } from 'base-ui-solidjs/toggle-group';
 
 export default function ExampleToggleGroup() {
   return (

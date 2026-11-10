@@ -1,4 +1,4 @@
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import { Show } from 'solid-js';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { FloatingPortal } from '../../utils/popups/portal/FloatingPortal';

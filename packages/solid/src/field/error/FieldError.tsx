@@ -1,6 +1,6 @@
 import { createEffect, createMemo, For, omit, untrack } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import type { FieldRootState } from '../root/FieldRoot';
 import { useFieldRootContext } from '../../internals/field-root-context/FieldRootContext';
 import { useLabelableContext } from '../../internals/labelable-provider/LabelableContext';

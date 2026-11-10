@@ -1,11 +1,11 @@
 import type { JSX } from '@solidjs/web';
 import { createEffect, createMemo, createSignal, flush, omit, onCleanup, untrack } from 'solid-js';
 import { isElement } from '@floating-ui/utils/dom';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { ownerDocument, ownerWindow } from '@base-ui-solid/utils/owner';
-import { useAnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { clamp } from '@base-ui-solid/utils/clamp';
-import { activeElement, closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { ownerDocument, ownerWindow } from 'base-ui-solidjs-utils/owner';
+import { useAnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
+import { activeElement, closest, contains, getTarget } from 'base-ui-solidjs-utils/shadowDom';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { DialogViewport } from '../../dialog/viewport/DialogViewport';
 import * as DialogViewportDataAttributes from '../../dialog/viewport/DialogViewportDataAttributes';

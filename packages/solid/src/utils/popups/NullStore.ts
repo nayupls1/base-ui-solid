@@ -1,4 +1,4 @@
-import { ReactStore } from '@base-ui-solid/utils/store';
+import { ReactStore } from 'base-ui-solidjs-utils/store';
 
 type SelectorFunction<State> = (state: State, ...args: any[]) => any;
 

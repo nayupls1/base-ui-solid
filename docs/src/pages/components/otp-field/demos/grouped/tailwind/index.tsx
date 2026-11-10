@@ -1,5 +1,5 @@
 import { createUniqueId } from 'solid-js';
-import { OTPField } from '@base-ui-solid/solid/otp-field';
+import { OTPField } from 'base-ui-solidjs/otp-field';
 
 const OTP_LENGTH = 6;
 

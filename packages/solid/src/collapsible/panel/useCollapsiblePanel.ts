@@ -1,10 +1,10 @@
 import { createEffect, onCleanup, untrack, type Accessor } from 'solid-js';
-import { addEventListener } from '@base-ui-solid/utils/addEventListener';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
-import { AnimationFrame } from '@base-ui-solid/utils/useAnimationFrame';
-import { Timeout } from '@base-ui-solid/utils/useTimeout';
-import { warn } from '@base-ui-solid/utils/warn';
-import { ownerWindow } from '@base-ui-solid/utils/owner';
+import { addEventListener } from 'base-ui-solidjs-utils/addEventListener';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
+import { AnimationFrame } from 'base-ui-solidjs-utils/useAnimationFrame';
+import { Timeout } from 'base-ui-solidjs-utils/useTimeout';
+import { warn } from 'base-ui-solidjs-utils/warn';
+import { ownerWindow } from 'base-ui-solidjs-utils/owner';
 import type { HTMLProps } from '../../internals/types';
 import { createChangeEventDetails } from '../../internals/createBaseUIEventDetails';
 import { REASONS } from '../../internals/reasons';

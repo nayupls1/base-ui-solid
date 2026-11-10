@@ -1,5 +1,5 @@
 import { createEffect, onCleanup, Show, untrack } from 'solid-js';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
 import { FloatingNode } from '../../utils/popups/tree/FloatingTree';
 import { MenuPositionerContext } from './MenuPositionerContext';
 import { useMenuRootContext } from '../root/MenuRootContext';

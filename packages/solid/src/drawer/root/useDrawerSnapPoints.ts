@@ -1,7 +1,7 @@
 import { createEffect, createMemo, createSignal, untrack } from 'solid-js';
 import { getComputedStyle } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui-solid/utils/owner';
-import { clamp } from '@base-ui-solid/utils/clamp';
+import { ownerDocument } from 'base-ui-solidjs-utils/owner';
+import { clamp } from 'base-ui-solidjs-utils/clamp';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useDrawerRootContext } from './DrawerRootContext';
 import type { DrawerSnapPoint } from './DrawerRootContext';

@@ -1,7 +1,7 @@
 import { createEffect, createMemo, type Accessor, untrack } from 'solid-js';
 import type { VirtualElement } from '@floating-ui/dom';
 import { isElement } from '@floating-ui/utils/dom';
-import { createSyncSignal } from '@base-ui-solid/utils/createSyncSignal';
+import { createSyncSignal } from 'base-ui-solidjs-utils/createSyncSignal';
 import { useFloatingTree } from '../tree/FloatingTree';
 import type {
   PopupPositioningContext,

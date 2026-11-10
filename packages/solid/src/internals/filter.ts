@@ -1,4 +1,4 @@
-import { stringifyLocale } from '@base-ui-solid/utils/stringifyLocale';
+import { stringifyLocale } from 'base-ui-solidjs-utils/stringifyLocale';
 import { stringifyAsLabel } from './resolveValueLabel';
 
 const filterCache = new Map<string, Filter>();

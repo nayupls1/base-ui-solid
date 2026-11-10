@@ -1,5 +1,5 @@
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
 import type { HTMLProps } from '../internals/types';
 import { compareItemEquality } from '../internals/itemEquality';
 import { hasNullItemLabel, stringifyAsValue } from '../internals/resolveValueLabel';

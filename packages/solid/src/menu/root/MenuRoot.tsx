@@ -8,9 +8,9 @@ import {
   useContext,
 } from 'solid-js';
 import type { JSX } from '@solidjs/web';
-import type { RefObject } from '@base-ui-solid/utils/types';
-import { useTimeout } from '@base-ui-solid/utils/useTimeout';
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '@base-ui-solid/utils/empty';
+import type { RefObject } from 'base-ui-solidjs-utils/types';
+import { useTimeout } from 'base-ui-solidjs-utils/useTimeout';
+import { EMPTY_ARRAY, EMPTY_OBJECT } from 'base-ui-solidjs-utils/empty';
 import {
   FloatingTree,
   useFloatingNodeId,
