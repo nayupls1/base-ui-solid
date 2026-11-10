@@ -1,0 +1,101 @@
+# Toolbar
+
+<Subtitle>A container for grouping a set of buttons and controls.</Subtitle>
+<Meta
+  name="description"
+  content="A high-quality, unstyled Solid toolbar component that groups a set of buttons and controls."
+/>
+
+import { DemoToolbarHero } from './demos/hero';
+
+<DemoToolbarHero />
+
+## Usage guidelines
+
+To ensure that toolbars are accessible and helpful, follow these guidelines:
+
+- **Use inputs sparingly**: Left and right arrow keys are used to both move the text insertion cursor in an input, and to navigate among controls in horizontal toolbars. When using an input in a horizontal toolbar, use only one and place it as the last element of the toolbar.
+
+## Anatomy
+
+Import the component and assemble its parts:
+
+```jsx title="Anatomy"
+import { Toolbar } from '@base-ui-solid/solid/toolbar';
+
+<Toolbar.Root>
+  <Toolbar.Button />
+  <Toolbar.Link />
+  <Toolbar.Separator />
+  <Toolbar.Group>
+    <Toolbar.Button />
+    <Toolbar.Button />
+  </Toolbar.Group>
+  <Toolbar.Input />
+</Toolbar.Root>;
+```
+
+## Examples
+
+### Using with other components
+
+Use the `render` prop to combine a toolbar part with a part from another component into a single element.
+The element joins the toolbar's keyboard navigation and keeps the behavior of the other part.
+
+```tsx title="Using a menu in a toolbar"
+<Toolbar.Root>
+  <Menu.Root>
+    {/* @highlight */}
+    <Toolbar.Button render={<Menu.Trigger />} />
+    <Menu.Portal>{/* Compose the rest of the menu */}</Menu.Portal>
+  </Menu.Root>
+</Toolbar.Root>
+```
+
+- **Popups with a trigger**, such as Alert Dialog, Dialog, Drawer, Menu, Popover, and Select: pass the trigger to the `render` prop of `<Toolbar.Button>`, as shown above. Set `disabled` on `<Toolbar.Button>` rather than on the trigger, so the button stays in the toolbar's keyboard navigation.
+- **Tooltip**: pass `<Toolbar.Button>` to the `render` prop of `<Tooltip.Trigger>` instead.
+- **Number Field**: pass `<NumberField.Input>` to the `render` prop of `<Toolbar.Input>`, and keep it inside `<NumberField.Root>` and `<NumberField.Group>` with the increment and decrement buttons.
+
+See [how props are merged](https://base-ui.com/react/handbook/composition#how-props-are-merged) for how the two parts combine.
+
+## API reference
+
+import { TypesToolbar } from './types';
+
+### Root
+
+<TypesToolbar.Root />
+
+### Button
+
+<TypesToolbar.Button />
+
+### Link
+
+<TypesToolbar.Link />
+
+### Input
+
+<TypesToolbar.Input />
+
+### Group
+
+<TypesToolbar.Group />
+
+### Separator
+
+<TypesToolbar.Separator />
+
+export const metadata = {
+  keywords: [
+    'Solid Toolbar',
+    'Toolbar Button Group',
+    'Action Bar',
+    'Button Bar',
+    'Command Strip',
+    'Headless Toolbar Component',
+    'Accessible Toolbar',
+    'Popup Trigger Toolbar',
+    'Base UI',
+  ],
+};

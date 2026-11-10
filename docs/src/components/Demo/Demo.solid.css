@@ -1,0 +1,32 @@
+@layer components {
+  .DemoVariantSelect {
+    height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-6, 0.375rem);
+    background-color: transparent;
+    color: var(--color-foreground);
+    font: inherit;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-gray-100);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-blue);
+      outline-offset: -1px;
+    }
+  }
+}
+
+@layer components {
+  /* Empty lines from the line-based highlighter keep their height (upstream's infra emits a
+     newline character inside them instead). */
+  .DemoSourceBrowser code .frame[data-lined] .line:empty {
+    height: var(--demo-code-block-line-height, 1.25rem);
+  }
+}
