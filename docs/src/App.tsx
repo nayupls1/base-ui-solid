@@ -117,8 +117,8 @@ export function Layout(props: { children?: JSX.Element }) {
                   </SideNav.Item>
                 </SideNav.List>
                 <p class="SideNavNote">
-                  An unofficial community port. Not affiliated with or endorsed by MUI or the Base UI
-                  team. The official library is at <a href="https://base-ui.com">base-ui.com</a>.
+                  An unofficial community port. Not affiliated with or endorsed by MUI or the Base
+                  UI team. The official library is at <a href="https://base-ui.com">base-ui.com</a>.
                 </p>
               </SideNav.Section>
             </SideNav.Root>

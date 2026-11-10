@@ -25,7 +25,9 @@ if (args.version !== undefined && !SEMVER.test(args.version)) {
 }
 
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
-const manifests = new Map(packageDirs.map((dir) => [dir, readJson(path.join(dir, 'package.json'))]));
+const manifests = new Map(
+  packageDirs.map((dir) => [dir, readJson(path.join(dir, 'package.json'))]),
+);
 const versions = new Map(
   [...manifests.values()].map((manifest) => [manifest.name, args.version ?? manifest.version]),
 );
@@ -137,9 +139,14 @@ for (const dir of packageDirs) {
   );
 
   const ownReadme = path.join(dir, 'README.md');
-  const readme = fs.readFileSync(fs.existsSync(ownReadme) ? ownReadme : path.join(root, 'README.md'), 'utf8');
+  const readme = fs.readFileSync(
+    fs.existsSync(ownReadme) ? ownReadme : path.join(root, 'README.md'),
+    'utf8',
+  );
   fs.writeFileSync(path.join(dist, 'README.md'), absolutizeLinks(readme));
   fs.copyFileSync(path.join(root, 'LICENSE'), path.join(dist, 'LICENSE'));
 
-  console.log(`built ${manifest.name}@${versions.get(manifest.name)} -> ${path.relative(root, dist)}`);
+  console.log(
+    `built ${manifest.name}@${versions.get(manifest.name)} -> ${path.relative(root, dist)}`,
+  );
 }
