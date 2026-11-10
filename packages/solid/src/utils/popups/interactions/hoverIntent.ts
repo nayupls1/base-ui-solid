@@ -1,3 +1,4 @@
+import { untrack } from 'solid-js';
 import { ownerDocument } from '@base-ui-solid/utils/owner';
 import { Timeout } from '@base-ui-solid/utils/useTimeout';
 import { closest, contains, getTarget } from '@base-ui-solid/utils/shadowDom';
@@ -428,8 +429,12 @@ export class HoverIntent {
 
     const doc = ownerDocument(positionerElement);
 
-    const parentFloating = tree?.nodesRef.current.find((node) => node.id === parentId)?.context
-      ?.elements.floating as HTMLElement | null;
+    // Called from effects; the parent's floating element is an imperative lookup.
+    const parentFloating = untrack(
+      () =>
+        tree?.nodesRef.current.find((node) => node.id === parentId)?.context?.elements
+          .floating as HTMLElement | null,
+    );
 
     if (parentFloating) {
       parentFloating.style.pointerEvents = '';
