@@ -1,8 +1,9 @@
+import type { Component } from 'solid-js';
 import { Popover } from '@base-ui-solid/solid/popover';
 import baseStyles from '../../_index.module.css';
 import styles from './index.module.css';
 
-const demoPopover = Popover.createHandle<React.ComponentType>();
+const demoPopover = Popover.createHandle<Component>();
 
 export default function PopoverDetachedTriggersFullDemo() {
   return (

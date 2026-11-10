@@ -33,7 +33,8 @@ export default defineConfig({
         rehypePlugins: [rehypeQuickNav, rehypeHighlightCode],
       }),
     },
-    solid({ extensions: ['.mdx'] }),
+    // See vitest.config.ts: the native JSX compiler misplaces components between text nodes.
+    solid({ extensions: ['.mdx'], compiler: 'babel' }),
   ],
   server: {
     port: 3005,

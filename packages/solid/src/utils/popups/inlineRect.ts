@@ -203,14 +203,14 @@ function getContextElement(reference: Element | VirtualElement): Element | undef
 
 export function getInlineRectTriggerProps(
   coordsRef: RefObject<InlineRectCoords | undefined>,
-  isOpen: boolean,
+  isOpen: boolean | (() => boolean),
 ): Pick<JSX.HTMLAttributes<Element>, 'onFocus' | 'onMouseEnter' | 'onMouseMove'> {
   function updateCoords(event: MouseEvent) {
     updateInlineRectCoords(coordsRef, event.currentTarget, event.clientX, event.clientY);
   }
 
   function updateCoordsIfClosed(event: MouseEvent) {
-    if (!isOpen) {
+    if (!(typeof isOpen === 'function' ? isOpen() : isOpen)) {
       updateCoords(event);
     }
   }

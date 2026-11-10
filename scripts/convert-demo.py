@@ -138,6 +138,7 @@ def transform(src: str) -> str:
     s = re.sub(r'\s+key="[^"]*"', '', s)
     s = s.replace('React.ComponentProps<\'svg\'>', 'JSX.SvgSVGAttributes<SVGSVGElement>')
     s = re.sub(r"React\.ComponentProps<'(\w+)'>", r"JSX.IntrinsicElements['\1']", s)
+    s = s.replace('React.ComponentType', 'Component')
     s = s.replace('React.ReactNode', 'JSX.Element')
     s = s.replace('React.CSSProperties', 'JSX.CSSProperties')
     s = s.replace('React.Fragment', '')

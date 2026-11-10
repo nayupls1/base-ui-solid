@@ -121,3 +121,19 @@ describe('core rendering', () => {
     expect(p.textContent).toBe('hello');
   });
 });
+
+describe('JSX compilation', () => {
+  it('keeps components in place between text siblings', () => {
+    const container = document.createElement('div');
+    const dispose = render(
+      () => (
+        <p>
+          before <Button>btn</Button> after
+        </p>
+      ),
+      container,
+    );
+    expect(container.textContent?.replace(/\s+/g, ' ').trim()).toBe('before btn after');
+    dispose();
+  });
+});

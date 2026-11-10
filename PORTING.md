@@ -86,3 +86,11 @@ See the checklist in `PORTING-STATUS.md`.
 - `@floating-ui/react-dom`'s `useFloating` is ported as `usePosition`
   (utils/popups/positioning/usePosition.ts); middleware wrappers that fold `deps` into options
   live in positioning/middleware.ts.
+- **Use `compiler: 'babel'` in `@solidjs/vite-plugin`.** The native Oxc JSX compiler
+  (`@dom-expressions/compiler` 0.50.0-next.40) drops the insertion marker between text siblings, so
+  `<p>a <C /> b</p>` renders `C` after `b`. Babel (`babel-preset-solid`) compiles it correctly.
+  Consumers of this library must do the same until that's fixed upstream.
+- `<For>` children receive plain items (keyed), not accessors.
+- Payload render functions (`{({ payload }) => …}`) re-run when the payload changes; the previous
+  subtree is disposed first (see `renderPayloadChildren` in utils/popups/popupRoot.tsx). Demos that
+  passed JSX elements as payloads pass render functions instead (a JSX element is a single DOM node).
