@@ -27,7 +27,6 @@
 
 /* ═══ Docs-only imports ═══ */
 
-@import './fonts/index.css';
 @import './custom-media.css';
 
 /* TODO: Remove these component imports once we make these components' styles truly isolated and they import their own styles. */
@@ -88,9 +87,9 @@
 
   /* Typography */
   --font-mono:
-    'Paper Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
-  --font-sans: 'die grotesk a', system-ui, sans-serif;
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', Times, 'Noto Serif', 'DejaVu Serif', serif;
 }
 
@@ -184,7 +183,7 @@
     --color-violet: oklch(40% 60% 300deg);
 
     /* Font family */
-    --font-sans-b: 'die grotesk b', system-ui, sans-serif;
+    --font-sans-b: var(--font-sans);
 
     /* Font size */
     --font-size-13: 0.8125rem; /* 13px */
@@ -440,9 +439,7 @@
     -moz-osx-font-smoothing: grayscale;
     /* Stable scrollbar */
     overflow-y: scroll;
-    /* Die Grotesk OpenType features (`alternate-r` is defined in ./fonts/index.css) */
     font-feature-settings: 'zero' 1;
-    font-variant-alternates: styleset(alternate-r);
   }
 
   ::selection {

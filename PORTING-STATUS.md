@@ -52,7 +52,6 @@ variants), API reference tables and quick nav.
   - Payload render functions (`{({ payload }) => …}`) re-run when the payload changes, and the
     filterable menu's state lives inside that render function, so switching a detached trigger's
     payload resets an uncontrolled filter.
-- **Docs:** `docs/public/fonts` holds upstream's font files (Die Grotesk, Paper Mono), copied
-  as-is. They're commercially licensed to MUI; replace them before publishing the site.
-  The virtualized demos use a small `@tanstack/virtual-core` binding (`docs/src/utils/
-  createVirtualizer.ts`) because `@tanstack/solid-virtual` targets Solid 1.
+- **Docs:** system font stacks replace upstream's licensed typefaces, and the site uses its own
+  icon instead of the Base UI logo. The virtualized demos use a small `@tanstack/virtual-core` binding (`docs/src/utils/
+createVirtualizer.ts`) because `@tanstack/solid-virtual` targets Solid 1.
