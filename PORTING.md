@@ -103,3 +103,6 @@ See the checklist in `PORTING-STATUS.md`.
 - Hooks bind to the store passed at setup. A part whose store changes over its lifetime (the
   navigation menu positioner follows the active trigger) uses
   `utils/popups/floating-root/createForwardingStore.ts`.
+- Never write `ref={props.ref}`: Solid compiles a non-function `ref` expression as an assignment
+  (`props.ref = el`), which throws on a props proxy. Forward with
+  `ref={(el) => assignRefs(props.ref, el)}` or pass it through `useRenderElement`'s `ref` option.

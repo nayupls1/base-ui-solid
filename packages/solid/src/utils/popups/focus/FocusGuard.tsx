@@ -3,6 +3,7 @@ import type { JSX } from '@solidjs/web';
 import { platform } from '@base-ui-solid/utils/platform';
 import { visuallyHidden } from '@base-ui-solid/utils/visuallyHidden';
 import { ownedProps } from '../../../internals/ownedProps';
+import { assignRefs, type RefInput } from '../../../internals/useRenderElement';
 
 /**
  * @internal
@@ -16,7 +17,7 @@ export function FocusGuard(props: JSX.HTMLAttributes<HTMLSpanElement> & { [key: 
   return (
     <span
       {...otherProps}
-      ref={props.ref}
+      ref={(el: HTMLSpanElement) => assignRefs(props.ref as RefInput<HTMLSpanElement>, el)}
       style={visuallyHidden}
       aria-hidden={role ? undefined : 'true'}
       tabindex={0}
