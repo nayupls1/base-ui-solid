@@ -4,7 +4,14 @@
   "type": "module",
   "description": "A 1:1 SolidJS 2.0 port of Base UI: unstyled, accessible UI components.",
   "license": "MIT",
-  "keywords": ["solid", "solidjs", "unstyled", "base-ui", "a11y", "headless"],
+  "keywords": [
+    "solid",
+    "solidjs",
+    "unstyled",
+    "base-ui",
+    "a11y",
+    "headless"
+  ],
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
@@ -15,8 +22,7 @@
   "dependencies": {
     "@base-ui-solid/utils": "workspace:*",
     "@floating-ui/dom": "^1.7.4",
-    "@floating-ui/utils": "^0.2.10",
-    "tabbable": "^6.2.0"
+    "@floating-ui/utils": "^0.2.10"
   },
   "peerDependencies": {
     "solid-js": "^2.0.0-rc.21",
