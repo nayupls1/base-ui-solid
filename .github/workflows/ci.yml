@@ -20,5 +20,6 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run test
       - run: bun run build
-      # What a release would upload, without uploading it.
-      - run: npm publish --dry-run packages/utils/dist && npm publish --dry-run packages/solid/dist
+      # What a release would upload, without uploading it. The checkout's version (0.0.0) is below
+      # the published one, and npm refuses to apply `latest` to it, so the dry run names a tag.
+      - run: npm publish --dry-run --tag ci packages/utils/dist && npm publish --dry-run --tag ci packages/solid/dist
