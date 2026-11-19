@@ -15,7 +15,7 @@ Ported from upstream commit
 ## Status
 
 Every component upstream exports is ported, and the docs site has a page with demos for each.
-The port targets Solid 2.0 (rc.21) and is client-only for now. See
+The port targets Solid 2.0 (tested on 2.0.2) and is client-only for now. See
 [PORTING-STATUS.md](PORTING-STATUS.md) for coverage, verification and known gaps, and
 [PORTING.md](PORTING.md) for how React patterns map to Solid.
 
@@ -38,8 +38,8 @@ import { Popover } from 'base-ui-solidjs/popover';
 </Popover.Root>;
 ```
 
-Compile with `@solidjs/vite-plugin` 3.0.0-next.57 or newer; older versions don't match the
-rc.21 runtime.
+Compile with `@solidjs/vite-plugin` 3.0 or newer; the pre-release 3.0.0-next builds older than
+next.57 don't match the Solid 2.0 runtime.
 
 ## Development
 
