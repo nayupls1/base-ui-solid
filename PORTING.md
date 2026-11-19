@@ -86,9 +86,9 @@ See the checklist in `PORTING-STATUS.md`.
 - `@floating-ui/react-dom`'s `useFloating` is ported as `usePosition`
   (utils/popups/positioning/usePosition.ts); middleware wrappers that fold `deps` into options
   live in positioning/middleware.ts.
-- **Use `@solidjs/vite-plugin` ≥ 3.0.0-next.57** (`@solidjs/compiler` matching the runtime). Older
-  plugin builds pull in `babel-preset-solid` 2.0.0-beta / `@dom-expressions/compiler` 0.50.0-next.40,
-  which write delegated handlers to `$$click` while `@solidjs/web` rc.21 reads `_$$click` (so plain
+- **Use `@solidjs/vite-plugin` ≥ 3.0** (`@solidjs/compiler` matching the runtime). Pre-release
+  plugin builds older than 3.0.0-next.57 pull in `babel-preset-solid` 2.0.0-beta / `@dom-expressions/compiler` 0.50.0-next.40,
+  which write delegated handlers to `$$click` while `@solidjs/web` 2.0 reads `_$$click` (so plain
   `onClick` on intrinsic elements silently never fires) and misplace components between text
   siblings. `test/compiler.test.tsx` guards both.
 - `<For>` children receive plain items (keyed), not accessors.

@@ -1,7 +1,7 @@
 # Porting status
 
 Port of [mui/base-ui](https://github.com/mui/base-ui) at
-`86b31e5875ac4439a400c19d6a12f4b14d69cfd2` to Solid 2.0 (rc.21). See `PORTING.md` for the
+`86b31e5875ac4439a400c19d6a12f4b14d69cfd2` to Solid 2.0 (tested on 2.0.2). See `PORTING.md` for the
 conventions used.
 
 ## Coverage
@@ -36,8 +36,8 @@ variants), API reference tables and quick nav.
   (`bun run build:docs`) compile without type checking.
 - **SSR/hydration:** not supported or tested. Upstream's pre-hydration scripts
   (`renderBeforeHydration`, `thumbAlignment="edge"` SSR behavior) are ported as client-only code.
-- **Toolchain:** needs `@solidjs/vite-plugin` ≥ 3.0.0-next.57. Older plugin builds compile
-  delegated events with a key the rc.21 runtime doesn't read (plain `onClick` never fires).
+- **Toolchain:** needs `@solidjs/vite-plugin` ≥ 3.0. Pre-release plugin builds older than
+  3.0.0-next.57 compile delegated events with a key the Solid 2.0 runtime doesn't read (plain `onClick` never fires).
 - **Solid dev warnings:** Solid's dev build reports `EFFECT_WRITES_OWN_SOURCE` /
   `EFFECT_RELAY_TEAR` advisories for effects that sync state the way upstream's layout effects
   do. They're performance hints, not errors, and don't appear in production builds.

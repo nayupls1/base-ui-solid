@@ -35,11 +35,11 @@
     "@floating-ui/utils": "^0.2.10"
   },
   "peerDependencies": {
-    "solid-js": "^2.0.0-rc.21",
-    "@solidjs/web": "^2.0.0-rc.21"
+    "solid-js": "^2.0.0",
+    "@solidjs/web": "^2.0.0"
   },
   "devDependencies": {
-    "solid-js": "2.0.0-rc.21",
-    "@solidjs/web": "2.0.0-rc.21"
+    "solid-js": "2.0.2",
+    "@solidjs/web": "2.0.2"
   }
 }
